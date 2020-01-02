@@ -113,17 +113,17 @@ mrb_raylib_audiostream_get_channels(mrb_state *mrb, mrb_value self)
 	return mrb_fixnum_value(mrb_raylib_audiostream_get_ptr(mrb, self)->channels);
 }
 
-static mrb_value
-mrb_raylib_audiostream_get_format(mrb_state *mrb, mrb_value self)
-{
-	return mrb_fixnum_value(mrb_raylib_audiostream_get_ptr(mrb, self)->format);
-}
+//static mrb_value
+//mrb_raylib_audiostream_get_format(mrb_state *mrb, mrb_value self)
+//{
+//	return mrb_fixnum_value(mrb_raylib_audiostream_get_ptr(mrb, self)->format);
+//}
 
-static mrb_value
-mrb_raylib_audiostream_get_source(mrb_state *mrb, mrb_value self)
-{
-	return mrb_fixnum_value(mrb_raylib_audiostream_get_ptr(mrb, self)->source);
-}
+//static mrb_value
+//mrb_raylib_audiostream_get_source(mrb_state *mrb, mrb_value self)
+//{
+//	return mrb_fixnum_value(mrb_raylib_audiostream_get_ptr(mrb, self)->source);
+//}
 
 
 void
@@ -137,8 +137,8 @@ mrb_raylib_audiostream_init(mrb_state* mrb, struct RClass* mod_RayLib)
 	mrb_define_method(mrb, class_AudioStream, "sample_rate", mrb_raylib_audiostream_get_sample_rate, MRB_ARGS_NONE());
 	mrb_define_method(mrb, class_AudioStream, "sample_size", mrb_raylib_audiostream_get_sample_size, MRB_ARGS_NONE());
 	mrb_define_method(mrb, class_AudioStream, "channels", mrb_raylib_audiostream_get_channels, MRB_ARGS_NONE());
-	mrb_define_method(mrb, class_AudioStream, "format", mrb_raylib_audiostream_get_format, MRB_ARGS_NONE());
-	mrb_define_method(mrb, class_AudioStream, "source", mrb_raylib_audiostream_get_source, MRB_ARGS_NONE());
+//	mrb_define_method(mrb, class_AudioStream, "format", mrb_raylib_audiostream_get_format, MRB_ARGS_NONE());
+//	mrb_define_method(mrb, class_AudioStream, "source", mrb_raylib_audiostream_get_source, MRB_ARGS_NONE());
 }
 
 void

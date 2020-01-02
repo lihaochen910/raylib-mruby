@@ -95,23 +95,23 @@ mrb_raylib_sound_initialize(mrb_state *mrb, mrb_value self)
 	return self;
 }
 
-static mrb_value
-mrb_raylib_sound_get_source(mrb_state *mrb, mrb_value self)
-{
-	return mrb_fixnum_value(mrb_raylib_sound_get_ptr(mrb, self)->source);
-}
-
-static mrb_value
-mrb_raylib_sound_get_buffer(mrb_state *mrb, mrb_value self)
-{
-	return mrb_fixnum_value(mrb_raylib_sound_get_ptr(mrb, self)->buffer);
-}
-
-static mrb_value
-mrb_raylib_sound_get_format(mrb_state *mrb, mrb_value self)
-{
-	return mrb_fixnum_value(mrb_raylib_sound_get_ptr(mrb, self)->format);
-}
+//static mrb_value
+//mrb_raylib_sound_get_source(mrb_state *mrb, mrb_value self)
+//{
+//	return mrb_fixnum_value(mrb_raylib_sound_get_ptr(mrb, self)->source);
+//}
+//
+//static mrb_value
+//mrb_raylib_sound_get_buffer(mrb_state *mrb, mrb_value self)
+//{
+//	return mrb_fixnum_value(mrb_raylib_sound_get_ptr(mrb, self)->buffer);
+//}
+//
+//static mrb_value
+//mrb_raylib_sound_get_format(mrb_state *mrb, mrb_value self)
+//{
+//	return mrb_fixnum_value(mrb_raylib_sound_get_ptr(mrb, self)->format);
+//}
 
 
 void
@@ -122,9 +122,9 @@ mrb_raylib_sound_init(mrb_state* mrb, struct RClass* mod_RayLib)
 	MRB_SET_INSTANCE_TT(class_Sound, MRB_TT_DATA);
 
 	mrb_define_method(mrb, class_Sound, "initialize", mrb_raylib_sound_initialize, MRB_ARGS_NONE());
-	mrb_define_method(mrb, class_Sound, "source", mrb_raylib_sound_get_source, MRB_ARGS_NONE());
-	mrb_define_method(mrb, class_Sound, "buffer", mrb_raylib_sound_get_buffer, MRB_ARGS_NONE());
-	mrb_define_method(mrb, class_Sound, "format", mrb_raylib_sound_get_format, MRB_ARGS_NONE());
+//	mrb_define_method(mrb, class_Sound, "source", mrb_raylib_sound_get_source, MRB_ARGS_NONE());
+//	mrb_define_method(mrb, class_Sound, "buffer", mrb_raylib_sound_get_buffer, MRB_ARGS_NONE());
+//	mrb_define_method(mrb, class_Sound, "format", mrb_raylib_sound_get_format, MRB_ARGS_NONE());
 }
 
 void

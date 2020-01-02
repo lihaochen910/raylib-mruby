@@ -17,13 +17,14 @@
 #include "module_models_wrapper.h"
 #include "module_audio_wrapper.h"
 
-//#include "vector2.h"
+RMRUBY_API struct RClass *mod_RayLib;
+RMRUBY_API struct RClass *class_RayLibError;
 
 void
 mrb_raylib_module_init(mrb_state *mrb)
 {
-	mod_RayLib = mrb_define_module(mrb, "RayLib");
-	class_RayLibError = mrb_define_class_under(mrb, mod_RayLib, "RayLibError", mrb->eStandardError_class);
+	mod_RayLib = mrb_define_module(mrb, "Raylib");
+	class_RayLibError = mrb_define_class_under(mrb, mod_RayLib, "RaylibError", mrb->eStandardError_class);
 
 	mrb_raylib_gem_init(mrb);
 
@@ -32,7 +33,7 @@ mrb_raylib_module_init(mrb_state *mrb)
 	//================================================================//
 	mrb_define_module_function(mrb, mod_RayLib, "init_window", mrb_init_window, MRB_ARGS_REQ(3));
 	mrb_define_module_function(mrb, mod_RayLib, "close_window", mrb_close_window, MRB_ARGS_NONE());
-	mrb_define_module_function(mrb, mod_RayLib, "is_window_ready", mrb_is_window_ready, MRB_ARGS_NONE(1));
+	mrb_define_module_function(mrb, mod_RayLib, "is_window_ready", mrb_is_window_ready, MRB_ARGS_NONE());
 	mrb_define_module_function(mrb, mod_RayLib, "window_should_close", mrb_window_should_close, MRB_ARGS_NONE());
 	mrb_define_module_function(mrb, mod_RayLib, "is_window_minimized", mrb_is_window_minimized, MRB_ARGS_NONE());
 	mrb_define_module_function(mrb, mod_RayLib, "toggle_fullscreen", mrb_toggle_fullscreen, MRB_ARGS_NONE());
