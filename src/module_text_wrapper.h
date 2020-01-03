@@ -9,8 +9,8 @@ extern "C" {
 #endif
 
 
-	extern void mrb_raylib_module_text_init(mrb_state* mrb, struct RClass* mod_RayLib);
-	extern void mrb_raylib_module_text_final(mrb_state* mrb, struct RClass* mod_RayLib);
+extern void mrb_raylib_module_text_init ( mrb_state *mrb, struct RClass *mod_RayLib );
+extern void mrb_raylib_module_text_final ( mrb_state *mrb, struct RClass *mod_RayLib );
 
 
 #ifdef __cplusplus

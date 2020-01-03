@@ -2,9 +2,11 @@
 #include "wave_wrapper.h"
 #include "sound_wrapper.h"
 #include "audiostream_wrapper.h"
+
 #ifdef RAYLIB_MUSIC
 #include "music_wrapper.h"
 #endif
+
 #include "mruby/data.h"
 #include "mruby/class.h"
 #include "mruby/string.h"
@@ -18,9 +20,8 @@
 	@text	Initialize audio device and context
 */
 static mrb_value
-mrb_raylib_module_audio_init_audio_device(mrb_state* mrb, mrb_value self)
-{
-	InitAudioDevice();
+mrb_raylib_module_audio_init_audio_device ( mrb_state *mrb, mrb_value self ) {
+	InitAudioDevice ();
 
 	return self;
 }
@@ -30,9 +31,8 @@ mrb_raylib_module_audio_init_audio_device(mrb_state* mrb, mrb_value self)
 	@text	Close the audio device and context (and music stream)
 */
 static mrb_value
-mrb_raylib_module_audio_close_audio_device(mrb_state* mrb, mrb_value self)
-{
-	CloseAudioDevice();
+mrb_raylib_module_audio_close_audio_device ( mrb_state *mrb, mrb_value self ) {
+	CloseAudioDevice ();
 
 	return self;
 }
@@ -44,9 +44,8 @@ mrb_raylib_module_audio_close_audio_device(mrb_state* mrb, mrb_value self)
 	@out	Boolean Audio device ready
 */
 static mrb_value
-mrb_raylib_module_audio_is_audio_device_ready(mrb_state* mrb, mrb_value self)
-{
-	return mrb_bool_value(IsAudioDeviceReady());
+mrb_raylib_module_audio_is_audio_device_ready ( mrb_state *mrb, mrb_value self ) {
+	return mrb_bool_value ( IsAudioDeviceReady () );
 }
 
 //----------------------------------------------------------------//
@@ -56,13 +55,12 @@ mrb_raylib_module_audio_is_audio_device_ready(mrb_state* mrb, mrb_value self)
 	@in		Float volume
 */
 static mrb_value
-mrb_raylib_module_audio_set_master_volume(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_set_master_volume ( mrb_state *mrb, mrb_value self ) {
 	mrb_float volume;
 
-	mrb_get_args(mrb, "f", &volume);
+	mrb_get_args ( mrb, "f", & volume );
 
-	SetMasterVolume(volume);
+	SetMasterVolume ( volume );
 
 	return self;
 }
@@ -75,15 +73,14 @@ mrb_raylib_module_audio_set_master_volume(mrb_state* mrb, mrb_value self)
 	@out	Wave wave
 */
 static mrb_value
-mrb_raylib_module_audio_load_wave(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_load_wave ( mrb_state *mrb, mrb_value self ) {
 	mrb_value fileName;
 
-	mrb_get_args(mrb, "S", &fileName);
+	mrb_get_args ( mrb, "S", & fileName );
 
-	Wave wave = LoadWave(RSTRING_PTR(fileName));
+	Wave wave = LoadWave ( RSTRING_PTR( fileName ) );
 
-	return mrb_raylib_wave_direct(mrb, &wave);
+	return mrb_raylib_wave_direct ( mrb, & wave );
 }
 
 //----------------------------------------------------------------//
@@ -94,15 +91,14 @@ mrb_raylib_module_audio_load_wave(mrb_state* mrb, mrb_value self)
 	@out	Sound sound
 */
 static mrb_value
-mrb_raylib_module_audio_load_sound(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_load_sound ( mrb_state *mrb, mrb_value self ) {
 	mrb_value fileName;
 
-	mrb_get_args(mrb, "S", &fileName);
+	mrb_get_args ( mrb, "S", & fileName );
 
-	Sound sound = LoadSound(RSTRING_PTR(fileName));
+	Sound sound = LoadSound ( RSTRING_PTR( fileName ) );
 
-	return mrb_raylib_sound_direct(mrb, &sound);
+	return mrb_raylib_sound_direct ( mrb, & sound );
 }
 
 //----------------------------------------------------------------//
@@ -113,15 +109,14 @@ mrb_raylib_module_audio_load_sound(mrb_state* mrb, mrb_value self)
 	@out	Sound sound
 */
 static mrb_value
-mrb_raylib_module_audio_load_sound_from_wave(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_load_sound_from_wave ( mrb_state *mrb, mrb_value self ) {
 	mrb_value wave;
 
-	mrb_get_args(mrb, "o", &wave);
+	mrb_get_args ( mrb, "o", & wave );
 
-	Sound sound = LoadSoundFromWave(*mrb_raylib_wave_get_ptr(mrb, wave));
+	Sound sound = LoadSoundFromWave ( * mrb_raylib_wave_get_ptr ( mrb, wave ) );
 
-	return mrb_raylib_sound_direct(mrb, &sound);
+	return mrb_raylib_sound_direct ( mrb, & sound );
 }
 
 //----------------------------------------------------------------//
@@ -131,13 +126,12 @@ mrb_raylib_module_audio_load_sound_from_wave(mrb_state* mrb, mrb_value self)
 	@in		Wave wave
 */
 static mrb_value
-mrb_raylib_module_audio_unload_wave(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_unload_wave ( mrb_state *mrb, mrb_value self ) {
 	mrb_value wave;
 
-	mrb_get_args(mrb, "o", &wave);
+	mrb_get_args ( mrb, "o", & wave );
 
-	UnloadWave(*mrb_raylib_wave_get_ptr(mrb, wave));
+	UnloadWave ( * mrb_raylib_wave_get_ptr ( mrb, wave ) );
 
 	return self;
 }
@@ -149,13 +143,12 @@ mrb_raylib_module_audio_unload_wave(mrb_state* mrb, mrb_value self)
 	@in		Sound sound
 */
 static mrb_value
-mrb_raylib_module_audio_unload_sound(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_unload_sound ( mrb_state *mrb, mrb_value self ) {
 	mrb_value sound;
 
-	mrb_get_args(mrb, "o", &sound);
+	mrb_get_args ( mrb, "o", & sound );
 
-	UnloadSound(*mrb_raylib_sound_get_ptr(mrb, sound));
+	UnloadSound ( * mrb_raylib_sound_get_ptr ( mrb, sound ) );
 
 	return self;
 }
@@ -167,13 +160,12 @@ mrb_raylib_module_audio_unload_sound(mrb_state* mrb, mrb_value self)
 	@in		Sound sound
 */
 static mrb_value
-mrb_raylib_module_audio_play_sound(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_play_sound ( mrb_state *mrb, mrb_value self ) {
 	mrb_value sound;
 
-	mrb_get_args(mrb, "o", &sound);
+	mrb_get_args ( mrb, "o", & sound );
 
-	PlaySound(*mrb_raylib_sound_get_ptr(mrb, sound));
+	PlaySound ( * mrb_raylib_sound_get_ptr ( mrb, sound ) );
 
 	return self;
 }
@@ -185,13 +177,12 @@ mrb_raylib_module_audio_play_sound(mrb_state* mrb, mrb_value self)
 	@in		Sound sound
 */
 static mrb_value
-mrb_raylib_module_audio_pause_sound(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_pause_sound ( mrb_state *mrb, mrb_value self ) {
 	mrb_value sound;
 
-	mrb_get_args(mrb, "o", &sound);
+	mrb_get_args ( mrb, "o", & sound );
 
-	PauseSound(*mrb_raylib_sound_get_ptr(mrb, sound));
+	PauseSound ( * mrb_raylib_sound_get_ptr ( mrb, sound ) );
 
 	return self;
 }
@@ -203,13 +194,12 @@ mrb_raylib_module_audio_pause_sound(mrb_state* mrb, mrb_value self)
 	@in		Sound sound
 */
 static mrb_value
-mrb_raylib_module_audio_resume_sound(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_resume_sound ( mrb_state *mrb, mrb_value self ) {
 	mrb_value sound;
 
-	mrb_get_args(mrb, "o", &sound);
+	mrb_get_args ( mrb, "o", & sound );
 
-	ResumeSound(*mrb_raylib_sound_get_ptr(mrb, sound));
+	ResumeSound ( * mrb_raylib_sound_get_ptr ( mrb, sound ) );
 
 	return self;
 }
@@ -221,13 +211,12 @@ mrb_raylib_module_audio_resume_sound(mrb_state* mrb, mrb_value self)
 	@in		Sound sound
 */
 static mrb_value
-mrb_raylib_module_audio_stop_sound(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_stop_sound ( mrb_state *mrb, mrb_value self ) {
 	mrb_value sound;
 
-	mrb_get_args(mrb, "o", &sound);
+	mrb_get_args ( mrb, "o", & sound );
 
-	StopSound(*mrb_raylib_sound_get_ptr(mrb, sound));
+	StopSound ( * mrb_raylib_sound_get_ptr ( mrb, sound ) );
 
 	return self;
 }
@@ -240,13 +229,12 @@ mrb_raylib_module_audio_stop_sound(mrb_state* mrb, mrb_value self)
 	@out	Boolean is_sound_playing
 */
 static mrb_value
-mrb_raylib_module_audio_is_sound_playing(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_is_sound_playing ( mrb_state *mrb, mrb_value self ) {
 	mrb_value sound;
 
-	mrb_get_args(mrb, "o", &sound);
+	mrb_get_args ( mrb, "o", & sound );
 
-	return mrb_bool_value(IsSoundPlaying(*mrb_raylib_sound_get_ptr(mrb, sound)));
+	return mrb_bool_value ( IsSoundPlaying ( * mrb_raylib_sound_get_ptr ( mrb, sound ) ) );
 }
 
 //----------------------------------------------------------------//
@@ -257,14 +245,13 @@ mrb_raylib_module_audio_is_sound_playing(mrb_state* mrb, mrb_value self)
 	@in		Float volume
 */
 static mrb_value
-mrb_raylib_module_audio_set_sound_volume(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_set_sound_volume ( mrb_state *mrb, mrb_value self ) {
 	mrb_value sound;
 	mrb_float volume;
 
-	mrb_get_args(mrb, "of", &sound, &volume);
+	mrb_get_args ( mrb, "of", & sound, & volume );
 
-	SetSoundVolume(*mrb_raylib_sound_get_ptr(mrb, sound), volume);
+	SetSoundVolume ( * mrb_raylib_sound_get_ptr ( mrb, sound ), volume );
 
 	return self;
 }
@@ -277,14 +264,13 @@ mrb_raylib_module_audio_set_sound_volume(mrb_state* mrb, mrb_value self)
 	@in		Float pitch
 */
 static mrb_value
-mrb_raylib_module_audio_set_sound_pitch(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_audio_set_sound_pitch ( mrb_state *mrb, mrb_value self ) {
 	mrb_value sound;
 	mrb_float pitch;
 
-	mrb_get_args(mrb, "of", &sound, &pitch);
+	mrb_get_args ( mrb, "of", & sound, & pitch );
 
-	SetSoundPitch(*mrb_raylib_sound_get_ptr(mrb, sound), pitch);
+	SetSoundPitch ( * mrb_raylib_sound_get_ptr ( mrb, sound ), pitch );
 
 	return self;
 }
@@ -531,29 +517,28 @@ mrb_raylib_module_audio_get_music_time_played(mrb_state* mrb, mrb_value self)
 
 
 void
-mrb_raylib_module_audio_init(mrb_state* mrb, struct RClass* mod_RayLib)
-{
+mrb_raylib_module_audio_init ( mrb_state *mrb, struct RClass *mod_RayLib ) {
 	// Audio device management functions
-	mrb_define_module_function(mrb, mod_RayLib, "init_audio_device", mrb_raylib_module_audio_init_audio_device, MRB_ARGS_NONE());
-	mrb_define_module_function(mrb, mod_RayLib, "close_audio_device", mrb_raylib_module_audio_close_audio_device, MRB_ARGS_NONE());
-	mrb_define_module_function(mrb, mod_RayLib, "is_audio_device_ready", mrb_raylib_module_audio_is_audio_device_ready, MRB_ARGS_NONE());
-	mrb_define_module_function(mrb, mod_RayLib, "set_master_volume", mrb_raylib_module_audio_set_master_volume, MRB_ARGS_REQ(1));
+	mrb_define_module_function ( mrb, mod_RayLib, "init_audio_device", mrb_raylib_module_audio_init_audio_device, MRB_ARGS_NONE() );
+	mrb_define_module_function ( mrb, mod_RayLib, "close_audio_device", mrb_raylib_module_audio_close_audio_device, MRB_ARGS_NONE() );
+	mrb_define_module_function ( mrb, mod_RayLib, "is_audio_device_ready", mrb_raylib_module_audio_is_audio_device_ready, MRB_ARGS_NONE() );
+	mrb_define_module_function ( mrb, mod_RayLib, "set_master_volume", mrb_raylib_module_audio_set_master_volume, MRB_ARGS_REQ( 1 ) );
 
 	// Wave/Sound loading/unloading functions
-	mrb_define_module_function(mrb, mod_RayLib, "load_wave", mrb_raylib_module_audio_load_wave, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "load_sound", mrb_raylib_module_audio_load_sound, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "load_sound_from_wave", mrb_raylib_module_audio_load_sound_from_wave, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "unload_wave", mrb_raylib_module_audio_unload_wave, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "unload_sound", mrb_raylib_module_audio_unload_sound, MRB_ARGS_REQ(1));
+	mrb_define_module_function ( mrb, mod_RayLib, "load_wave", mrb_raylib_module_audio_load_wave, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "load_sound", mrb_raylib_module_audio_load_sound, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "load_sound_from_wave", mrb_raylib_module_audio_load_sound_from_wave, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "unload_wave", mrb_raylib_module_audio_unload_wave, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "unload_sound", mrb_raylib_module_audio_unload_sound, MRB_ARGS_REQ( 1 ) );
 
 	// Wave/Sound management functions
-	mrb_define_module_function(mrb, mod_RayLib, "play_sound", mrb_raylib_module_audio_play_sound, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "pause_sound", mrb_raylib_module_audio_pause_sound, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "resume_sound", mrb_raylib_module_audio_resume_sound, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "stop_sound", mrb_raylib_module_audio_stop_sound, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "is_sound_playing", mrb_raylib_module_audio_is_sound_playing, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "set_sound_volume", mrb_raylib_module_audio_set_sound_volume, MRB_ARGS_REQ(2));
-	mrb_define_module_function(mrb, mod_RayLib, "set_sound_pitch", mrb_raylib_module_audio_set_sound_pitch, MRB_ARGS_REQ(2));
+	mrb_define_module_function ( mrb, mod_RayLib, "play_sound", mrb_raylib_module_audio_play_sound, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "pause_sound", mrb_raylib_module_audio_pause_sound, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "resume_sound", mrb_raylib_module_audio_resume_sound, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "stop_sound", mrb_raylib_module_audio_stop_sound, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "is_sound_playing", mrb_raylib_module_audio_is_sound_playing, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "set_sound_volume", mrb_raylib_module_audio_set_sound_volume, MRB_ARGS_REQ( 2 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "set_sound_pitch", mrb_raylib_module_audio_set_sound_pitch, MRB_ARGS_REQ( 2 ) );
 
 #ifdef RAYLIB_MUSIC
 	// Music management functions
@@ -577,7 +562,6 @@ mrb_raylib_module_audio_init(mrb_state* mrb, struct RClass* mod_RayLib)
 }
 
 void
-mrb_raylib_module_audio_final(mrb_state* mrb, struct RClass* mod_RayLib)
-{
+mrb_raylib_module_audio_final ( mrb_state *mrb, struct RClass *mod_RayLib ) {
 
 }

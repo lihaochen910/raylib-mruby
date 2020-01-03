@@ -17,15 +17,14 @@
 	@out	Font font
 */
 static mrb_value
-mrb_raylib_module_text_load_font(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_text_load_font ( mrb_state *mrb, mrb_value self ) {
 	mrb_value fileName;
 
-	mrb_get_args(mrb, "S", &fileName);
+	mrb_get_args ( mrb, "S", & fileName );
 
-	Font font = LoadFont(RSTRING_PTR(fileName));
+	Font font = LoadFont ( RSTRING_PTR( fileName ) );
 
-	return mrb_raylib_font_direct(mrb, &font);
+	return mrb_raylib_font_direct ( mrb, & font );
 }
 
 //----------------------------------------------------------------//
@@ -35,11 +34,10 @@ mrb_raylib_module_text_load_font(mrb_state* mrb, mrb_value self)
 	@out	Font font
 */
 static mrb_value
-mrb_raylib_module_text_get_font_default(mrb_state* mrb, mrb_value self)
-{
-	Font font = GetFontDefault();
+mrb_raylib_module_text_get_font_default ( mrb_state *mrb, mrb_value self ) {
+	Font font = GetFontDefault ();
 
-	return mrb_raylib_font_direct(mrb, &font);
+	return mrb_raylib_font_direct ( mrb, & font );
 }
 
 //----------------------------------------------------------------//
@@ -49,13 +47,12 @@ mrb_raylib_module_text_get_font_default(mrb_state* mrb, mrb_value self)
 	@in		Font font
 */
 static mrb_value
-mrb_raylib_module_text_unload_font(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_text_unload_font ( mrb_state *mrb, mrb_value self ) {
 	mrb_value font;
 
-	mrb_get_args(mrb, "o", &font);
+	mrb_get_args ( mrb, "o", & font );
 
-	UnloadFont(*mrb_raylib_font_get_ptr(mrb, font));
+	UnloadFont ( * mrb_raylib_font_get_ptr ( mrb, font ) );
 
 	return self;
 }
@@ -68,13 +65,12 @@ mrb_raylib_module_text_unload_font(mrb_state* mrb, mrb_value self)
 	@in		Fixnum posY
 */
 static mrb_value
-mrb_raylib_module_text_draw_fps(mrb_state *mrb, mrb_value self)
-{
+mrb_raylib_module_text_draw_fps ( mrb_state *mrb, mrb_value self ) {
 	mrb_int posX, posY = 0;
 
-	mrb_get_args(mrb, "ii", &posX, &posY);
+	mrb_get_args ( mrb, "ii", & posX, & posY );
 
-	DrawFPS(posX, posY);
+	DrawFPS ( posX, posY );
 
 	return self;
 }
@@ -94,18 +90,17 @@ mrb_raylib_module_text_draw_fps(mrb_state *mrb, mrb_value self)
 	@in		Float a
 */
 static mrb_value
-mrb_raylib_module_text_draw_text(mrb_state *mrb, mrb_value self)
-{
+mrb_raylib_module_text_draw_text ( mrb_state *mrb, mrb_value self ) {
 	mrb_value text;
 	mrb_int posX, posY = 0;
 	mrb_int fontSize = 0;
 	mrb_float r, g, b, a = 0;
 
-	mrb_get_args(mrb, "Siiiffff", &text, &posX, &posY, &fontSize, &r, &g, &b, &a);
+	mrb_get_args ( mrb, "Siiiffff", & text, & posX, & posY, & fontSize, & r, & g, & b, & a );
 
 	Color color = { r, g, b, a };
 
-	DrawText(RSTRING_PTR(text), posX, posY, fontSize, color);
+	DrawText ( RSTRING_PTR( text ), posX, posY, fontSize, color );
 
 	return self;
 }
@@ -126,8 +121,7 @@ mrb_raylib_module_text_draw_text(mrb_state *mrb, mrb_value self)
 	@in		Float a
 */
 static mrb_value
-mrb_raylib_module_text_draw_text_ex(mrb_state *mrb, mrb_value self)
-{
+mrb_raylib_module_text_draw_text_ex ( mrb_state *mrb, mrb_value self ) {
 	mrb_value font;
 	mrb_value text;
 	mrb_float posX, posY = 0;
@@ -135,35 +129,33 @@ mrb_raylib_module_text_draw_text_ex(mrb_state *mrb, mrb_value self)
 	mrb_float spacing = 0;
 	mrb_float r, g, b, a = 0;
 
-	mrb_get_args(mrb, "oSffffffff", &font, &text, &posX, &posY, &fontSize, &spacing, &r, &g, &b, &a);
+	mrb_get_args ( mrb, "oSffffffff", & font, & text, & posX, & posY, & fontSize, & spacing, & r, & g, & b, & a );
 
 	Vector2 position = { posX, posY };
 	Color tint = { r, g, b, a };
 
-	DrawTextEx(*mrb_raylib_font_get_ptr(mrb, font), RSTRING_PTR(text), position, fontSize, spacing, tint);
+	DrawTextEx ( * mrb_raylib_font_get_ptr ( mrb, font ), RSTRING_PTR( text ), position, fontSize, spacing, tint );
 
 	return self;
 }
 
 void
-mrb_raylib_module_text_init(mrb_state* mrb, struct RClass* mod_RayLib)
-{
+mrb_raylib_module_text_init ( mrb_state *mrb, struct RClass *mod_RayLib ) {
 	// Font loading/unloading functions
-	mrb_define_module_function(mrb, mod_RayLib, "get_font_default", mrb_raylib_module_text_get_font_default, MRB_ARGS_NONE());
-	mrb_define_module_function(mrb, mod_RayLib, "load_font", mrb_raylib_module_text_load_font, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "unload_font", mrb_raylib_module_text_unload_font, MRB_ARGS_REQ(1));
+	mrb_define_module_function ( mrb, mod_RayLib, "get_font_default", mrb_raylib_module_text_get_font_default, MRB_ARGS_NONE() );
+	mrb_define_module_function ( mrb, mod_RayLib, "load_font", mrb_raylib_module_text_load_font, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "unload_font", mrb_raylib_module_text_unload_font, MRB_ARGS_REQ( 1 ) );
 
 	// Text drawing functions
-	mrb_define_module_function(mrb, mod_RayLib, "draw_fps", mrb_raylib_module_text_draw_fps, MRB_ARGS_NONE());
-	mrb_define_module_function(mrb, mod_RayLib, "draw_text", mrb_raylib_module_text_draw_text, MRB_ARGS_REQ(8));
-	mrb_define_module_function(mrb, mod_RayLib, "draw_text_ex", mrb_raylib_module_text_draw_text_ex, MRB_ARGS_REQ(10));
+	mrb_define_module_function ( mrb, mod_RayLib, "draw_fps", mrb_raylib_module_text_draw_fps, MRB_ARGS_NONE() );
+	mrb_define_module_function ( mrb, mod_RayLib, "draw_text", mrb_raylib_module_text_draw_text, MRB_ARGS_REQ( 8 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "draw_text_ex", mrb_raylib_module_text_draw_text_ex, MRB_ARGS_REQ( 10 ) );
 
 	// TODO: Text misc. functions
 
 }
 
 void
-mrb_raylib_module_text_final(mrb_state* mrb, struct RClass* mod_RayLib)
-{
+mrb_raylib_module_text_final ( mrb_state *mrb, struct RClass *mod_RayLib ) {
 
 }

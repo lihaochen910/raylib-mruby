@@ -18,16 +18,15 @@
 	@out	Shader shader
 */
 static mrb_value
-mrb_raylib_module_shader_load_shader(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_shader_load_shader ( mrb_state *mrb, mrb_value self ) {
 	mrb_value vsFileName;
 	mrb_value fsFileName;
 
-	mrb_get_args(mrb, "SS", &vsFileName, &fsFileName);
+	mrb_get_args ( mrb, "SS", & vsFileName, & fsFileName );
 
-	Shader shader = LoadShader(RSTRING_PTR(vsFileName), RSTRING_PTR(fsFileName));
+	Shader shader = LoadShader ( RSTRING_PTR( vsFileName ), RSTRING_PTR( fsFileName ) );
 
-	return mrb_raylib_shader_direct(mrb, &shader);
+	return mrb_raylib_shader_direct ( mrb, & shader );
 }
 
 //----------------------------------------------------------------//
@@ -39,16 +38,15 @@ mrb_raylib_module_shader_load_shader(mrb_state* mrb, mrb_value self)
 	@out	Shader shader
 */
 static mrb_value
-mrb_raylib_module_shader_load_shader_code(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_shader_load_shader_code ( mrb_state *mrb, mrb_value self ) {
 	mrb_value vsCode;
 	mrb_value fsCode;
 
-	mrb_get_args(mrb, "SS", &vsCode, &fsCode);
+	mrb_get_args ( mrb, "SS", & vsCode, & fsCode );
 
-	Shader shader = LoadShaderCode(RSTRING_PTR(vsCode), RSTRING_PTR(fsCode));
+	Shader shader = LoadShaderCode ( RSTRING_PTR( vsCode ), RSTRING_PTR( fsCode ) );
 
-	return mrb_raylib_shader_direct(mrb, &shader);
+	return mrb_raylib_shader_direct ( mrb, & shader );
 }
 
 //----------------------------------------------------------------//
@@ -58,13 +56,12 @@ mrb_raylib_module_shader_load_shader_code(mrb_state* mrb, mrb_value self)
 	@in		Shader shader
 */
 static mrb_value
-mrb_raylib_module_shader_unload_shader(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_shader_unload_shader ( mrb_state *mrb, mrb_value self ) {
 	mrb_value shader;
 
-	mrb_get_args(mrb, "o", &shader);
+	mrb_get_args ( mrb, "o", & shader );
 
-	UnloadShader(*mrb_raylib_shader_get_ptr(mrb, shader));
+	UnloadShader ( * mrb_raylib_shader_get_ptr ( mrb, shader ) );
 
 	return self;
 }
@@ -76,11 +73,10 @@ mrb_raylib_module_shader_unload_shader(mrb_state* mrb, mrb_value self)
 	@out	Shader shader
 */
 static mrb_value
-mrb_raylib_module_shader_get_shader_default(mrb_state* mrb, mrb_value self)
-{
-	Shader shader = GetShaderDefault();
+mrb_raylib_module_shader_get_shader_default ( mrb_state *mrb, mrb_value self ) {
+	Shader shader = GetShaderDefault ();
 
-	return mrb_raylib_shader_direct(mrb, &shader);
+	return mrb_raylib_shader_direct ( mrb, & shader );
 }
 
 //----------------------------------------------------------------//
@@ -90,11 +86,10 @@ mrb_raylib_module_shader_get_shader_default(mrb_state* mrb, mrb_value self)
 	@out	Texture2D texture
 */
 static mrb_value
-mrb_raylib_module_shader_get_texture_default(mrb_state* mrb, mrb_value self)
-{
-	Texture2D texture = GetTextureDefault();
+mrb_raylib_module_shader_get_texture_default ( mrb_state *mrb, mrb_value self ) {
+	Texture2D texture = GetTextureDefault ();
 
-	return mrb_raylib_texture_direct(mrb, &texture);
+	return mrb_raylib_texture_direct ( mrb, & texture );
 }
 
 //----------------------------------------------------------------//
@@ -106,14 +101,13 @@ mrb_raylib_module_shader_get_texture_default(mrb_state* mrb, mrb_value self)
 	@out	Fixnum location
 */
 static mrb_value
-mrb_raylib_module_shader_get_shader_location(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_shader_get_shader_location ( mrb_state *mrb, mrb_value self ) {
 	mrb_value shader;
 	mrb_value uniformName;
 
-	mrb_get_args(mrb, "oS", &shader, &uniformName);
+	mrb_get_args ( mrb, "oS", & shader, & uniformName );
 
-	return mrb_fixnum_value(GetShaderLocation(*mrb_raylib_shader_get_ptr(mrb, shader), RSTRING_PTR(uniformName)));
+	return mrb_fixnum_value ( GetShaderLocation ( * mrb_raylib_shader_get_ptr ( mrb, shader ), RSTRING_PTR( uniformName ) ) );
 }
 
 //----------------------------------------------------------------//
@@ -123,13 +117,12 @@ mrb_raylib_module_shader_get_shader_location(mrb_state* mrb, mrb_value self)
 	@in		Shader shader
 */
 static mrb_value
-mrb_raylib_module_shader_begin_shader_mode(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_shader_begin_shader_mode ( mrb_state *mrb, mrb_value self ) {
 	mrb_value shader;
 
-	mrb_get_args(mrb, "o", &shader);
+	mrb_get_args ( mrb, "o", & shader );
 
-	BeginShaderMode(*mrb_raylib_shader_get_ptr(mrb, shader));
+	BeginShaderMode ( * mrb_raylib_shader_get_ptr ( mrb, shader ) );
 
 	return self;
 }
@@ -139,9 +132,8 @@ mrb_raylib_module_shader_begin_shader_mode(mrb_state* mrb, mrb_value self)
 	@text	End custom shader drawing (use default shader)
 */
 static mrb_value
-mrb_raylib_module_shader_end_shader_mode(mrb_state* mrb, mrb_value self)
-{
-	EndShaderMode();
+mrb_raylib_module_shader_end_shader_mode ( mrb_state *mrb, mrb_value self ) {
+	EndShaderMode ();
 
 	return self;
 }
@@ -153,13 +145,12 @@ mrb_raylib_module_shader_end_shader_mode(mrb_state* mrb, mrb_value self)
 	@in		Fixnum blend mode
 */
 static mrb_value
-mrb_raylib_module_shader_begin_blend_mode(mrb_state* mrb, mrb_value self)
-{
+mrb_raylib_module_shader_begin_blend_mode ( mrb_state *mrb, mrb_value self ) {
 	mrb_int blend_mode;
 
-	mrb_get_args(mrb, "i", &blend_mode);
+	mrb_get_args ( mrb, "i", & blend_mode );
 
-	BeginBlendMode(blend_mode);
+	BeginBlendMode ( blend_mode );
 
 	return self;
 }
@@ -169,40 +160,37 @@ mrb_raylib_module_shader_begin_blend_mode(mrb_state* mrb, mrb_value self)
 	@text	End blending mode (reset to default: alpha blending)
 */
 static mrb_value
-mrb_raylib_module_shader_end_blend_mode(mrb_state* mrb, mrb_value self)
-{
-	EndBlendMode();
+mrb_raylib_module_shader_end_blend_mode ( mrb_state *mrb, mrb_value self ) {
+	EndBlendMode ();
 
 	return self;
 }
 
 
-
 void
-mrb_raylib_module_shader_init(mrb_state* mrb, struct RClass* mod_RayLib)
-{
-	// Shader loading/unloading functions
-	mrb_define_module_function(mrb, mod_RayLib, "load_shader", mrb_raylib_module_shader_load_shader, MRB_ARGS_REQ(2));
-	mrb_define_module_function(mrb, mod_RayLib, "load_shader_code", mrb_raylib_module_shader_load_shader_code, MRB_ARGS_REQ(2));
-	mrb_define_module_function(mrb, mod_RayLib, "unload_shader", mrb_raylib_module_shader_unload_shader, MRB_ARGS_REQ(1));
+mrb_raylib_module_shader_init ( mrb_state *mrb, struct RClass *mod_RayLib ) {
 
-	mrb_define_module_function(mrb, mod_RayLib, "get_shader_default", mrb_raylib_module_shader_get_shader_default, MRB_ARGS_NONE());
-	mrb_define_module_function(mrb, mod_RayLib, "get_texture_default", mrb_raylib_module_shader_get_texture_default, MRB_ARGS_NONE());
+	// Shader loading/unloading functions
+	mrb_define_module_function ( mrb, mod_RayLib, "load_shader", mrb_raylib_module_shader_load_shader, MRB_ARGS_REQ( 2 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "load_shader_code", mrb_raylib_module_shader_load_shader_code, MRB_ARGS_REQ( 2 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "unload_shader", mrb_raylib_module_shader_unload_shader, MRB_ARGS_REQ( 1 ) );
+
+	mrb_define_module_function ( mrb, mod_RayLib, "get_shader_default", mrb_raylib_module_shader_get_shader_default, MRB_ARGS_NONE() );
+	mrb_define_module_function ( mrb, mod_RayLib, "get_texture_default", mrb_raylib_module_shader_get_texture_default, MRB_ARGS_NONE() );
 
 	// Shader access functions
-	mrb_define_module_function(mrb, mod_RayLib, "get_shader_location", mrb_raylib_module_shader_get_shader_location, MRB_ARGS_REQ(2));
+	mrb_define_module_function ( mrb, mod_RayLib, "get_shader_location", mrb_raylib_module_shader_get_shader_location, MRB_ARGS_REQ( 2 ) );
 
 	// Shading beegin/end functions
-	mrb_define_module_function(mrb, mod_RayLib, "begin_shader_mode", mrb_raylib_module_shader_begin_shader_mode, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "end_shader_mode", mrb_raylib_module_shader_end_shader_mode, MRB_ARGS_NONE());
-	mrb_define_module_function(mrb, mod_RayLib, "begin_blend_mode", mrb_raylib_module_shader_begin_blend_mode, MRB_ARGS_REQ(1));
-	mrb_define_module_function(mrb, mod_RayLib, "end_blend_mode", mrb_raylib_module_shader_end_blend_mode, MRB_ARGS_NONE());
+	mrb_define_module_function ( mrb, mod_RayLib, "begin_shader_mode", mrb_raylib_module_shader_begin_shader_mode, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "end_shader_mode", mrb_raylib_module_shader_end_shader_mode, MRB_ARGS_NONE() );
+	mrb_define_module_function ( mrb, mod_RayLib, "begin_blend_mode", mrb_raylib_module_shader_begin_blend_mode, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function ( mrb, mod_RayLib, "end_blend_mode", mrb_raylib_module_shader_end_blend_mode, MRB_ARGS_NONE() );
 
 	// TODO: VR control functions
 }
 
 void
-mrb_raylib_module_shader_final(mrb_state* mrb, struct RClass* mod_RayLib)
-{
+mrb_raylib_module_shader_final ( mrb_state *mrb, struct RClass *mod_RayLib ) {
 
 }
