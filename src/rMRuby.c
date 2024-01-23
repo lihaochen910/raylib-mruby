@@ -17,6 +17,7 @@
 #include "module_text_wrapper.h"
 #include "module_models_wrapper.h"
 #include "module_audio_wrapper.h"
+#include "module_shaders_wrapper.h"
 
 RMRUBY_API struct RClass *mod_RayLib;
 RMRUBY_API struct RClass *class_RayLibError;
