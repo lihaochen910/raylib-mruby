@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B359098A8B437CD4BDF2384 /* module_audio_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B35944A3DECE0B57FC52175 /* module_audio_wrapper.c */; };
 		2B35910F3BE48A31FD65EA7D /* wave_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359481BC90E476E839F19F /* wave_wrapper.c */; };
-		2B3595E6BC8AE15A7A20B42B /* charinfo_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3592A8A494137D1F360739 /* charinfo_wrapper.c */; };
+		2B3595E6BC8AE15A7A20B42B /* glyphinfo_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3592A8A494137D1F360739 /* glyphinfo_wrapper.c */; };
 		2B35969504C6A02CD7B2D0AF /* libmruby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B35906B88E11BF2F5EED569 /* libmruby.a */; };
 		2B3598AC4B0D85C40ECBC192 /* rMRuby.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359C05981A840F31938B1D /* rMRuby.c */; };
 		2B3598E6AFF1A54B54539370 /* music_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3594A49642202FF05954D5 /* music_wrapper.c */; };
@@ -48,7 +48,7 @@
 		2B3590E5E368ADB2A5716DD9 /* render_texture_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = render_texture_wrapper.c; sourceTree = "<group>"; };
 		2B3591A052FC513AC293EA39 /* sound_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sound_wrapper.h; sourceTree = "<group>"; };
 		2B359263339E80813D07F3B4 /* module_shapes_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module_shapes_wrapper.h; sourceTree = "<group>"; };
-		2B3592A8A494137D1F360739 /* charinfo_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = charinfo_wrapper.c; sourceTree = "<group>"; };
+		2B3592A8A494137D1F360739 /* glyphinfo_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glyphinfo_wrapper.c; sourceTree = "<group>"; };
 		2B3593ECBFD6621C5B0AFE70 /* module_models_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module_models_wrapper.c; sourceTree = "<group>"; };
 		2B35943C155298C04EE86673 /* render_texture_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = render_texture_wrapper.h; sourceTree = "<group>"; };
 		2B35944A3DECE0B57FC52175 /* module_audio_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module_audio_wrapper.c; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		2B3598EE17422E8E84E340DB /* core_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core_wrapper.h; sourceTree = "<group>"; };
 		2B35995D5BED3976232E1FA1 /* module_models_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module_models_wrapper.h; sourceTree = "<group>"; };
 		2B35999BEED2492313B5D7C5 /* sound_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sound_wrapper.c; sourceTree = "<group>"; };
-		2B3599F754BB083A45AC5BC1 /* charinfo_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = charinfo_wrapper.h; sourceTree = "<group>"; };
+		2B3599F754BB083A45AC5BC1 /* glyphinfo_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glyphinfo_wrapper.h; sourceTree = "<group>"; };
 		2B359AA87D51C88F55965805 /* audiostream_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audiostream_wrapper.c; sourceTree = "<group>"; };
 		2B359AB492ECFCD5EE607C33 /* shader_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shader_wrapper.c; sourceTree = "<group>"; };
 		2B359B473D26F6756B3FE6CC /* module_shapes_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module_shapes_wrapper.c; sourceTree = "<group>"; };
@@ -145,8 +145,8 @@
 				2B359D622AF7CB937B57A4F4 /* shader_wrapper.h */,
 				2B3595724394D50038E3F048 /* texture_wrapper.c */,
 				2B359C2598A5509328E12BDA /* texture_wrapper.h */,
-				2B3592A8A494137D1F360739 /* charinfo_wrapper.c */,
-				2B3599F754BB083A45AC5BC1 /* charinfo_wrapper.h */,
+				2B3592A8A494137D1F360739 /* glyphinfo_wrapper.c */,
+				2B3599F754BB083A45AC5BC1 /* glyphinfo_wrapper.h */,
 				2B359AA87D51C88F55965805 /* audiostream_wrapper.c */,
 				2B3595DAE4083E6F198F0B61 /* audiostream_wrapper.h */,
 				2B359023625A20C6C4C255E9 /* module_text_wrapper.c */,
@@ -237,7 +237,7 @@
 				2B359F29559A094765925C09 /* sound_wrapper.c in Sources */,
 				2B359E92BBA1869D864E44FD /* shader_wrapper.c in Sources */,
 				2B3599F7C25BE300FD396AB2 /* texture_wrapper.c in Sources */,
-				2B3595E6BC8AE15A7A20B42B /* charinfo_wrapper.c in Sources */,
+				2B3595E6BC8AE15A7A20B42B /* glyphinfo_wrapper.c in Sources */,
 				2B3599BEA65F7710FE2CC323 /* audiostream_wrapper.c in Sources */,
 				2B359E28E5B0E570E0EB65D6 /* module_text_wrapper.c in Sources */,
 				2B359098A8B437CD4BDF2384 /* module_audio_wrapper.c in Sources */,

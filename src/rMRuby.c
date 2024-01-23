@@ -4,7 +4,7 @@
 #include "image_wrapper.h"
 #include "texture_wrapper.h"
 #include "render_texture_wrapper.h"
-#include "charinfo_wrapper.h"
+#include "glyphinfo_wrapper.h"
 #include "font_wrapper.h"
 #include "wave_wrapper.h"
 #include "sound_wrapper.h"
@@ -80,7 +80,7 @@ mrb_raylib_gem_init ( mrb_state *mrb ) {
 	mrb_raylib_image_init ( mrb, mod_RayLib );
 	mrb_raylib_texture_init ( mrb, mod_RayLib );
 	mrb_raylib_render_texture_init ( mrb, mod_RayLib );
-	mrb_raylib_charinfo_init ( mrb, mod_RayLib );
+	mrb_raylib_glyphinfo_init ( mrb, mod_RayLib );
 	mrb_raylib_font_init ( mrb, mod_RayLib );
 	mrb_raylib_wave_init ( mrb, mod_RayLib );
 	mrb_raylib_sound_init ( mrb, mod_RayLib );
