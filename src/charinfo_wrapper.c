@@ -6,13 +6,13 @@
 #include "mruby/variable.h"
 
 //================================================================//
-// CharInfo struct
+// GlyphInfo struct
 //================================================================//
 
-static struct RClass *class_CharInfo;
+static struct RClass *class_GlyphInfo;
 
 typedef struct mrb_raylib_charinfo_data_t {
-	CharInfo charinfo;
+	GlyphInfo charinfo;
 } mrb_raylib_charinfo_data_t;
 
 static void
@@ -24,22 +24,22 @@ mrb_raylib_charinfo_data_free ( mrb_state *mrb, void *p ) {
 }
 
 static struct mrb_data_type const mrb_raylib_charinfo_data_type = {
-		"CharInfo", mrb_raylib_charinfo_data_free
+		"GlyphInfo", mrb_raylib_charinfo_data_free
 };
 
 mrb_value
-mrb_raylib_charinfo ( mrb_state *mrb, CharInfo *charinfo, bool is_associated ) {
+mrb_raylib_charinfo ( mrb_state *mrb, GlyphInfo *charinfo, bool is_associated ) {
 	mrb_raylib_charinfo_data_t *data =
 			( mrb_raylib_charinfo_data_t * ) mrb_malloc ( mrb, sizeof ( mrb_raylib_charinfo_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise ( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
 	data->charinfo = * charinfo;
-	return mrb_obj_value ( Data_Wrap_Struct( mrb, class_CharInfo, & mrb_raylib_charinfo_data_type, data ) );
+	return mrb_obj_value ( Data_Wrap_Struct( mrb, class_GlyphInfo, & mrb_raylib_charinfo_data_type, data ) );
 }
 
 mrb_value
-mrb_raylib_charinfo_direct ( mrb_state *mrb, CharInfo const *charinfo ) {
+mrb_raylib_charinfo_direct ( mrb_state *mrb, GlyphInfo const *charinfo ) {
 	mrb_raylib_charinfo_data_t *data =
 			( mrb_raylib_charinfo_data_t * ) mrb_malloc ( mrb, sizeof ( mrb_raylib_charinfo_data_t ) );
 	if ( NULL == data ) {
@@ -50,10 +50,10 @@ mrb_raylib_charinfo_direct ( mrb_state *mrb, CharInfo const *charinfo ) {
 	} else {
 		data->charinfo = * charinfo;
 	}
-	return mrb_obj_value ( Data_Wrap_Struct( mrb, class_CharInfo, & mrb_raylib_charinfo_data_type, data ) );
+	return mrb_obj_value ( Data_Wrap_Struct( mrb, class_GlyphInfo, & mrb_raylib_charinfo_data_type, data ) );
 }
 
-CharInfo *
+GlyphInfo *
 mrb_raylib_charinfo_get_ptr ( mrb_state *mrb, mrb_value charinfo ) {
 	mrb_raylib_charinfo_data_t *data;
 	if ( mrb_nil_p( charinfo ) ) {
@@ -78,7 +78,7 @@ mrb_raylib_charinfo_initialize ( mrb_state *mrb, mrb_value self ) {
 	} else {
 
 	}
-	CharInfo charinfo = { 0 };
+	GlyphInfo charinfo = { 0 };
 	data->charinfo = charinfo;
 	if ( NULL == & data->charinfo ) {
 		mrb_free ( mrb, data );
@@ -111,15 +111,15 @@ mrb_raylib_charinfo_advance_x ( mrb_state *mrb, mrb_value self ) {
 
 void
 mrb_raylib_charinfo_init ( mrb_state *mrb, struct RClass *mod_RayLib ) {
-	class_CharInfo = mrb_define_class_under ( mrb, mod_RayLib, "CharInfo", mrb->object_class );
+	class_GlyphInfo = mrb_define_class_under ( mrb, mod_RayLib, "GlyphInfo", mrb->object_class );
 
-	MRB_SET_INSTANCE_TT( class_CharInfo, MRB_TT_DATA );
+	MRB_SET_INSTANCE_TT( class_GlyphInfo, MRB_TT_DATA );
 
-	mrb_define_method ( mrb, class_CharInfo, "initialize", mrb_raylib_charinfo_initialize, MRB_ARGS_NONE() );
-	mrb_define_method ( mrb, class_CharInfo, "value", mrb_raylib_charinfo_value, MRB_ARGS_NONE() );
-	mrb_define_method ( mrb, class_CharInfo, "offsetX", mrb_raylib_charinfo_offset_x, MRB_ARGS_NONE() );
-	mrb_define_method ( mrb, class_CharInfo, "offsetY", mrb_raylib_charinfo_offset_y, MRB_ARGS_NONE() );
-	mrb_define_method ( mrb, class_CharInfo, "advanceX", mrb_raylib_charinfo_advance_x, MRB_ARGS_NONE() );
+	mrb_define_method ( mrb, class_GlyphInfo, "initialize", mrb_raylib_charinfo_initialize, MRB_ARGS_NONE() );
+	mrb_define_method ( mrb, class_GlyphInfo, "value", mrb_raylib_charinfo_value, MRB_ARGS_NONE() );
+	mrb_define_method ( mrb, class_GlyphInfo, "offsetX", mrb_raylib_charinfo_offset_x, MRB_ARGS_NONE() );
+	mrb_define_method ( mrb, class_GlyphInfo, "offsetY", mrb_raylib_charinfo_offset_y, MRB_ARGS_NONE() );
+	mrb_define_method ( mrb, class_GlyphInfo, "advanceX", mrb_raylib_charinfo_advance_x, MRB_ARGS_NONE() );
 }
 
 void
