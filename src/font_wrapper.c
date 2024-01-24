@@ -100,8 +100,8 @@ mrb_raylib_font_base_size ( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mrb_raylib_font_chars_count ( mrb_state *mrb, mrb_value self ) {
-	return mrb_fixnum_value ( mrb_raylib_font_get_ptr ( mrb, self )->charsCount );
+mrb_raylib_font_glyph_count ( mrb_state *mrb, mrb_value self ) {
+	return mrb_fixnum_value ( mrb_raylib_font_get_ptr ( mrb, self )->glyphCount );
 }
 
 
@@ -114,7 +114,7 @@ mrb_raylib_font_init ( mrb_state *mrb, struct RClass *mod_RayLib ) {
 	mrb_define_method ( mrb, class_Font, "initialize", mrb_raylib_font_initialize, MRB_ARGS_NONE () );
 	mrb_define_method ( mrb, class_Font, "texture", mrb_raylib_font_texture, MRB_ARGS_NONE () );
 	mrb_define_method ( mrb, class_Font, "base_size", mrb_raylib_font_base_size, MRB_ARGS_NONE () );
-	mrb_define_method ( mrb, class_Font, "chars_count", mrb_raylib_font_chars_count, MRB_ARGS_NONE () );
+	mrb_define_method ( mrb, class_Font, "glyph_count", mrb_raylib_font_glyph_count, MRB_ARGS_NONE () );
 }
 
 void
