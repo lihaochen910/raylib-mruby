@@ -44,7 +44,6 @@
 		997A6E542B6747B400A79CED /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		997A6E562B6747BB00A79CED /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		997A6E582B6747C100A79CED /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		997A6E5A2B67480500A79CED /* libmruby_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmruby_core.a; path = ../../../../mruby/build/host/lib/libmruby_core.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +104,6 @@
 		2B359CAECB26A6B53550FB53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				997A6E5A2B67480500A79CED /* libmruby_core.a */,
 				997A6E582B6747C100A79CED /* CoreVideo.framework */,
 				997A6E562B6747BB00A79CED /* CoreAudio.framework */,
 				997A6E542B6747B400A79CED /* IOKit.framework */,

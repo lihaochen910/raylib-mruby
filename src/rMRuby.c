@@ -6462,7 +6462,7 @@ mod_raylib_end_drawing( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_begin_mode2_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_begin_mode2d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Camera2D
 
 	mrb_get_args( mrb, "o", &param0 );
@@ -6473,14 +6473,14 @@ mod_raylib_begin_mode2_d( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_end_mode2_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_end_mode2d( mrb_state *mrb, mrb_value self ) {
 	EndMode2D();
 
 	return self;
 }
 
 static mrb_value
-mod_raylib_begin_mode3_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_begin_mode3d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Camera3D
 
 	mrb_get_args( mrb, "o", &param0 );
@@ -6491,7 +6491,7 @@ mod_raylib_begin_mode3_d( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_end_mode3_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_end_mode3d( mrb_state *mrb, mrb_value self ) {
 	EndMode3D();
 
 	return self;
@@ -6761,7 +6761,7 @@ mod_raylib_get_camera_matrix( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_get_camera_matrix2_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_get_camera_matrix2d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Camera2D
 
 	mrb_get_args( mrb, "o", &param0 );
@@ -6784,7 +6784,7 @@ mod_raylib_get_world_to_screen( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_get_screen_to_world2_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_get_screen_to_world2d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector2
 	mrb_value param1; // Camera2D
 
@@ -6810,7 +6810,7 @@ mod_raylib_get_world_to_screen_ex( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_get_world_to_screen2_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_get_world_to_screen2d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector2
 	mrb_value param1; // Camera2D
 
@@ -10751,7 +10751,7 @@ mod_raylib_text_to_integer( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_draw_line3_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_draw_line3d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector3
 	mrb_value param1; // Vector3
 	mrb_value param2; // Color
@@ -10764,7 +10764,7 @@ mod_raylib_draw_line3_d( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_draw_point3_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_draw_point3d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector3
 	mrb_value param1; // Color
 
@@ -10776,7 +10776,7 @@ mod_raylib_draw_point3_d( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_draw_circle3_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_draw_circle3d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector3
 	mrb_float param1; // float
 	mrb_value param2; // Vector3
@@ -10791,7 +10791,7 @@ mod_raylib_draw_circle3_d( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_draw_triangle3_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_draw_triangle3d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector3
 	mrb_value param1; // Vector3
 	mrb_value param2; // Vector3
@@ -10805,7 +10805,7 @@ mod_raylib_draw_triangle3_d( mrb_state *mrb, mrb_value self ) {
 }
 
 static mrb_value
-mod_raylib_draw_triangle_strip3_d( mrb_state *mrb, mrb_value self ) {
+mod_raylib_draw_triangle_strip3d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector3*
 	mrb_int param1; // int
 	mrb_value param2; // Color
@@ -13437,10 +13437,10 @@ mrb_raylib_module_init( mrb_state *mrb ) {
 	mrb_define_module_function( mrb, mod_RayLib, "clear_background", mod_raylib_clear_background, MRB_ARGS_REQ( 1 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "begin_drawing", mod_raylib_begin_drawing, MRB_ARGS_NONE() );
 	mrb_define_module_function( mrb, mod_RayLib, "end_drawing", mod_raylib_end_drawing, MRB_ARGS_NONE() );
-	mrb_define_module_function( mrb, mod_RayLib, "begin_mode2_d", mod_raylib_begin_mode2_d, MRB_ARGS_REQ( 1 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "end_mode2_d", mod_raylib_end_mode2_d, MRB_ARGS_NONE() );
-	mrb_define_module_function( mrb, mod_RayLib, "begin_mode3_d", mod_raylib_begin_mode3_d, MRB_ARGS_REQ( 1 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "end_mode3_d", mod_raylib_end_mode3_d, MRB_ARGS_NONE() );
+	mrb_define_module_function( mrb, mod_RayLib, "begin_mode2d", mod_raylib_begin_mode2d, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "end_mode2d", mod_raylib_end_mode2d, MRB_ARGS_NONE() );
+	mrb_define_module_function( mrb, mod_RayLib, "begin_mode3d", mod_raylib_begin_mode3d, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "end_mode3d", mod_raylib_end_mode3d, MRB_ARGS_NONE() );
 	mrb_define_module_function( mrb, mod_RayLib, "begin_texture_mode", mod_raylib_begin_texture_mode, MRB_ARGS_REQ( 1 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "end_texture_mode", mod_raylib_end_texture_mode, MRB_ARGS_NONE() );
 	mrb_define_module_function( mrb, mod_RayLib, "begin_shader_mode", mod_raylib_begin_shader_mode, MRB_ARGS_REQ( 1 ) );
@@ -13465,11 +13465,11 @@ mrb_raylib_module_init( mrb_state *mrb ) {
 	mrb_define_module_function( mrb, mod_RayLib, "unload_shader", mod_raylib_unload_shader, MRB_ARGS_REQ( 1 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "get_mouse_ray", mod_raylib_get_mouse_ray, MRB_ARGS_REQ( 2 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "get_camera_matrix", mod_raylib_get_camera_matrix, MRB_ARGS_REQ( 1 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "get_camera_matrix2_d", mod_raylib_get_camera_matrix2_d, MRB_ARGS_REQ( 1 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "get_camera_matrix2d", mod_raylib_get_camera_matrix2d, MRB_ARGS_REQ( 1 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "get_world_to_screen", mod_raylib_get_world_to_screen, MRB_ARGS_REQ( 2 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "get_screen_to_world2_d", mod_raylib_get_screen_to_world2_d, MRB_ARGS_REQ( 2 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "get_screen_to_world2d", mod_raylib_get_screen_to_world2d, MRB_ARGS_REQ( 2 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "get_world_to_screen_ex", mod_raylib_get_world_to_screen_ex, MRB_ARGS_REQ( 4 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "get_world_to_screen2_d", mod_raylib_get_world_to_screen2_d, MRB_ARGS_REQ( 2 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "get_world_to_screen2d", mod_raylib_get_world_to_screen2d, MRB_ARGS_REQ( 2 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "set_target_fps", mod_raylib_set_target_fps, MRB_ARGS_REQ( 1 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "get_frame_time", mod_raylib_get_frame_time, MRB_ARGS_NONE() );
 	mrb_define_module_function( mrb, mod_RayLib, "get_time", mod_raylib_get_time, MRB_ARGS_NONE() );
@@ -13794,11 +13794,11 @@ mrb_raylib_module_init( mrb_state *mrb ) {
 	mrb_define_module_function( mrb, mod_RayLib, "text_to_lower", mod_raylib_text_to_lower, MRB_ARGS_REQ( 1 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "text_to_pascal", mod_raylib_text_to_pascal, MRB_ARGS_REQ( 1 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "text_to_integer", mod_raylib_text_to_integer, MRB_ARGS_REQ( 1 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "draw_line3_d", mod_raylib_draw_line3_d, MRB_ARGS_REQ( 3 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "draw_point3_d", mod_raylib_draw_point3_d, MRB_ARGS_REQ( 2 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "draw_circle3_d", mod_raylib_draw_circle3_d, MRB_ARGS_REQ( 5 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "draw_triangle3_d", mod_raylib_draw_triangle3_d, MRB_ARGS_REQ( 4 ) );
-	mrb_define_module_function( mrb, mod_RayLib, "draw_triangle_strip3_d", mod_raylib_draw_triangle_strip3_d, MRB_ARGS_REQ( 3 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "draw_line3d", mod_raylib_draw_line3d, MRB_ARGS_REQ( 3 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "draw_point3d", mod_raylib_draw_point3d, MRB_ARGS_REQ( 2 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "draw_circle3d", mod_raylib_draw_circle3d, MRB_ARGS_REQ( 5 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "draw_triangle3d", mod_raylib_draw_triangle3d, MRB_ARGS_REQ( 4 ) );
+	mrb_define_module_function( mrb, mod_RayLib, "draw_triangle_strip3d", mod_raylib_draw_triangle_strip3d, MRB_ARGS_REQ( 3 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "draw_cube", mod_raylib_draw_cube, MRB_ARGS_REQ( 5 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "draw_cube_v", mod_raylib_draw_cube_v, MRB_ARGS_REQ( 3 ) );
 	mrb_define_module_function( mrb, mod_RayLib, "draw_cube_wires", mod_raylib_draw_cube_wires, MRB_ARGS_REQ( 5 ) );
