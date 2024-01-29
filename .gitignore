@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# General
+.DS_Store
+
+## XCode User settings
+xcuserdata/
+**/DerivedData

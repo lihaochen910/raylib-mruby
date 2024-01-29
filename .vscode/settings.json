@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "*.x": "objective-c",
+        "*.xm": "objective-c",
+        "*.scene_group": "json",
+        "*.ui_style": "lua",
+        "*.meta": "json",
+        "*.clua": "lua",
+        "*.inc": "cpp",
+        "*.prefab": "yaml",
+        "*.shader_script": "lua",
+        "module_audio_wrapper.h": "c",
+        "module_shaders_wrapper.h": "c",
+        "mruby.h": "c"
+    }
+}

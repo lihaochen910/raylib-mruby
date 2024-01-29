@@ -45,7 +45,7 @@ class_raylib_vector2_2_mrbvalue( mrb_state *mrb, Vector2 *vector2, bool is_assoc
 
 mrb_value
 class_raylib_vector2_2_mrbvalue_direct( mrb_state *mrb, Vector2 const *vector2 ) {
-	class_raylib_vector2_data_t *data = ( class_raylib_vector2_data_t * )mrb_malloc( mrb, sizeof( class_raylib_vector2_data_t ) );
+	class_raylib_vector2_data_t *data = ( class_raylib_vector2_data_t* )mrb_malloc( mrb, sizeof( class_raylib_vector2_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -64,7 +64,7 @@ class_raylib_vector2_get_ptr( mrb_state *mrb, mrb_value vector2 ) {
 	if ( mrb_nil_p( vector2 ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_vector2_data_t * )mrb_data_get_ptr( mrb, vector2, &class_raylib_vector2_data_type );
+	data = ( class_raylib_vector2_data_t* )mrb_data_get_ptr( mrb, vector2, &class_raylib_vector2_data_type );
 	return &data->vector2;
 }
 
@@ -100,7 +100,9 @@ class_raylib_vector2_get_x( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vector2_set_x( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vector2_get_ptr( mrb, self )->x = param0;
 	return self;
 }
 	
@@ -111,7 +113,9 @@ class_raylib_vector2_get_y( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vector2_set_y( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vector2_get_ptr( mrb, self )->y = param0;
 	return self;
 }
 	
@@ -165,7 +169,7 @@ class_raylib_vector3_2_mrbvalue( mrb_state *mrb, Vector3 *vector3, bool is_assoc
 
 mrb_value
 class_raylib_vector3_2_mrbvalue_direct( mrb_state *mrb, Vector3 const *vector3 ) {
-	class_raylib_vector3_data_t *data = ( class_raylib_vector3_data_t * )mrb_malloc( mrb, sizeof( class_raylib_vector3_data_t ) );
+	class_raylib_vector3_data_t *data = ( class_raylib_vector3_data_t* )mrb_malloc( mrb, sizeof( class_raylib_vector3_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -184,7 +188,7 @@ class_raylib_vector3_get_ptr( mrb_state *mrb, mrb_value vector3 ) {
 	if ( mrb_nil_p( vector3 ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_vector3_data_t * )mrb_data_get_ptr( mrb, vector3, &class_raylib_vector3_data_type );
+	data = ( class_raylib_vector3_data_t* )mrb_data_get_ptr( mrb, vector3, &class_raylib_vector3_data_type );
 	return &data->vector3;
 }
 
@@ -220,7 +224,9 @@ class_raylib_vector3_get_x( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vector3_set_x( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vector3_get_ptr( mrb, self )->x = param0;
 	return self;
 }
 	
@@ -231,7 +237,9 @@ class_raylib_vector3_get_y( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vector3_set_y( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vector3_get_ptr( mrb, self )->y = param0;
 	return self;
 }
 	
@@ -242,7 +250,9 @@ class_raylib_vector3_get_z( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vector3_set_z( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vector3_get_ptr( mrb, self )->z = param0;
 	return self;
 }
 	
@@ -298,7 +308,7 @@ class_raylib_vector4_2_mrbvalue( mrb_state *mrb, Vector4 *vector4, bool is_assoc
 
 mrb_value
 class_raylib_vector4_2_mrbvalue_direct( mrb_state *mrb, Vector4 const *vector4 ) {
-	class_raylib_vector4_data_t *data = ( class_raylib_vector4_data_t * )mrb_malloc( mrb, sizeof( class_raylib_vector4_data_t ) );
+	class_raylib_vector4_data_t *data = ( class_raylib_vector4_data_t* )mrb_malloc( mrb, sizeof( class_raylib_vector4_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -317,7 +327,7 @@ class_raylib_vector4_get_ptr( mrb_state *mrb, mrb_value vector4 ) {
 	if ( mrb_nil_p( vector4 ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_vector4_data_t * )mrb_data_get_ptr( mrb, vector4, &class_raylib_vector4_data_type );
+	data = ( class_raylib_vector4_data_t* )mrb_data_get_ptr( mrb, vector4, &class_raylib_vector4_data_type );
 	return &data->vector4;
 }
 
@@ -353,7 +363,9 @@ class_raylib_vector4_get_x( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vector4_set_x( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vector4_get_ptr( mrb, self )->x = param0;
 	return self;
 }
 	
@@ -364,7 +376,9 @@ class_raylib_vector4_get_y( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vector4_set_y( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vector4_get_ptr( mrb, self )->y = param0;
 	return self;
 }
 	
@@ -375,7 +389,9 @@ class_raylib_vector4_get_z( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vector4_set_z( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vector4_get_ptr( mrb, self )->z = param0;
 	return self;
 }
 	
@@ -386,7 +402,9 @@ class_raylib_vector4_get_w( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vector4_set_w( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vector4_get_ptr( mrb, self )->w = param0;
 	return self;
 }
 	
@@ -444,7 +462,7 @@ class_raylib_matrix_2_mrbvalue( mrb_state *mrb, Matrix *matrix, bool is_associat
 
 mrb_value
 class_raylib_matrix_2_mrbvalue_direct( mrb_state *mrb, Matrix const *matrix ) {
-	class_raylib_matrix_data_t *data = ( class_raylib_matrix_data_t * )mrb_malloc( mrb, sizeof( class_raylib_matrix_data_t ) );
+	class_raylib_matrix_data_t *data = ( class_raylib_matrix_data_t* )mrb_malloc( mrb, sizeof( class_raylib_matrix_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -463,7 +481,7 @@ class_raylib_matrix_get_ptr( mrb_state *mrb, mrb_value matrix ) {
 	if ( mrb_nil_p( matrix ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_matrix_data_t * )mrb_data_get_ptr( mrb, matrix, &class_raylib_matrix_data_type );
+	data = ( class_raylib_matrix_data_t* )mrb_data_get_ptr( mrb, matrix, &class_raylib_matrix_data_type );
 	return &data->matrix;
 }
 
@@ -499,7 +517,9 @@ class_raylib_matrix_get_m0( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m0( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m0 = param0;
 	return self;
 }
 	
@@ -510,7 +530,9 @@ class_raylib_matrix_get_m4( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m4( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m4 = param0;
 	return self;
 }
 	
@@ -521,7 +543,9 @@ class_raylib_matrix_get_m8( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m8( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m8 = param0;
 	return self;
 }
 	
@@ -532,7 +556,9 @@ class_raylib_matrix_get_m12( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m12( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m12 = param0;
 	return self;
 }
 	
@@ -543,7 +569,9 @@ class_raylib_matrix_get_m1( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m1( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m1 = param0;
 	return self;
 }
 	
@@ -554,7 +582,9 @@ class_raylib_matrix_get_m5( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m5( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m5 = param0;
 	return self;
 }
 	
@@ -565,7 +595,9 @@ class_raylib_matrix_get_m9( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m9( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m9 = param0;
 	return self;
 }
 	
@@ -576,7 +608,9 @@ class_raylib_matrix_get_m13( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m13( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m13 = param0;
 	return self;
 }
 	
@@ -587,7 +621,9 @@ class_raylib_matrix_get_m2( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m2( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m2 = param0;
 	return self;
 }
 	
@@ -598,7 +634,9 @@ class_raylib_matrix_get_m6( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m6( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m6 = param0;
 	return self;
 }
 	
@@ -609,7 +647,9 @@ class_raylib_matrix_get_m10( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m10( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m10 = param0;
 	return self;
 }
 	
@@ -620,7 +660,9 @@ class_raylib_matrix_get_m14( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m14( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m14 = param0;
 	return self;
 }
 	
@@ -631,7 +673,9 @@ class_raylib_matrix_get_m3( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m3( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m3 = param0;
 	return self;
 }
 	
@@ -642,7 +686,9 @@ class_raylib_matrix_get_m7( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m7( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m7 = param0;
 	return self;
 }
 	
@@ -653,7 +699,9 @@ class_raylib_matrix_get_m11( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m11( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m11 = param0;
 	return self;
 }
 	
@@ -664,7 +712,9 @@ class_raylib_matrix_get_m15( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_matrix_set_m15( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_matrix_get_ptr( mrb, self )->m15 = param0;
 	return self;
 }
 	
@@ -746,7 +796,7 @@ class_raylib_color_2_mrbvalue( mrb_state *mrb, Color *color, bool is_associated 
 
 mrb_value
 class_raylib_color_2_mrbvalue_direct( mrb_state *mrb, Color const *color ) {
-	class_raylib_color_data_t *data = ( class_raylib_color_data_t * )mrb_malloc( mrb, sizeof( class_raylib_color_data_t ) );
+	class_raylib_color_data_t *data = ( class_raylib_color_data_t* )mrb_malloc( mrb, sizeof( class_raylib_color_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -765,7 +815,7 @@ class_raylib_color_get_ptr( mrb_state *mrb, mrb_value color ) {
 	if ( mrb_nil_p( color ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_color_data_t * )mrb_data_get_ptr( mrb, color, &class_raylib_color_data_type );
+	data = ( class_raylib_color_data_t* )mrb_data_get_ptr( mrb, color, &class_raylib_color_data_type );
 	return &data->color;
 }
 
@@ -796,45 +846,53 @@ class_raylib_color_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_color_get_r( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_color_get_ptr( mrb, self )->r );
+	return mrb_fixnum_value( class_raylib_color_get_ptr( mrb, self )->r );
 }
 	
 static mrb_value
 class_raylib_color_set_r( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_color_get_ptr( mrb, self )->r = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_color_get_g( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_color_get_ptr( mrb, self )->g );
+	return mrb_fixnum_value( class_raylib_color_get_ptr( mrb, self )->g );
 }
 	
 static mrb_value
 class_raylib_color_set_g( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_color_get_ptr( mrb, self )->g = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_color_get_b( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_color_get_ptr( mrb, self )->b );
+	return mrb_fixnum_value( class_raylib_color_get_ptr( mrb, self )->b );
 }
 	
 static mrb_value
 class_raylib_color_set_b( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_color_get_ptr( mrb, self )->b = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_color_get_a( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_color_get_ptr( mrb, self )->a );
+	return mrb_fixnum_value( class_raylib_color_get_ptr( mrb, self )->a );
 }
 	
 static mrb_value
 class_raylib_color_set_a( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_color_get_ptr( mrb, self )->a = param0;
 	return self;
 }
 	
@@ -892,7 +950,7 @@ class_raylib_rectangle_2_mrbvalue( mrb_state *mrb, Rectangle *rectangle, bool is
 
 mrb_value
 class_raylib_rectangle_2_mrbvalue_direct( mrb_state *mrb, Rectangle const *rectangle ) {
-	class_raylib_rectangle_data_t *data = ( class_raylib_rectangle_data_t * )mrb_malloc( mrb, sizeof( class_raylib_rectangle_data_t ) );
+	class_raylib_rectangle_data_t *data = ( class_raylib_rectangle_data_t* )mrb_malloc( mrb, sizeof( class_raylib_rectangle_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -911,7 +969,7 @@ class_raylib_rectangle_get_ptr( mrb_state *mrb, mrb_value rectangle ) {
 	if ( mrb_nil_p( rectangle ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_rectangle_data_t * )mrb_data_get_ptr( mrb, rectangle, &class_raylib_rectangle_data_type );
+	data = ( class_raylib_rectangle_data_t* )mrb_data_get_ptr( mrb, rectangle, &class_raylib_rectangle_data_type );
 	return &data->rectangle;
 }
 
@@ -947,7 +1005,9 @@ class_raylib_rectangle_get_x( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_rectangle_set_x( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_rectangle_get_ptr( mrb, self )->x = param0;
 	return self;
 }
 	
@@ -958,7 +1018,9 @@ class_raylib_rectangle_get_y( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_rectangle_set_y( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_rectangle_get_ptr( mrb, self )->y = param0;
 	return self;
 }
 	
@@ -969,7 +1031,9 @@ class_raylib_rectangle_get_width( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_rectangle_set_width( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_rectangle_get_ptr( mrb, self )->width = param0;
 	return self;
 }
 	
@@ -980,7 +1044,9 @@ class_raylib_rectangle_get_height( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_rectangle_set_height( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_rectangle_get_ptr( mrb, self )->height = param0;
 	return self;
 }
 	
@@ -1038,7 +1104,7 @@ class_raylib_image_2_mrbvalue( mrb_state *mrb, Image *image, bool is_associated 
 
 mrb_value
 class_raylib_image_2_mrbvalue_direct( mrb_state *mrb, Image const *image ) {
-	class_raylib_image_data_t *data = ( class_raylib_image_data_t * )mrb_malloc( mrb, sizeof( class_raylib_image_data_t ) );
+	class_raylib_image_data_t *data = ( class_raylib_image_data_t* )mrb_malloc( mrb, sizeof( class_raylib_image_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -1057,7 +1123,7 @@ class_raylib_image_get_ptr( mrb_state *mrb, mrb_value image ) {
 	if ( mrb_nil_p( image ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_image_data_t * )mrb_data_get_ptr( mrb, image, &class_raylib_image_data_type );
+	data = ( class_raylib_image_data_t* )mrb_data_get_ptr( mrb, image, &class_raylib_image_data_type );
 	return &data->image;
 }
 
@@ -1093,51 +1159,61 @@ class_raylib_image_get_data( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_image_set_data( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "d", &param0 );
+	class_raylib_image_get_ptr( mrb, self )->data = mrb_cptr( param0 );
 	return self;
 }
 	
 static mrb_value
 class_raylib_image_get_width( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_image_get_ptr( mrb, self )->width );
+	return mrb_fixnum_value( class_raylib_image_get_ptr( mrb, self )->width );
 }
 	
 static mrb_value
 class_raylib_image_set_width( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_image_get_ptr( mrb, self )->width = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_image_get_height( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_image_get_ptr( mrb, self )->height );
+	return mrb_fixnum_value( class_raylib_image_get_ptr( mrb, self )->height );
 }
 	
 static mrb_value
 class_raylib_image_set_height( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_image_get_ptr( mrb, self )->height = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_image_get_mipmaps( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_image_get_ptr( mrb, self )->mipmaps );
+	return mrb_fixnum_value( class_raylib_image_get_ptr( mrb, self )->mipmaps );
 }
 	
 static mrb_value
 class_raylib_image_set_mipmaps( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_image_get_ptr( mrb, self )->mipmaps = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_image_get_format( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_image_get_ptr( mrb, self )->format );
+	return mrb_fixnum_value( class_raylib_image_get_ptr( mrb, self )->format );
 }
 	
 static mrb_value
 class_raylib_image_set_format( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_image_get_ptr( mrb, self )->format = param0;
 	return self;
 }
 	
@@ -1197,7 +1273,7 @@ class_raylib_texture_2_mrbvalue( mrb_state *mrb, Texture *texture, bool is_assoc
 
 mrb_value
 class_raylib_texture_2_mrbvalue_direct( mrb_state *mrb, Texture const *texture ) {
-	class_raylib_texture_data_t *data = ( class_raylib_texture_data_t * )mrb_malloc( mrb, sizeof( class_raylib_texture_data_t ) );
+	class_raylib_texture_data_t *data = ( class_raylib_texture_data_t* )mrb_malloc( mrb, sizeof( class_raylib_texture_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -1216,7 +1292,7 @@ class_raylib_texture_get_ptr( mrb_state *mrb, mrb_value texture ) {
 	if ( mrb_nil_p( texture ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_texture_data_t * )mrb_data_get_ptr( mrb, texture, &class_raylib_texture_data_type );
+	data = ( class_raylib_texture_data_t* )mrb_data_get_ptr( mrb, texture, &class_raylib_texture_data_type );
 	return &data->texture;
 }
 
@@ -1247,56 +1323,66 @@ class_raylib_texture_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_texture_get_id( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_texture_get_ptr( mrb, self )->id );
+	return mrb_fixnum_value( class_raylib_texture_get_ptr( mrb, self )->id );
 }
 	
 static mrb_value
 class_raylib_texture_set_id( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_texture_get_ptr( mrb, self )->id = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_texture_get_width( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_texture_get_ptr( mrb, self )->width );
+	return mrb_fixnum_value( class_raylib_texture_get_ptr( mrb, self )->width );
 }
 	
 static mrb_value
 class_raylib_texture_set_width( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_texture_get_ptr( mrb, self )->width = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_texture_get_height( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_texture_get_ptr( mrb, self )->height );
+	return mrb_fixnum_value( class_raylib_texture_get_ptr( mrb, self )->height );
 }
 	
 static mrb_value
 class_raylib_texture_set_height( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_texture_get_ptr( mrb, self )->height = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_texture_get_mipmaps( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_texture_get_ptr( mrb, self )->mipmaps );
+	return mrb_fixnum_value( class_raylib_texture_get_ptr( mrb, self )->mipmaps );
 }
 	
 static mrb_value
 class_raylib_texture_set_mipmaps( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_texture_get_ptr( mrb, self )->mipmaps = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_texture_get_format( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_texture_get_ptr( mrb, self )->format );
+	return mrb_fixnum_value( class_raylib_texture_get_ptr( mrb, self )->format );
 }
 	
 static mrb_value
 class_raylib_texture_set_format( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_texture_get_ptr( mrb, self )->format = param0;
 	return self;
 }
 	
@@ -1356,7 +1442,7 @@ class_raylib_rendertexture_2_mrbvalue( mrb_state *mrb, RenderTexture *rendertext
 
 mrb_value
 class_raylib_rendertexture_2_mrbvalue_direct( mrb_state *mrb, RenderTexture const *rendertexture ) {
-	class_raylib_rendertexture_data_t *data = ( class_raylib_rendertexture_data_t * )mrb_malloc( mrb, sizeof( class_raylib_rendertexture_data_t ) );
+	class_raylib_rendertexture_data_t *data = ( class_raylib_rendertexture_data_t* )mrb_malloc( mrb, sizeof( class_raylib_rendertexture_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -1375,7 +1461,7 @@ class_raylib_rendertexture_get_ptr( mrb_state *mrb, mrb_value rendertexture ) {
 	if ( mrb_nil_p( rendertexture ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_rendertexture_data_t * )mrb_data_get_ptr( mrb, rendertexture, &class_raylib_rendertexture_data_type );
+	data = ( class_raylib_rendertexture_data_t* )mrb_data_get_ptr( mrb, rendertexture, &class_raylib_rendertexture_data_type );
 	return &data->rendertexture;
 }
 
@@ -1406,12 +1492,14 @@ class_raylib_rendertexture_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_rendertexture_get_id( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_rendertexture_get_ptr( mrb, self )->id );
+	return mrb_fixnum_value( class_raylib_rendertexture_get_ptr( mrb, self )->id );
 }
 	
 static mrb_value
 class_raylib_rendertexture_set_id( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_rendertexture_get_ptr( mrb, self )->id = param0;
 	return self;
 }
 	
@@ -1422,7 +1510,9 @@ class_raylib_rendertexture_get_texture( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_rendertexture_set_texture( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_rendertexture_get_ptr( mrb, self )->texture = *class_raylib_texture_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -1433,7 +1523,9 @@ class_raylib_rendertexture_get_depth( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_rendertexture_set_depth( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_rendertexture_get_ptr( mrb, self )->depth = *class_raylib_texture_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -1489,7 +1581,7 @@ class_raylib_npatchinfo_2_mrbvalue( mrb_state *mrb, NPatchInfo *npatchinfo, bool
 
 mrb_value
 class_raylib_npatchinfo_2_mrbvalue_direct( mrb_state *mrb, NPatchInfo const *npatchinfo ) {
-	class_raylib_npatchinfo_data_t *data = ( class_raylib_npatchinfo_data_t * )mrb_malloc( mrb, sizeof( class_raylib_npatchinfo_data_t ) );
+	class_raylib_npatchinfo_data_t *data = ( class_raylib_npatchinfo_data_t* )mrb_malloc( mrb, sizeof( class_raylib_npatchinfo_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -1508,7 +1600,7 @@ class_raylib_npatchinfo_get_ptr( mrb_state *mrb, mrb_value npatchinfo ) {
 	if ( mrb_nil_p( npatchinfo ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_npatchinfo_data_t * )mrb_data_get_ptr( mrb, npatchinfo, &class_raylib_npatchinfo_data_type );
+	data = ( class_raylib_npatchinfo_data_t* )mrb_data_get_ptr( mrb, npatchinfo, &class_raylib_npatchinfo_data_type );
 	return &data->npatchinfo;
 }
 
@@ -1544,62 +1636,74 @@ class_raylib_npatchinfo_get_source( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_npatchinfo_set_source( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_npatchinfo_get_ptr( mrb, self )->source = *class_raylib_rectangle_get_ptr( mrb, param0 );
 	return self;
 }
 	
 static mrb_value
 class_raylib_npatchinfo_get_left( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_npatchinfo_get_ptr( mrb, self )->left );
+	return mrb_fixnum_value( class_raylib_npatchinfo_get_ptr( mrb, self )->left );
 }
 	
 static mrb_value
 class_raylib_npatchinfo_set_left( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_npatchinfo_get_ptr( mrb, self )->left = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_npatchinfo_get_top( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_npatchinfo_get_ptr( mrb, self )->top );
+	return mrb_fixnum_value( class_raylib_npatchinfo_get_ptr( mrb, self )->top );
 }
 	
 static mrb_value
 class_raylib_npatchinfo_set_top( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_npatchinfo_get_ptr( mrb, self )->top = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_npatchinfo_get_right( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_npatchinfo_get_ptr( mrb, self )->right );
+	return mrb_fixnum_value( class_raylib_npatchinfo_get_ptr( mrb, self )->right );
 }
 	
 static mrb_value
 class_raylib_npatchinfo_set_right( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_npatchinfo_get_ptr( mrb, self )->right = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_npatchinfo_get_bottom( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_npatchinfo_get_ptr( mrb, self )->bottom );
+	return mrb_fixnum_value( class_raylib_npatchinfo_get_ptr( mrb, self )->bottom );
 }
 	
 static mrb_value
 class_raylib_npatchinfo_set_bottom( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_npatchinfo_get_ptr( mrb, self )->bottom = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_npatchinfo_get_layout( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_npatchinfo_get_ptr( mrb, self )->layout );
+	return mrb_fixnum_value( class_raylib_npatchinfo_get_ptr( mrb, self )->layout );
 }
 	
 static mrb_value
 class_raylib_npatchinfo_set_layout( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_npatchinfo_get_ptr( mrb, self )->layout = param0;
 	return self;
 }
 	
@@ -1661,7 +1765,7 @@ class_raylib_glyphinfo_2_mrbvalue( mrb_state *mrb, GlyphInfo *glyphinfo, bool is
 
 mrb_value
 class_raylib_glyphinfo_2_mrbvalue_direct( mrb_state *mrb, GlyphInfo const *glyphinfo ) {
-	class_raylib_glyphinfo_data_t *data = ( class_raylib_glyphinfo_data_t * )mrb_malloc( mrb, sizeof( class_raylib_glyphinfo_data_t ) );
+	class_raylib_glyphinfo_data_t *data = ( class_raylib_glyphinfo_data_t* )mrb_malloc( mrb, sizeof( class_raylib_glyphinfo_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -1680,7 +1784,7 @@ class_raylib_glyphinfo_get_ptr( mrb_state *mrb, mrb_value glyphinfo ) {
 	if ( mrb_nil_p( glyphinfo ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_glyphinfo_data_t * )mrb_data_get_ptr( mrb, glyphinfo, &class_raylib_glyphinfo_data_type );
+	data = ( class_raylib_glyphinfo_data_t* )mrb_data_get_ptr( mrb, glyphinfo, &class_raylib_glyphinfo_data_type );
 	return &data->glyphinfo;
 }
 
@@ -1711,45 +1815,53 @@ class_raylib_glyphinfo_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_glyphinfo_get_value( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_glyphinfo_get_ptr( mrb, self )->value );
+	return mrb_fixnum_value( class_raylib_glyphinfo_get_ptr( mrb, self )->value );
 }
 	
 static mrb_value
 class_raylib_glyphinfo_set_value( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_glyphinfo_get_ptr( mrb, self )->value = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_glyphinfo_get_offsetX( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_glyphinfo_get_ptr( mrb, self )->offsetX );
+	return mrb_fixnum_value( class_raylib_glyphinfo_get_ptr( mrb, self )->offsetX );
 }
 	
 static mrb_value
 class_raylib_glyphinfo_set_offsetX( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_glyphinfo_get_ptr( mrb, self )->offsetX = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_glyphinfo_get_offsetY( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_glyphinfo_get_ptr( mrb, self )->offsetY );
+	return mrb_fixnum_value( class_raylib_glyphinfo_get_ptr( mrb, self )->offsetY );
 }
 	
 static mrb_value
 class_raylib_glyphinfo_set_offsetY( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_glyphinfo_get_ptr( mrb, self )->offsetY = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_glyphinfo_get_advanceX( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_glyphinfo_get_ptr( mrb, self )->advanceX );
+	return mrb_fixnum_value( class_raylib_glyphinfo_get_ptr( mrb, self )->advanceX );
 }
 	
 static mrb_value
 class_raylib_glyphinfo_set_advanceX( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_glyphinfo_get_ptr( mrb, self )->advanceX = param0;
 	return self;
 }
 	
@@ -1760,7 +1872,9 @@ class_raylib_glyphinfo_get_image( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_glyphinfo_set_image( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_glyphinfo_get_ptr( mrb, self )->image = *class_raylib_image_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -1820,7 +1934,7 @@ class_raylib_font_2_mrbvalue( mrb_state *mrb, Font *font, bool is_associated ) {
 
 mrb_value
 class_raylib_font_2_mrbvalue_direct( mrb_state *mrb, Font const *font ) {
-	class_raylib_font_data_t *data = ( class_raylib_font_data_t * )mrb_malloc( mrb, sizeof( class_raylib_font_data_t ) );
+	class_raylib_font_data_t *data = ( class_raylib_font_data_t* )mrb_malloc( mrb, sizeof( class_raylib_font_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -1839,7 +1953,7 @@ class_raylib_font_get_ptr( mrb_state *mrb, mrb_value font ) {
 	if ( mrb_nil_p( font ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_font_data_t * )mrb_data_get_ptr( mrb, font, &class_raylib_font_data_type );
+	data = ( class_raylib_font_data_t* )mrb_data_get_ptr( mrb, font, &class_raylib_font_data_type );
 	return &data->font;
 }
 
@@ -1870,34 +1984,40 @@ class_raylib_font_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_font_get_baseSize( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_font_get_ptr( mrb, self )->baseSize );
+	return mrb_fixnum_value( class_raylib_font_get_ptr( mrb, self )->baseSize );
 }
 	
 static mrb_value
 class_raylib_font_set_baseSize( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_font_get_ptr( mrb, self )->baseSize = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_font_get_glyphCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_font_get_ptr( mrb, self )->glyphCount );
+	return mrb_fixnum_value( class_raylib_font_get_ptr( mrb, self )->glyphCount );
 }
 	
 static mrb_value
 class_raylib_font_set_glyphCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_font_get_ptr( mrb, self )->glyphCount = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_font_get_glyphPadding( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_font_get_ptr( mrb, self )->glyphPadding );
+	return mrb_fixnum_value( class_raylib_font_get_ptr( mrb, self )->glyphPadding );
 }
 	
 static mrb_value
 class_raylib_font_set_glyphPadding( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_font_get_ptr( mrb, self )->glyphPadding = param0;
 	return self;
 }
 	
@@ -1908,7 +2028,9 @@ class_raylib_font_get_texture( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_font_set_texture( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "d", &param0 );
+	class_raylib_font_get_ptr( mrb, self )->texture = *class_raylib_texture_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -1919,7 +2041,9 @@ class_raylib_font_get_recs( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_font_set_recs( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_font_get_ptr( mrb, self )->recs = class_raylib_rectangle_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -1930,7 +2054,9 @@ class_raylib_font_get_glyphs( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_font_set_glyphs( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_font_get_ptr( mrb, self )->glyphs = class_raylib_glyphinfo_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -1992,7 +2118,7 @@ class_raylib_camera3d_2_mrbvalue( mrb_state *mrb, Camera3D *camera3d, bool is_as
 
 mrb_value
 class_raylib_camera3d_2_mrbvalue_direct( mrb_state *mrb, Camera3D const *camera3d ) {
-	class_raylib_camera3d_data_t *data = ( class_raylib_camera3d_data_t * )mrb_malloc( mrb, sizeof( class_raylib_camera3d_data_t ) );
+	class_raylib_camera3d_data_t *data = ( class_raylib_camera3d_data_t* )mrb_malloc( mrb, sizeof( class_raylib_camera3d_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -2011,7 +2137,7 @@ class_raylib_camera3d_get_ptr( mrb_state *mrb, mrb_value camera3d ) {
 	if ( mrb_nil_p( camera3d ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_camera3d_data_t * )mrb_data_get_ptr( mrb, camera3d, &class_raylib_camera3d_data_type );
+	data = ( class_raylib_camera3d_data_t* )mrb_data_get_ptr( mrb, camera3d, &class_raylib_camera3d_data_type );
 	return &data->camera3d;
 }
 
@@ -2047,7 +2173,9 @@ class_raylib_camera3d_get_position( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_camera3d_set_position( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_camera3d_get_ptr( mrb, self )->position = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -2058,7 +2186,9 @@ class_raylib_camera3d_get_target( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_camera3d_set_target( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_camera3d_get_ptr( mrb, self )->target = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -2069,7 +2199,9 @@ class_raylib_camera3d_get_up( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_camera3d_set_up( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_camera3d_get_ptr( mrb, self )->up = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -2080,18 +2212,22 @@ class_raylib_camera3d_get_fovy( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_camera3d_set_fovy( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_camera3d_get_ptr( mrb, self )->fovy = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_camera3d_get_projection( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_camera3d_get_ptr( mrb, self )->projection );
+	return mrb_fixnum_value( class_raylib_camera3d_get_ptr( mrb, self )->projection );
 }
 	
 static mrb_value
 class_raylib_camera3d_set_projection( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_camera3d_get_ptr( mrb, self )->projection = param0;
 	return self;
 }
 	
@@ -2151,7 +2287,7 @@ class_raylib_camera2d_2_mrbvalue( mrb_state *mrb, Camera2D *camera2d, bool is_as
 
 mrb_value
 class_raylib_camera2d_2_mrbvalue_direct( mrb_state *mrb, Camera2D const *camera2d ) {
-	class_raylib_camera2d_data_t *data = ( class_raylib_camera2d_data_t * )mrb_malloc( mrb, sizeof( class_raylib_camera2d_data_t ) );
+	class_raylib_camera2d_data_t *data = ( class_raylib_camera2d_data_t* )mrb_malloc( mrb, sizeof( class_raylib_camera2d_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -2170,7 +2306,7 @@ class_raylib_camera2d_get_ptr( mrb_state *mrb, mrb_value camera2d ) {
 	if ( mrb_nil_p( camera2d ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_camera2d_data_t * )mrb_data_get_ptr( mrb, camera2d, &class_raylib_camera2d_data_type );
+	data = ( class_raylib_camera2d_data_t* )mrb_data_get_ptr( mrb, camera2d, &class_raylib_camera2d_data_type );
 	return &data->camera2d;
 }
 
@@ -2206,7 +2342,9 @@ class_raylib_camera2d_get_offset( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_camera2d_set_offset( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_camera2d_get_ptr( mrb, self )->offset = *class_raylib_vector2_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -2217,7 +2355,9 @@ class_raylib_camera2d_get_target( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_camera2d_set_target( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_camera2d_get_ptr( mrb, self )->target = *class_raylib_vector2_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -2228,7 +2368,9 @@ class_raylib_camera2d_get_rotation( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_camera2d_set_rotation( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_camera2d_get_ptr( mrb, self )->rotation = param0;
 	return self;
 }
 	
@@ -2239,7 +2381,9 @@ class_raylib_camera2d_get_zoom( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_camera2d_set_zoom( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_camera2d_get_ptr( mrb, self )->zoom = param0;
 	return self;
 }
 	
@@ -2297,7 +2441,7 @@ class_raylib_mesh_2_mrbvalue( mrb_state *mrb, Mesh *mesh, bool is_associated ) {
 
 mrb_value
 class_raylib_mesh_2_mrbvalue_direct( mrb_state *mrb, Mesh const *mesh ) {
-	class_raylib_mesh_data_t *data = ( class_raylib_mesh_data_t * )mrb_malloc( mrb, sizeof( class_raylib_mesh_data_t ) );
+	class_raylib_mesh_data_t *data = ( class_raylib_mesh_data_t* )mrb_malloc( mrb, sizeof( class_raylib_mesh_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -2316,7 +2460,7 @@ class_raylib_mesh_get_ptr( mrb_state *mrb, mrb_value mesh ) {
 	if ( mrb_nil_p( mesh ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_mesh_data_t * )mrb_data_get_ptr( mrb, mesh, &class_raylib_mesh_data_type );
+	data = ( class_raylib_mesh_data_t* )mrb_data_get_ptr( mrb, mesh, &class_raylib_mesh_data_type );
 	return &data->mesh;
 }
 
@@ -2347,23 +2491,27 @@ class_raylib_mesh_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_mesh_get_vertexCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_mesh_get_ptr( mrb, self )->vertexCount );
+	return mrb_fixnum_value( class_raylib_mesh_get_ptr( mrb, self )->vertexCount );
 }
 	
 static mrb_value
 class_raylib_mesh_set_vertexCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->vertexCount = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_mesh_get_triangleCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_mesh_get_ptr( mrb, self )->triangleCount );
+	return mrb_fixnum_value( class_raylib_mesh_get_ptr( mrb, self )->triangleCount );
 }
 	
 static mrb_value
 class_raylib_mesh_set_triangleCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->triangleCount = param0;
 	return self;
 }
 	
@@ -2374,7 +2522,9 @@ class_raylib_mesh_get_vertices( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_vertices( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->vertices = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2385,7 +2535,9 @@ class_raylib_mesh_get_texcoords( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_texcoords( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->texcoords = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2396,7 +2548,9 @@ class_raylib_mesh_get_texcoords2( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_texcoords2( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->texcoords2 = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2407,7 +2561,9 @@ class_raylib_mesh_get_normals( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_normals( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->normals = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2418,7 +2574,9 @@ class_raylib_mesh_get_tangents( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_tangents( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->tangents = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2429,7 +2587,9 @@ class_raylib_mesh_get_colors( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_colors( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->colors = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2440,7 +2600,9 @@ class_raylib_mesh_get_indices( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_indices( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->indices = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2451,7 +2613,9 @@ class_raylib_mesh_get_animVertices( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_animVertices( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->animVertices = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2462,7 +2626,9 @@ class_raylib_mesh_get_animNormals( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_animNormals( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->animNormals = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2473,7 +2639,9 @@ class_raylib_mesh_get_boneIds( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_boneIds( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->boneIds = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2484,18 +2652,22 @@ class_raylib_mesh_get_boneWeights( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_boneWeights( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->boneWeights = mrb_cptr( param0 );
 	return self;
 }
 	
 static mrb_value
 class_raylib_mesh_get_vaoId( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_mesh_get_ptr( mrb, self )->vaoId );
+	return mrb_fixnum_value( class_raylib_mesh_get_ptr( mrb, self )->vaoId );
 }
 	
 static mrb_value
 class_raylib_mesh_set_vaoId( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->vaoId = param0;
 	return self;
 }
 	
@@ -2506,7 +2678,9 @@ class_raylib_mesh_get_vboId( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_mesh_set_vboId( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_mesh_get_ptr( mrb, self )->vboId = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2586,7 +2760,7 @@ class_raylib_shader_2_mrbvalue( mrb_state *mrb, Shader *shader, bool is_associat
 
 mrb_value
 class_raylib_shader_2_mrbvalue_direct( mrb_state *mrb, Shader const *shader ) {
-	class_raylib_shader_data_t *data = ( class_raylib_shader_data_t * )mrb_malloc( mrb, sizeof( class_raylib_shader_data_t ) );
+	class_raylib_shader_data_t *data = ( class_raylib_shader_data_t* )mrb_malloc( mrb, sizeof( class_raylib_shader_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -2605,7 +2779,7 @@ class_raylib_shader_get_ptr( mrb_state *mrb, mrb_value shader ) {
 	if ( mrb_nil_p( shader ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_shader_data_t * )mrb_data_get_ptr( mrb, shader, &class_raylib_shader_data_type );
+	data = ( class_raylib_shader_data_t* )mrb_data_get_ptr( mrb, shader, &class_raylib_shader_data_type );
 	return &data->shader;
 }
 
@@ -2636,12 +2810,14 @@ class_raylib_shader_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_shader_get_id( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_shader_get_ptr( mrb, self )->id );
+	return mrb_fixnum_value( class_raylib_shader_get_ptr( mrb, self )->id );
 }
 	
 static mrb_value
 class_raylib_shader_set_id( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_shader_get_ptr( mrb, self )->id = param0;
 	return self;
 }
 	
@@ -2652,7 +2828,9 @@ class_raylib_shader_get_locs( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_shader_set_locs( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_shader_get_ptr( mrb, self )->locs = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -2706,7 +2884,7 @@ class_raylib_materialmap_2_mrbvalue( mrb_state *mrb, MaterialMap *materialmap, b
 
 mrb_value
 class_raylib_materialmap_2_mrbvalue_direct( mrb_state *mrb, MaterialMap const *materialmap ) {
-	class_raylib_materialmap_data_t *data = ( class_raylib_materialmap_data_t * )mrb_malloc( mrb, sizeof( class_raylib_materialmap_data_t ) );
+	class_raylib_materialmap_data_t *data = ( class_raylib_materialmap_data_t* )mrb_malloc( mrb, sizeof( class_raylib_materialmap_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -2725,7 +2903,7 @@ class_raylib_materialmap_get_ptr( mrb_state *mrb, mrb_value materialmap ) {
 	if ( mrb_nil_p( materialmap ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_materialmap_data_t * )mrb_data_get_ptr( mrb, materialmap, &class_raylib_materialmap_data_type );
+	data = ( class_raylib_materialmap_data_t* )mrb_data_get_ptr( mrb, materialmap, &class_raylib_materialmap_data_type );
 	return &data->materialmap;
 }
 
@@ -2761,7 +2939,9 @@ class_raylib_materialmap_get_texture( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_materialmap_set_texture( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "d", &param0 );
+	class_raylib_materialmap_get_ptr( mrb, self )->texture = *class_raylib_texture_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -2772,7 +2952,9 @@ class_raylib_materialmap_get_color( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_materialmap_set_color( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_materialmap_get_ptr( mrb, self )->color = *class_raylib_color_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -2783,7 +2965,9 @@ class_raylib_materialmap_get_value( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_materialmap_set_value( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_materialmap_get_ptr( mrb, self )->value = param0;
 	return self;
 }
 	
@@ -2839,7 +3023,7 @@ class_raylib_material_2_mrbvalue( mrb_state *mrb, Material *material, bool is_as
 
 mrb_value
 class_raylib_material_2_mrbvalue_direct( mrb_state *mrb, Material const *material ) {
-	class_raylib_material_data_t *data = ( class_raylib_material_data_t * )mrb_malloc( mrb, sizeof( class_raylib_material_data_t ) );
+	class_raylib_material_data_t *data = ( class_raylib_material_data_t* )mrb_malloc( mrb, sizeof( class_raylib_material_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -2858,7 +3042,7 @@ class_raylib_material_get_ptr( mrb_state *mrb, mrb_value material ) {
 	if ( mrb_nil_p( material ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_material_data_t * )mrb_data_get_ptr( mrb, material, &class_raylib_material_data_type );
+	data = ( class_raylib_material_data_t* )mrb_data_get_ptr( mrb, material, &class_raylib_material_data_type );
 	return &data->material;
 }
 
@@ -2894,7 +3078,9 @@ class_raylib_material_get_shader( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_material_set_shader( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_material_get_ptr( mrb, self )->shader = *class_raylib_shader_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -2905,7 +3091,9 @@ class_raylib_material_get_maps( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_material_set_maps( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_material_get_ptr( mrb, self )->maps = class_raylib_materialmap_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -2921,7 +3109,7 @@ return arr;
 	
 static mrb_value
 class_raylib_material_set_params( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set params
 	return self;
 }
 	
@@ -2977,7 +3165,7 @@ class_raylib_transform_2_mrbvalue( mrb_state *mrb, Transform *transform, bool is
 
 mrb_value
 class_raylib_transform_2_mrbvalue_direct( mrb_state *mrb, Transform const *transform ) {
-	class_raylib_transform_data_t *data = ( class_raylib_transform_data_t * )mrb_malloc( mrb, sizeof( class_raylib_transform_data_t ) );
+	class_raylib_transform_data_t *data = ( class_raylib_transform_data_t* )mrb_malloc( mrb, sizeof( class_raylib_transform_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -2996,7 +3184,7 @@ class_raylib_transform_get_ptr( mrb_state *mrb, mrb_value transform ) {
 	if ( mrb_nil_p( transform ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_transform_data_t * )mrb_data_get_ptr( mrb, transform, &class_raylib_transform_data_type );
+	data = ( class_raylib_transform_data_t* )mrb_data_get_ptr( mrb, transform, &class_raylib_transform_data_type );
 	return &data->transform;
 }
 
@@ -3032,7 +3220,9 @@ class_raylib_transform_get_translation( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_transform_set_translation( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_transform_get_ptr( mrb, self )->translation = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3043,7 +3233,9 @@ class_raylib_transform_get_rotation( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_transform_set_rotation( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "d", &param0 );
+	class_raylib_transform_get_ptr( mrb, self )->rotation = *class_raylib_vector4_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3054,7 +3246,9 @@ class_raylib_transform_get_scale( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_transform_set_scale( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_transform_get_ptr( mrb, self )->scale = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3110,7 +3304,7 @@ class_raylib_boneinfo_2_mrbvalue( mrb_state *mrb, BoneInfo *boneinfo, bool is_as
 
 mrb_value
 class_raylib_boneinfo_2_mrbvalue_direct( mrb_state *mrb, BoneInfo const *boneinfo ) {
-	class_raylib_boneinfo_data_t *data = ( class_raylib_boneinfo_data_t * )mrb_malloc( mrb, sizeof( class_raylib_boneinfo_data_t ) );
+	class_raylib_boneinfo_data_t *data = ( class_raylib_boneinfo_data_t* )mrb_malloc( mrb, sizeof( class_raylib_boneinfo_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -3129,7 +3323,7 @@ class_raylib_boneinfo_get_ptr( mrb_state *mrb, mrb_value boneinfo ) {
 	if ( mrb_nil_p( boneinfo ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_boneinfo_data_t * )mrb_data_get_ptr( mrb, boneinfo, &class_raylib_boneinfo_data_type );
+	data = ( class_raylib_boneinfo_data_t* )mrb_data_get_ptr( mrb, boneinfo, &class_raylib_boneinfo_data_type );
 	return &data->boneinfo;
 }
 
@@ -3161,55 +3355,57 @@ class_raylib_boneinfo_initialize( mrb_state *mrb, mrb_value self ) {
 static mrb_value
 class_raylib_boneinfo_get_name( mrb_state *mrb, mrb_value self ) {
 	mrb_value arr = mrb_ary_new( mrb );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 0 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 1 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 2 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 3 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 4 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 5 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 6 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 7 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 8 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 9 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 10 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 11 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 12 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 13 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 14 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 15 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 16 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 17 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 18 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 19 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 20 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 21 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 22 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 23 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 24 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 25 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 26 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 27 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 28 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 29 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 30 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->name[ 31 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 0 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 1 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 2 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 3 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 4 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 5 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 6 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 7 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 8 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 9 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 10 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 11 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 12 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 13 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 14 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 15 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 16 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 17 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 18 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 19 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 20 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 21 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 22 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 23 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 24 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 25 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 26 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 27 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 28 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 29 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 30 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->name[ 31 ] ) );
 return arr;
 }
 	
 static mrb_value
 class_raylib_boneinfo_set_name( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set name
 	return self;
 }
 	
 static mrb_value
 class_raylib_boneinfo_get_parent( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_boneinfo_get_ptr( mrb, self )->parent );
+	return mrb_fixnum_value( class_raylib_boneinfo_get_ptr( mrb, self )->parent );
 }
 	
 static mrb_value
 class_raylib_boneinfo_set_parent( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_boneinfo_get_ptr( mrb, self )->parent = param0;
 	return self;
 }
 	
@@ -3263,7 +3459,7 @@ class_raylib_model_2_mrbvalue( mrb_state *mrb, Model *model, bool is_associated 
 
 mrb_value
 class_raylib_model_2_mrbvalue_direct( mrb_state *mrb, Model const *model ) {
-	class_raylib_model_data_t *data = ( class_raylib_model_data_t * )mrb_malloc( mrb, sizeof( class_raylib_model_data_t ) );
+	class_raylib_model_data_t *data = ( class_raylib_model_data_t* )mrb_malloc( mrb, sizeof( class_raylib_model_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -3282,7 +3478,7 @@ class_raylib_model_get_ptr( mrb_state *mrb, mrb_value model ) {
 	if ( mrb_nil_p( model ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_model_data_t * )mrb_data_get_ptr( mrb, model, &class_raylib_model_data_type );
+	data = ( class_raylib_model_data_t* )mrb_data_get_ptr( mrb, model, &class_raylib_model_data_type );
 	return &data->model;
 }
 
@@ -3318,29 +3514,35 @@ class_raylib_model_get_transform( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_model_set_transform( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_model_get_ptr( mrb, self )->transform = *class_raylib_matrix_get_ptr( mrb, param0 );
 	return self;
 }
 	
 static mrb_value
 class_raylib_model_get_meshCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_model_get_ptr( mrb, self )->meshCount );
+	return mrb_fixnum_value( class_raylib_model_get_ptr( mrb, self )->meshCount );
 }
 	
 static mrb_value
 class_raylib_model_set_meshCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_model_get_ptr( mrb, self )->meshCount = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_model_get_materialCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_model_get_ptr( mrb, self )->materialCount );
+	return mrb_fixnum_value( class_raylib_model_get_ptr( mrb, self )->materialCount );
 }
 	
 static mrb_value
 class_raylib_model_set_materialCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_model_get_ptr( mrb, self )->materialCount = param0;
 	return self;
 }
 	
@@ -3351,7 +3553,9 @@ class_raylib_model_get_meshes( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_model_set_meshes( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_model_get_ptr( mrb, self )->meshes = class_raylib_mesh_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3362,7 +3566,9 @@ class_raylib_model_get_materials( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_model_set_materials( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_model_get_ptr( mrb, self )->materials = class_raylib_material_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3373,18 +3579,22 @@ class_raylib_model_get_meshMaterial( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_model_set_meshMaterial( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "*", &param0 );
+	class_raylib_model_get_ptr( mrb, self )->meshMaterial = mrb_cptr( param0 );
 	return self;
 }
 	
 static mrb_value
 class_raylib_model_get_boneCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_model_get_ptr( mrb, self )->boneCount );
+	return mrb_fixnum_value( class_raylib_model_get_ptr( mrb, self )->boneCount );
 }
 	
 static mrb_value
 class_raylib_model_set_boneCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_model_get_ptr( mrb, self )->boneCount = param0;
 	return self;
 }
 	
@@ -3395,7 +3605,9 @@ class_raylib_model_get_bones( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_model_set_bones( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_model_get_ptr( mrb, self )->bones = class_raylib_boneinfo_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3406,7 +3618,9 @@ class_raylib_model_get_bindPose( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_model_set_bindPose( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_model_get_ptr( mrb, self )->bindPose = class_raylib_transform_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3474,7 +3688,7 @@ class_raylib_modelanimation_2_mrbvalue( mrb_state *mrb, ModelAnimation *modelani
 
 mrb_value
 class_raylib_modelanimation_2_mrbvalue_direct( mrb_state *mrb, ModelAnimation const *modelanimation ) {
-	class_raylib_modelanimation_data_t *data = ( class_raylib_modelanimation_data_t * )mrb_malloc( mrb, sizeof( class_raylib_modelanimation_data_t ) );
+	class_raylib_modelanimation_data_t *data = ( class_raylib_modelanimation_data_t* )mrb_malloc( mrb, sizeof( class_raylib_modelanimation_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -3493,7 +3707,7 @@ class_raylib_modelanimation_get_ptr( mrb_state *mrb, mrb_value modelanimation ) 
 	if ( mrb_nil_p( modelanimation ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_modelanimation_data_t * )mrb_data_get_ptr( mrb, modelanimation, &class_raylib_modelanimation_data_type );
+	data = ( class_raylib_modelanimation_data_t* )mrb_data_get_ptr( mrb, modelanimation, &class_raylib_modelanimation_data_type );
 	return &data->modelanimation;
 }
 
@@ -3524,23 +3738,27 @@ class_raylib_modelanimation_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_modelanimation_get_boneCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->boneCount );
+	return mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->boneCount );
 }
 	
 static mrb_value
 class_raylib_modelanimation_set_boneCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_modelanimation_get_ptr( mrb, self )->boneCount = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_modelanimation_get_frameCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->frameCount );
+	return mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->frameCount );
 }
 	
 static mrb_value
 class_raylib_modelanimation_set_frameCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_modelanimation_get_ptr( mrb, self )->frameCount = param0;
 	return self;
 }
 	
@@ -3551,7 +3769,9 @@ class_raylib_modelanimation_get_bones( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_modelanimation_set_bones( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_modelanimation_get_ptr( mrb, self )->bones = class_raylib_boneinfo_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3562,51 +3782,53 @@ class_raylib_modelanimation_get_framePoses( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_modelanimation_set_framePoses( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_modelanimation_get_ptr( mrb, self )->framePoses = mrb_cptr( param0 );
 	return self;
 }
 	
 static mrb_value
 class_raylib_modelanimation_get_name( mrb_state *mrb, mrb_value self ) {
 	mrb_value arr = mrb_ary_new( mrb );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 0 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 1 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 2 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 3 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 4 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 5 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 6 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 7 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 8 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 9 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 10 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 11 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 12 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 13 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 14 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 15 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 16 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 17 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 18 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 19 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 20 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 21 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 22 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 23 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 24 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 25 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 26 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 27 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 28 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 29 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 30 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_modelanimation_get_ptr( mrb, self )->name[ 31 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 0 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 1 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 2 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 3 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 4 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 5 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 6 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 7 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 8 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 9 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 10 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 11 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 12 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 13 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 14 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 15 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 16 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 17 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 18 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 19 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 20 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 21 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 22 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 23 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 24 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 25 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 26 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 27 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 28 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 29 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 30 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_modelanimation_get_ptr( mrb, self )->name[ 31 ] ) );
 return arr;
 }
 	
 static mrb_value
 class_raylib_modelanimation_set_name( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set name
 	return self;
 }
 	
@@ -3666,7 +3888,7 @@ class_raylib_ray_2_mrbvalue( mrb_state *mrb, Ray *ray, bool is_associated ) {
 
 mrb_value
 class_raylib_ray_2_mrbvalue_direct( mrb_state *mrb, Ray const *ray ) {
-	class_raylib_ray_data_t *data = ( class_raylib_ray_data_t * )mrb_malloc( mrb, sizeof( class_raylib_ray_data_t ) );
+	class_raylib_ray_data_t *data = ( class_raylib_ray_data_t* )mrb_malloc( mrb, sizeof( class_raylib_ray_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -3685,7 +3907,7 @@ class_raylib_ray_get_ptr( mrb_state *mrb, mrb_value ray ) {
 	if ( mrb_nil_p( ray ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_ray_data_t * )mrb_data_get_ptr( mrb, ray, &class_raylib_ray_data_type );
+	data = ( class_raylib_ray_data_t* )mrb_data_get_ptr( mrb, ray, &class_raylib_ray_data_type );
 	return &data->ray;
 }
 
@@ -3721,7 +3943,9 @@ class_raylib_ray_get_position( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_ray_set_position( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_ray_get_ptr( mrb, self )->position = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3732,7 +3956,9 @@ class_raylib_ray_get_direction( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_ray_set_direction( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_ray_get_ptr( mrb, self )->direction = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3786,7 +4012,7 @@ class_raylib_raycollision_2_mrbvalue( mrb_state *mrb, RayCollision *raycollision
 
 mrb_value
 class_raylib_raycollision_2_mrbvalue_direct( mrb_state *mrb, RayCollision const *raycollision ) {
-	class_raylib_raycollision_data_t *data = ( class_raylib_raycollision_data_t * )mrb_malloc( mrb, sizeof( class_raylib_raycollision_data_t ) );
+	class_raylib_raycollision_data_t *data = ( class_raylib_raycollision_data_t* )mrb_malloc( mrb, sizeof( class_raylib_raycollision_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -3805,7 +4031,7 @@ class_raylib_raycollision_get_ptr( mrb_state *mrb, mrb_value raycollision ) {
 	if ( mrb_nil_p( raycollision ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_raycollision_data_t * )mrb_data_get_ptr( mrb, raycollision, &class_raylib_raycollision_data_type );
+	data = ( class_raylib_raycollision_data_t* )mrb_data_get_ptr( mrb, raycollision, &class_raylib_raycollision_data_type );
 	return &data->raycollision;
 }
 
@@ -3841,7 +4067,9 @@ class_raylib_raycollision_get_hit( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_raycollision_set_hit( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_bool param0;
+	mrb_get_args( mrb, "b", &param0 );
+	class_raylib_raycollision_get_ptr( mrb, self )->hit = param0;
 	return self;
 }
 	
@@ -3852,7 +4080,9 @@ class_raylib_raycollision_get_distance( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_raycollision_set_distance( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_raycollision_get_ptr( mrb, self )->distance = param0;
 	return self;
 }
 	
@@ -3863,7 +4093,9 @@ class_raylib_raycollision_get_point( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_raycollision_set_point( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_raycollision_get_ptr( mrb, self )->point = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3874,7 +4106,9 @@ class_raylib_raycollision_get_normal( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_raycollision_set_normal( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_raycollision_get_ptr( mrb, self )->normal = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3932,7 +4166,7 @@ class_raylib_boundingbox_2_mrbvalue( mrb_state *mrb, BoundingBox *boundingbox, b
 
 mrb_value
 class_raylib_boundingbox_2_mrbvalue_direct( mrb_state *mrb, BoundingBox const *boundingbox ) {
-	class_raylib_boundingbox_data_t *data = ( class_raylib_boundingbox_data_t * )mrb_malloc( mrb, sizeof( class_raylib_boundingbox_data_t ) );
+	class_raylib_boundingbox_data_t *data = ( class_raylib_boundingbox_data_t* )mrb_malloc( mrb, sizeof( class_raylib_boundingbox_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -3951,7 +4185,7 @@ class_raylib_boundingbox_get_ptr( mrb_state *mrb, mrb_value boundingbox ) {
 	if ( mrb_nil_p( boundingbox ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_boundingbox_data_t * )mrb_data_get_ptr( mrb, boundingbox, &class_raylib_boundingbox_data_type );
+	data = ( class_raylib_boundingbox_data_t* )mrb_data_get_ptr( mrb, boundingbox, &class_raylib_boundingbox_data_type );
 	return &data->boundingbox;
 }
 
@@ -3987,7 +4221,9 @@ class_raylib_boundingbox_get_min( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_boundingbox_set_min( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_boundingbox_get_ptr( mrb, self )->min = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -3998,7 +4234,9 @@ class_raylib_boundingbox_get_max( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_boundingbox_set_max( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_boundingbox_get_ptr( mrb, self )->max = *class_raylib_vector3_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -4052,7 +4290,7 @@ class_raylib_wave_2_mrbvalue( mrb_state *mrb, Wave *wave, bool is_associated ) {
 
 mrb_value
 class_raylib_wave_2_mrbvalue_direct( mrb_state *mrb, Wave const *wave ) {
-	class_raylib_wave_data_t *data = ( class_raylib_wave_data_t * )mrb_malloc( mrb, sizeof( class_raylib_wave_data_t ) );
+	class_raylib_wave_data_t *data = ( class_raylib_wave_data_t* )mrb_malloc( mrb, sizeof( class_raylib_wave_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -4071,7 +4309,7 @@ class_raylib_wave_get_ptr( mrb_state *mrb, mrb_value wave ) {
 	if ( mrb_nil_p( wave ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_wave_data_t * )mrb_data_get_ptr( mrb, wave, &class_raylib_wave_data_type );
+	data = ( class_raylib_wave_data_t* )mrb_data_get_ptr( mrb, wave, &class_raylib_wave_data_type );
 	return &data->wave;
 }
 
@@ -4102,45 +4340,53 @@ class_raylib_wave_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_wave_get_frameCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_wave_get_ptr( mrb, self )->frameCount );
+	return mrb_fixnum_value( class_raylib_wave_get_ptr( mrb, self )->frameCount );
 }
 	
 static mrb_value
 class_raylib_wave_set_frameCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_wave_get_ptr( mrb, self )->frameCount = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_wave_get_sampleRate( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_wave_get_ptr( mrb, self )->sampleRate );
+	return mrb_fixnum_value( class_raylib_wave_get_ptr( mrb, self )->sampleRate );
 }
 	
 static mrb_value
 class_raylib_wave_set_sampleRate( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_wave_get_ptr( mrb, self )->sampleRate = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_wave_get_sampleSize( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_wave_get_ptr( mrb, self )->sampleSize );
+	return mrb_fixnum_value( class_raylib_wave_get_ptr( mrb, self )->sampleSize );
 }
 	
 static mrb_value
 class_raylib_wave_set_sampleSize( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_wave_get_ptr( mrb, self )->sampleSize = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_wave_get_channels( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_wave_get_ptr( mrb, self )->channels );
+	return mrb_fixnum_value( class_raylib_wave_get_ptr( mrb, self )->channels );
 }
 	
 static mrb_value
 class_raylib_wave_set_channels( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_wave_get_ptr( mrb, self )->channels = param0;
 	return self;
 }
 	
@@ -4151,7 +4397,9 @@ class_raylib_wave_get_data( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_wave_set_data( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "d", &param0 );
+	class_raylib_wave_get_ptr( mrb, self )->data = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -4211,7 +4459,7 @@ class_raylib_raudiobuffer_2_mrbvalue( mrb_state *mrb, rAudioBuffer *raudiobuffer
 
 mrb_value
 class_raylib_raudiobuffer_2_mrbvalue_direct( mrb_state *mrb, rAudioBuffer const *raudiobuffer ) {
-	class_raylib_raudiobuffer_data_t *data = ( class_raylib_raudiobuffer_data_t * )mrb_malloc( mrb, sizeof( class_raylib_raudiobuffer_data_t ) );
+	class_raylib_raudiobuffer_data_t *data = ( class_raylib_raudiobuffer_data_t* )mrb_malloc( mrb, sizeof( class_raylib_raudiobuffer_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -4230,7 +4478,7 @@ class_raylib_raudiobuffer_get_ptr( mrb_state *mrb, mrb_value raudiobuffer ) {
 	if ( mrb_nil_p( raudiobuffer ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_raudiobuffer_data_t * )mrb_data_get_ptr( mrb, raudiobuffer, &class_raylib_raudiobuffer_data_type );
+	data = ( class_raylib_raudiobuffer_data_t* )mrb_data_get_ptr( mrb, raudiobuffer, &class_raylib_raudiobuffer_data_type );
 	return &data->raudiobuffer;
 }
 
@@ -4305,7 +4553,7 @@ class_raylib_raudioprocessor_2_mrbvalue( mrb_state *mrb, rAudioProcessor *raudio
 
 mrb_value
 class_raylib_raudioprocessor_2_mrbvalue_direct( mrb_state *mrb, rAudioProcessor const *raudioprocessor ) {
-	class_raylib_raudioprocessor_data_t *data = ( class_raylib_raudioprocessor_data_t * )mrb_malloc( mrb, sizeof( class_raylib_raudioprocessor_data_t ) );
+	class_raylib_raudioprocessor_data_t *data = ( class_raylib_raudioprocessor_data_t* )mrb_malloc( mrb, sizeof( class_raylib_raudioprocessor_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -4324,7 +4572,7 @@ class_raylib_raudioprocessor_get_ptr( mrb_state *mrb, mrb_value raudioprocessor 
 	if ( mrb_nil_p( raudioprocessor ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_raudioprocessor_data_t * )mrb_data_get_ptr( mrb, raudioprocessor, &class_raylib_raudioprocessor_data_type );
+	data = ( class_raylib_raudioprocessor_data_t* )mrb_data_get_ptr( mrb, raudioprocessor, &class_raylib_raudioprocessor_data_type );
 	return &data->raudioprocessor;
 }
 
@@ -4399,7 +4647,7 @@ class_raylib_audiostream_2_mrbvalue( mrb_state *mrb, AudioStream *audiostream, b
 
 mrb_value
 class_raylib_audiostream_2_mrbvalue_direct( mrb_state *mrb, AudioStream const *audiostream ) {
-	class_raylib_audiostream_data_t *data = ( class_raylib_audiostream_data_t * )mrb_malloc( mrb, sizeof( class_raylib_audiostream_data_t ) );
+	class_raylib_audiostream_data_t *data = ( class_raylib_audiostream_data_t* )mrb_malloc( mrb, sizeof( class_raylib_audiostream_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -4418,7 +4666,7 @@ class_raylib_audiostream_get_ptr( mrb_state *mrb, mrb_value audiostream ) {
 	if ( mrb_nil_p( audiostream ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_audiostream_data_t * )mrb_data_get_ptr( mrb, audiostream, &class_raylib_audiostream_data_type );
+	data = ( class_raylib_audiostream_data_t* )mrb_data_get_ptr( mrb, audiostream, &class_raylib_audiostream_data_type );
 	return &data->audiostream;
 }
 
@@ -4454,7 +4702,9 @@ class_raylib_audiostream_get_buffer( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_audiostream_set_buffer( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_audiostream_get_ptr( mrb, self )->buffer = class_raylib_raudiobuffer_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -4465,40 +4715,48 @@ class_raylib_audiostream_get_processor( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_audiostream_set_processor( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_audiostream_get_ptr( mrb, self )->processor = class_raylib_raudioprocessor_get_ptr( mrb, param0 );
 	return self;
 }
 	
 static mrb_value
 class_raylib_audiostream_get_sampleRate( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_audiostream_get_ptr( mrb, self )->sampleRate );
+	return mrb_fixnum_value( class_raylib_audiostream_get_ptr( mrb, self )->sampleRate );
 }
 	
 static mrb_value
 class_raylib_audiostream_set_sampleRate( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_audiostream_get_ptr( mrb, self )->sampleRate = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_audiostream_get_sampleSize( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_audiostream_get_ptr( mrb, self )->sampleSize );
+	return mrb_fixnum_value( class_raylib_audiostream_get_ptr( mrb, self )->sampleSize );
 }
 	
 static mrb_value
 class_raylib_audiostream_set_sampleSize( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_audiostream_get_ptr( mrb, self )->sampleSize = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_audiostream_get_channels( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_audiostream_get_ptr( mrb, self )->channels );
+	return mrb_fixnum_value( class_raylib_audiostream_get_ptr( mrb, self )->channels );
 }
 	
 static mrb_value
 class_raylib_audiostream_set_channels( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_audiostream_get_ptr( mrb, self )->channels = param0;
 	return self;
 }
 	
@@ -4558,7 +4816,7 @@ class_raylib_sound_2_mrbvalue( mrb_state *mrb, Sound *sound, bool is_associated 
 
 mrb_value
 class_raylib_sound_2_mrbvalue_direct( mrb_state *mrb, Sound const *sound ) {
-	class_raylib_sound_data_t *data = ( class_raylib_sound_data_t * )mrb_malloc( mrb, sizeof( class_raylib_sound_data_t ) );
+	class_raylib_sound_data_t *data = ( class_raylib_sound_data_t* )mrb_malloc( mrb, sizeof( class_raylib_sound_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -4577,7 +4835,7 @@ class_raylib_sound_get_ptr( mrb_state *mrb, mrb_value sound ) {
 	if ( mrb_nil_p( sound ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_sound_data_t * )mrb_data_get_ptr( mrb, sound, &class_raylib_sound_data_type );
+	data = ( class_raylib_sound_data_t* )mrb_data_get_ptr( mrb, sound, &class_raylib_sound_data_type );
 	return &data->sound;
 }
 
@@ -4613,18 +4871,22 @@ class_raylib_sound_get_stream( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_sound_set_stream( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_sound_get_ptr( mrb, self )->stream = *class_raylib_audiostream_get_ptr( mrb, param0 );
 	return self;
 }
 	
 static mrb_value
 class_raylib_sound_get_frameCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_sound_get_ptr( mrb, self )->frameCount );
+	return mrb_fixnum_value( class_raylib_sound_get_ptr( mrb, self )->frameCount );
 }
 	
 static mrb_value
 class_raylib_sound_set_frameCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_sound_get_ptr( mrb, self )->frameCount = param0;
 	return self;
 }
 	
@@ -4678,7 +4940,7 @@ class_raylib_music_2_mrbvalue( mrb_state *mrb, Music *music, bool is_associated 
 
 mrb_value
 class_raylib_music_2_mrbvalue_direct( mrb_state *mrb, Music const *music ) {
-	class_raylib_music_data_t *data = ( class_raylib_music_data_t * )mrb_malloc( mrb, sizeof( class_raylib_music_data_t ) );
+	class_raylib_music_data_t *data = ( class_raylib_music_data_t* )mrb_malloc( mrb, sizeof( class_raylib_music_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -4697,7 +4959,7 @@ class_raylib_music_get_ptr( mrb_state *mrb, mrb_value music ) {
 	if ( mrb_nil_p( music ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_music_data_t * )mrb_data_get_ptr( mrb, music, &class_raylib_music_data_type );
+	data = ( class_raylib_music_data_t* )mrb_data_get_ptr( mrb, music, &class_raylib_music_data_type );
 	return &data->music;
 }
 
@@ -4733,18 +4995,22 @@ class_raylib_music_get_stream( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_music_set_stream( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "o", &param0 );
+	class_raylib_music_get_ptr( mrb, self )->stream = *class_raylib_audiostream_get_ptr( mrb, param0 );
 	return self;
 }
 	
 static mrb_value
 class_raylib_music_get_frameCount( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_music_get_ptr( mrb, self )->frameCount );
+	return mrb_fixnum_value( class_raylib_music_get_ptr( mrb, self )->frameCount );
 }
 	
 static mrb_value
 class_raylib_music_set_frameCount( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_music_get_ptr( mrb, self )->frameCount = param0;
 	return self;
 }
 	
@@ -4755,18 +5021,22 @@ class_raylib_music_get_looping( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_music_set_looping( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_bool param0;
+	mrb_get_args( mrb, "b", &param0 );
+	class_raylib_music_get_ptr( mrb, self )->looping = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_music_get_ctxType( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_music_get_ptr( mrb, self )->ctxType );
+	return mrb_fixnum_value( class_raylib_music_get_ptr( mrb, self )->ctxType );
 }
 	
 static mrb_value
 class_raylib_music_set_ctxType( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_music_get_ptr( mrb, self )->ctxType = param0;
 	return self;
 }
 	
@@ -4777,7 +5047,9 @@ class_raylib_music_get_ctxData( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_music_set_ctxData( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "d", &param0 );
+	class_raylib_music_get_ptr( mrb, self )->ctxData = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -4837,7 +5109,7 @@ class_raylib_vrdeviceinfo_2_mrbvalue( mrb_state *mrb, VrDeviceInfo *vrdeviceinfo
 
 mrb_value
 class_raylib_vrdeviceinfo_2_mrbvalue_direct( mrb_state *mrb, VrDeviceInfo const *vrdeviceinfo ) {
-	class_raylib_vrdeviceinfo_data_t *data = ( class_raylib_vrdeviceinfo_data_t * )mrb_malloc( mrb, sizeof( class_raylib_vrdeviceinfo_data_t ) );
+	class_raylib_vrdeviceinfo_data_t *data = ( class_raylib_vrdeviceinfo_data_t* )mrb_malloc( mrb, sizeof( class_raylib_vrdeviceinfo_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -4856,7 +5128,7 @@ class_raylib_vrdeviceinfo_get_ptr( mrb_state *mrb, mrb_value vrdeviceinfo ) {
 	if ( mrb_nil_p( vrdeviceinfo ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_vrdeviceinfo_data_t * )mrb_data_get_ptr( mrb, vrdeviceinfo, &class_raylib_vrdeviceinfo_data_type );
+	data = ( class_raylib_vrdeviceinfo_data_t* )mrb_data_get_ptr( mrb, vrdeviceinfo, &class_raylib_vrdeviceinfo_data_type );
 	return &data->vrdeviceinfo;
 }
 
@@ -4887,23 +5159,27 @@ class_raylib_vrdeviceinfo_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_vrdeviceinfo_get_hResolution( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_vrdeviceinfo_get_ptr( mrb, self )->hResolution );
+	return mrb_fixnum_value( class_raylib_vrdeviceinfo_get_ptr( mrb, self )->hResolution );
 }
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_hResolution( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_vrdeviceinfo_get_ptr( mrb, self )->hResolution = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_vrdeviceinfo_get_vResolution( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_vrdeviceinfo_get_ptr( mrb, self )->vResolution );
+	return mrb_fixnum_value( class_raylib_vrdeviceinfo_get_ptr( mrb, self )->vResolution );
 }
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_vResolution( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_vrdeviceinfo_get_ptr( mrb, self )->vResolution = param0;
 	return self;
 }
 	
@@ -4914,7 +5190,9 @@ class_raylib_vrdeviceinfo_get_hScreenSize( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_hScreenSize( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vrdeviceinfo_get_ptr( mrb, self )->hScreenSize = param0;
 	return self;
 }
 	
@@ -4925,7 +5203,9 @@ class_raylib_vrdeviceinfo_get_vScreenSize( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_vScreenSize( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vrdeviceinfo_get_ptr( mrb, self )->vScreenSize = param0;
 	return self;
 }
 	
@@ -4936,7 +5216,9 @@ class_raylib_vrdeviceinfo_get_vScreenCenter( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_vScreenCenter( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vrdeviceinfo_get_ptr( mrb, self )->vScreenCenter = param0;
 	return self;
 }
 	
@@ -4947,7 +5229,9 @@ class_raylib_vrdeviceinfo_get_eyeToScreenDistance( mrb_state *mrb, mrb_value sel
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_eyeToScreenDistance( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vrdeviceinfo_get_ptr( mrb, self )->eyeToScreenDistance = param0;
 	return self;
 }
 	
@@ -4958,7 +5242,9 @@ class_raylib_vrdeviceinfo_get_lensSeparationDistance( mrb_state *mrb, mrb_value 
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_lensSeparationDistance( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vrdeviceinfo_get_ptr( mrb, self )->lensSeparationDistance = param0;
 	return self;
 }
 	
@@ -4969,7 +5255,9 @@ class_raylib_vrdeviceinfo_get_interpupillaryDistance( mrb_state *mrb, mrb_value 
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_interpupillaryDistance( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_float param0;
+	mrb_get_args( mrb, "f", &param0 );
+	class_raylib_vrdeviceinfo_get_ptr( mrb, self )->interpupillaryDistance = param0;
 	return self;
 }
 	
@@ -4985,7 +5273,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_lensDistortionValues( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set lensDistortionValues
 	return self;
 }
 	
@@ -5001,7 +5289,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrdeviceinfo_set_chromaAbCorrection( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set chromaAbCorrection
 	return self;
 }
 	
@@ -5071,7 +5359,7 @@ class_raylib_vrstereoconfig_2_mrbvalue( mrb_state *mrb, VrStereoConfig *vrstereo
 
 mrb_value
 class_raylib_vrstereoconfig_2_mrbvalue_direct( mrb_state *mrb, VrStereoConfig const *vrstereoconfig ) {
-	class_raylib_vrstereoconfig_data_t *data = ( class_raylib_vrstereoconfig_data_t * )mrb_malloc( mrb, sizeof( class_raylib_vrstereoconfig_data_t ) );
+	class_raylib_vrstereoconfig_data_t *data = ( class_raylib_vrstereoconfig_data_t* )mrb_malloc( mrb, sizeof( class_raylib_vrstereoconfig_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -5090,7 +5378,7 @@ class_raylib_vrstereoconfig_get_ptr( mrb_state *mrb, mrb_value vrstereoconfig ) 
 	if ( mrb_nil_p( vrstereoconfig ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_vrstereoconfig_data_t * )mrb_data_get_ptr( mrb, vrstereoconfig, &class_raylib_vrstereoconfig_data_type );
+	data = ( class_raylib_vrstereoconfig_data_t* )mrb_data_get_ptr( mrb, vrstereoconfig, &class_raylib_vrstereoconfig_data_type );
 	return &data->vrstereoconfig;
 }
 
@@ -5129,7 +5417,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrstereoconfig_set_projection( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set projection
 	return self;
 }
 	
@@ -5143,7 +5431,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrstereoconfig_set_viewOffset( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set viewOffset
 	return self;
 }
 	
@@ -5157,7 +5445,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrstereoconfig_set_leftLensCenter( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set leftLensCenter
 	return self;
 }
 	
@@ -5171,7 +5459,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrstereoconfig_set_rightLensCenter( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set rightLensCenter
 	return self;
 }
 	
@@ -5185,7 +5473,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrstereoconfig_set_leftScreenCenter( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set leftScreenCenter
 	return self;
 }
 	
@@ -5199,7 +5487,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrstereoconfig_set_rightScreenCenter( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set rightScreenCenter
 	return self;
 }
 	
@@ -5213,7 +5501,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrstereoconfig_set_scale( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set scale
 	return self;
 }
 	
@@ -5227,7 +5515,7 @@ return arr;
 	
 static mrb_value
 class_raylib_vrstereoconfig_set_scaleIn( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set scaleIn
 	return self;
 }
 	
@@ -5293,7 +5581,7 @@ class_raylib_filepathlist_2_mrbvalue( mrb_state *mrb, FilePathList *filepathlist
 
 mrb_value
 class_raylib_filepathlist_2_mrbvalue_direct( mrb_state *mrb, FilePathList const *filepathlist ) {
-	class_raylib_filepathlist_data_t *data = ( class_raylib_filepathlist_data_t * )mrb_malloc( mrb, sizeof( class_raylib_filepathlist_data_t ) );
+	class_raylib_filepathlist_data_t *data = ( class_raylib_filepathlist_data_t* )mrb_malloc( mrb, sizeof( class_raylib_filepathlist_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -5312,7 +5600,7 @@ class_raylib_filepathlist_get_ptr( mrb_state *mrb, mrb_value filepathlist ) {
 	if ( mrb_nil_p( filepathlist ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_filepathlist_data_t * )mrb_data_get_ptr( mrb, filepathlist, &class_raylib_filepathlist_data_type );
+	data = ( class_raylib_filepathlist_data_t* )mrb_data_get_ptr( mrb, filepathlist, &class_raylib_filepathlist_data_type );
 	return &data->filepathlist;
 }
 
@@ -5343,23 +5631,27 @@ class_raylib_filepathlist_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_filepathlist_get_capacity( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_filepathlist_get_ptr( mrb, self )->capacity );
+	return mrb_fixnum_value( class_raylib_filepathlist_get_ptr( mrb, self )->capacity );
 }
 	
 static mrb_value
 class_raylib_filepathlist_set_capacity( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_filepathlist_get_ptr( mrb, self )->capacity = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_filepathlist_get_count( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_filepathlist_get_ptr( mrb, self )->count );
+	return mrb_fixnum_value( class_raylib_filepathlist_get_ptr( mrb, self )->count );
 }
 	
 static mrb_value
 class_raylib_filepathlist_set_count( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_filepathlist_get_ptr( mrb, self )->count = param0;
 	return self;
 }
 	
@@ -5370,7 +5662,9 @@ class_raylib_filepathlist_get_paths( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_filepathlist_set_paths( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_filepathlist_get_ptr( mrb, self )->paths = mrb_cptr( param0 );
 	return self;
 }
 	
@@ -5426,7 +5720,7 @@ class_raylib_automationevent_2_mrbvalue( mrb_state *mrb, AutomationEvent *automa
 
 mrb_value
 class_raylib_automationevent_2_mrbvalue_direct( mrb_state *mrb, AutomationEvent const *automationevent ) {
-	class_raylib_automationevent_data_t *data = ( class_raylib_automationevent_data_t * )mrb_malloc( mrb, sizeof( class_raylib_automationevent_data_t ) );
+	class_raylib_automationevent_data_t *data = ( class_raylib_automationevent_data_t* )mrb_malloc( mrb, sizeof( class_raylib_automationevent_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -5445,7 +5739,7 @@ class_raylib_automationevent_get_ptr( mrb_state *mrb, mrb_value automationevent 
 	if ( mrb_nil_p( automationevent ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_automationevent_data_t * )mrb_data_get_ptr( mrb, automationevent, &class_raylib_automationevent_data_type );
+	data = ( class_raylib_automationevent_data_t* )mrb_data_get_ptr( mrb, automationevent, &class_raylib_automationevent_data_type );
 	return &data->automationevent;
 }
 
@@ -5476,39 +5770,43 @@ class_raylib_automationevent_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_automationevent_get_frame( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_automationevent_get_ptr( mrb, self )->frame );
+	return mrb_fixnum_value( class_raylib_automationevent_get_ptr( mrb, self )->frame );
 }
 	
 static mrb_value
 class_raylib_automationevent_set_frame( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_automationevent_get_ptr( mrb, self )->frame = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_automationevent_get_type( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_automationevent_get_ptr( mrb, self )->type );
+	return mrb_fixnum_value( class_raylib_automationevent_get_ptr( mrb, self )->type );
 }
 	
 static mrb_value
 class_raylib_automationevent_set_type( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_automationevent_get_ptr( mrb, self )->type = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_automationevent_get_params( mrb_state *mrb, mrb_value self ) {
 	mrb_value arr = mrb_ary_new( mrb );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_automationevent_get_ptr( mrb, self )->params[ 0 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_automationevent_get_ptr( mrb, self )->params[ 1 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_automationevent_get_ptr( mrb, self )->params[ 2 ] ) );
-mrb_ary_push( mrb, arr, mrb_int_value( mrb, class_raylib_automationevent_get_ptr( mrb, self )->params[ 3 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_automationevent_get_ptr( mrb, self )->params[ 0 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_automationevent_get_ptr( mrb, self )->params[ 1 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_automationevent_get_ptr( mrb, self )->params[ 2 ] ) );
+mrb_ary_push( mrb, arr, mrb_fixnum_value( class_raylib_automationevent_get_ptr( mrb, self )->params[ 3 ] ) );
 return arr;
 }
 	
 static mrb_value
 class_raylib_automationevent_set_params( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	// TODO: set params
 	return self;
 }
 	
@@ -5564,7 +5862,7 @@ class_raylib_automationeventlist_2_mrbvalue( mrb_state *mrb, AutomationEventList
 
 mrb_value
 class_raylib_automationeventlist_2_mrbvalue_direct( mrb_state *mrb, AutomationEventList const *automationeventlist ) {
-	class_raylib_automationeventlist_data_t *data = ( class_raylib_automationeventlist_data_t * )mrb_malloc( mrb, sizeof( class_raylib_automationeventlist_data_t ) );
+	class_raylib_automationeventlist_data_t *data = ( class_raylib_automationeventlist_data_t* )mrb_malloc( mrb, sizeof( class_raylib_automationeventlist_data_t ) );
 	if ( NULL == data ) {
 		mrb_raise( mrb, E_RUNTIME_ERROR, "insufficient memory." );
 	}
@@ -5583,7 +5881,7 @@ class_raylib_automationeventlist_get_ptr( mrb_state *mrb, mrb_value automationev
 	if ( mrb_nil_p( automationeventlist ) ) {
 		return NULL;
 	}
-	data = ( class_raylib_automationeventlist_data_t * )mrb_data_get_ptr( mrb, automationeventlist, &class_raylib_automationeventlist_data_type );
+	data = ( class_raylib_automationeventlist_data_t* )mrb_data_get_ptr( mrb, automationeventlist, &class_raylib_automationeventlist_data_type );
 	return &data->automationeventlist;
 }
 
@@ -5614,23 +5912,27 @@ class_raylib_automationeventlist_initialize( mrb_state *mrb, mrb_value self ) {
 
 static mrb_value
 class_raylib_automationeventlist_get_capacity( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_automationeventlist_get_ptr( mrb, self )->capacity );
+	return mrb_fixnum_value( class_raylib_automationeventlist_get_ptr( mrb, self )->capacity );
 }
 	
 static mrb_value
 class_raylib_automationeventlist_set_capacity( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_automationeventlist_get_ptr( mrb, self )->capacity = param0;
 	return self;
 }
 	
 static mrb_value
 class_raylib_automationeventlist_get_count( mrb_state *mrb, mrb_value self ) {
-	return mrb_int_value( mrb, class_raylib_automationeventlist_get_ptr( mrb, self )->count );
+	return mrb_fixnum_value( class_raylib_automationeventlist_get_ptr( mrb, self )->count );
 }
 	
 static mrb_value
 class_raylib_automationeventlist_set_count( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_int param0;
+	mrb_get_args( mrb, "i", &param0 );
+	class_raylib_automationeventlist_get_ptr( mrb, self )->count = param0;
 	return self;
 }
 	
@@ -5641,7 +5943,9 @@ class_raylib_automationeventlist_get_events( mrb_state *mrb, mrb_value self ) {
 	
 static mrb_value
 class_raylib_automationeventlist_set_events( mrb_state *mrb, mrb_value self ) {
-	// TODO: set
+	mrb_value param0;
+	mrb_get_args( mrb, "!d", &param0 );
+	class_raylib_automationeventlist_get_ptr( mrb, self )->events = class_raylib_automationevent_get_ptr( mrb, param0 );
 	return self;
 }
 	
@@ -5811,7 +6115,7 @@ static mrb_value
 mod_raylib_set_window_icon( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	SetWindowIcon( *class_raylib_image_get_ptr( mrb, param0 ) );
 
@@ -5929,42 +6233,42 @@ static mrb_value
 mod_raylib_get_screen_width( mrb_state *mrb, mrb_value self ) {
 	int ret = GetScreenWidth();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_get_screen_height( mrb_state *mrb, mrb_value self ) {
 	int ret = GetScreenHeight();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_get_render_width( mrb_state *mrb, mrb_value self ) {
 	int ret = GetRenderWidth();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_get_render_height( mrb_state *mrb, mrb_value self ) {
 	int ret = GetRenderHeight();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_get_monitor_count( mrb_state *mrb, mrb_value self ) {
 	int ret = GetMonitorCount();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_get_current_monitor( mrb_state *mrb, mrb_value self ) {
 	int ret = GetCurrentMonitor();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -5986,7 +6290,7 @@ mod_raylib_get_monitor_width( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetMonitorWidth( param0 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -5997,7 +6301,7 @@ mod_raylib_get_monitor_height( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetMonitorHeight( param0 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -6008,7 +6312,7 @@ mod_raylib_get_monitor_physical_width( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetMonitorPhysicalWidth( param0 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -6019,7 +6323,7 @@ mod_raylib_get_monitor_physical_height( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetMonitorPhysicalHeight( param0 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -6030,7 +6334,7 @@ mod_raylib_get_monitor_refresh_rate( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetMonitorRefreshRate( param0 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -6136,7 +6440,7 @@ static mrb_value
 mod_raylib_clear_background( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Color
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	ClearBackground( *class_raylib_color_get_ptr( mrb, param0 ) );
 
@@ -6161,7 +6465,7 @@ static mrb_value
 mod_raylib_begin_mode2_d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Camera2D
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	BeginMode2D( *class_raylib_camera2d_get_ptr( mrb, param0 ) );
 
@@ -6179,7 +6483,7 @@ static mrb_value
 mod_raylib_begin_mode3_d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Camera3D
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	BeginMode3D( *class_raylib_camera3d_get_ptr( mrb, param0 ) );
 
@@ -6215,7 +6519,7 @@ static mrb_value
 mod_raylib_begin_shader_mode( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Shader
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	BeginShaderMode( *class_raylib_shader_get_ptr( mrb, param0 ) );
 
@@ -6272,7 +6576,7 @@ static mrb_value
 mod_raylib_begin_vr_stereo_mode( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // VrStereoConfig
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	BeginVrStereoMode( *class_raylib_vrstereoconfig_get_ptr( mrb, param0 ) );
 
@@ -6290,7 +6594,7 @@ static mrb_value
 mod_raylib_load_vr_stereo_config( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // VrDeviceInfo
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	VrStereoConfig ret = LoadVrStereoConfig( *class_raylib_vrdeviceinfo_get_ptr( mrb, param0 ) );
 
@@ -6301,7 +6605,7 @@ static mrb_value
 mod_raylib_unload_vr_stereo_config( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // VrStereoConfig
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadVrStereoConfig( *class_raylib_vrstereoconfig_get_ptr( mrb, param0 ) );
 
@@ -6336,7 +6640,7 @@ static mrb_value
 mod_raylib_is_shader_ready( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Shader
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsShaderReady( *class_raylib_shader_get_ptr( mrb, param0 ) );
 
@@ -6348,11 +6652,11 @@ mod_raylib_get_shader_location( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Shader
 	mrb_value param1; // const char*
 
-	mrb_get_args( mrb, "dS", &param0, &param1 );
+	mrb_get_args( mrb, "oS", &param0, &param1 );
 
 	int ret = GetShaderLocation( *class_raylib_shader_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -6360,11 +6664,11 @@ mod_raylib_get_shader_location_attrib( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Shader
 	mrb_value param1; // const char*
 
-	mrb_get_args( mrb, "dS", &param0, &param1 );
+	mrb_get_args( mrb, "oS", &param0, &param1 );
 
 	int ret = GetShaderLocationAttrib( *class_raylib_shader_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -6374,7 +6678,7 @@ mod_raylib_set_shader_value( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // const void*
 	mrb_int param3; // int
 
-	mrb_get_args( mrb, "di!di", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oi!di", &param0, &param1, &param2, &param3 );
 
 	SetShaderValue( *class_raylib_shader_get_ptr( mrb, param0 ), param1, mrb_cptr( param2 ), param3 );
 
@@ -6389,7 +6693,7 @@ mod_raylib_set_shader_value_v( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_int param4; // int
 
-	mrb_get_args( mrb, "di!dii", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oi!dii", &param0, &param1, &param2, &param3, &param4 );
 
 	SetShaderValueV( *class_raylib_shader_get_ptr( mrb, param0 ), param1, mrb_cptr( param2 ), param3, param4 );
 
@@ -6402,7 +6706,7 @@ mod_raylib_set_shader_value_matrix( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // Matrix
 
-	mrb_get_args( mrb, "did", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "oio", &param0, &param1, &param2 );
 
 	SetShaderValueMatrix( *class_raylib_shader_get_ptr( mrb, param0 ), param1, *class_raylib_matrix_get_ptr( mrb, param2 ) );
 
@@ -6415,7 +6719,7 @@ mod_raylib_set_shader_value_texture( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // Texture2D
 
-	mrb_get_args( mrb, "did", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "oid", &param0, &param1, &param2 );
 
 	SetShaderValueTexture( *class_raylib_shader_get_ptr( mrb, param0 ), param1, *class_raylib_texture_get_ptr( mrb, param2 ) );
 
@@ -6426,7 +6730,7 @@ static mrb_value
 mod_raylib_unload_shader( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Shader
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadShader( *class_raylib_shader_get_ptr( mrb, param0 ) );
 
@@ -6438,7 +6742,7 @@ mod_raylib_get_mouse_ray( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector2
 	mrb_value param1; // Camera
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "od", &param0, &param1 );
 
 	Ray ret = GetMouseRay( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_camera3d_get_ptr( mrb, param1 ) );
 
@@ -6460,7 +6764,7 @@ static mrb_value
 mod_raylib_get_camera_matrix2_d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Camera2D
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Matrix ret = GetCameraMatrix2D( *class_raylib_camera2d_get_ptr( mrb, param0 ) );
 
@@ -6472,7 +6776,7 @@ mod_raylib_get_world_to_screen( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector3
 	mrb_value param1; // Camera
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "od", &param0, &param1 );
 
 	Vector2 ret = GetWorldToScreen( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_camera3d_get_ptr( mrb, param1 ) );
 
@@ -6484,7 +6788,7 @@ mod_raylib_get_screen_to_world2_d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector2
 	mrb_value param1; // Camera2D
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	Vector2 ret = GetScreenToWorld2D( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_camera2d_get_ptr( mrb, param1 ) );
 
@@ -6498,7 +6802,7 @@ mod_raylib_get_world_to_screen_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_int param2; // int
 	mrb_int param3; // int
 
-	mrb_get_args( mrb, "ddii", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "odii", &param0, &param1, &param2, &param3 );
 
 	Vector2 ret = GetWorldToScreenEx( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_camera3d_get_ptr( mrb, param1 ), param2, param3 );
 
@@ -6510,7 +6814,7 @@ mod_raylib_get_world_to_screen2_d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector2
 	mrb_value param1; // Camera2D
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	Vector2 ret = GetWorldToScreen2D( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_camera2d_get_ptr( mrb, param1 ) );
 
@@ -6546,7 +6850,7 @@ static mrb_value
 mod_raylib_get_fps( mrb_state *mrb, mrb_value self ) {
 	int ret = GetFPS();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -6594,7 +6898,7 @@ mod_raylib_get_random_value( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetRandomValue( param0, param1 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -6891,7 +7195,7 @@ mod_raylib_get_file_length( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetFileLength( RSTRING_PTR( param0 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7013,7 +7317,7 @@ static mrb_value
 mod_raylib_unload_directory_files( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // FilePathList
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadDirectoryFiles( *class_raylib_filepathlist_get_ptr( mrb, param0 ) );
 
@@ -7038,7 +7342,7 @@ static mrb_value
 mod_raylib_unload_dropped_files( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // FilePathList
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadDroppedFiles( *class_raylib_filepathlist_get_ptr( mrb, param0 ) );
 
@@ -7053,7 +7357,7 @@ mod_raylib_get_file_mod_time( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetFileModTime( RSTRING_PTR( param0 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7134,7 +7438,7 @@ mod_raylib_export_automation_event_list( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AutomationEventList
 	mrb_value param1; // const char*
 
-	mrb_get_args( mrb, "dS", &param0, &param1 );
+	mrb_get_args( mrb, "oS", &param0, &param1 );
 
 	bool ret = ExportAutomationEventList( *class_raylib_automationeventlist_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ) );
 
@@ -7181,7 +7485,7 @@ static mrb_value
 mod_raylib_play_automation_event( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AutomationEvent
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	PlayAutomationEvent( *class_raylib_automationevent_get_ptr( mrb, param0 ) );
 
@@ -7247,14 +7551,14 @@ static mrb_value
 mod_raylib_get_key_pressed( mrb_state *mrb, mrb_value self ) {
 	int ret = GetKeyPressed();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_get_char_pressed( mrb_state *mrb, mrb_value self ) {
 	int ret = GetCharPressed();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7342,7 +7646,7 @@ static mrb_value
 mod_raylib_get_gamepad_button_pressed( mrb_state *mrb, mrb_value self ) {
 	int ret = GetGamepadButtonPressed();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7353,7 +7657,7 @@ mod_raylib_get_gamepad_axis_count( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetGamepadAxisCount( param0 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7376,7 +7680,7 @@ mod_raylib_set_gamepad_mappings( mrb_state *mrb, mrb_value self ) {
 
 	int ret = SetGamepadMappings( RSTRING_PTR( param0 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7427,14 +7731,14 @@ static mrb_value
 mod_raylib_get_mouse_x( mrb_state *mrb, mrb_value self ) {
 	int ret = GetMouseX();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_get_mouse_y( mrb_state *mrb, mrb_value self ) {
 	int ret = GetMouseY();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7516,14 +7820,14 @@ static mrb_value
 mod_raylib_get_touch_x( mrb_state *mrb, mrb_value self ) {
 	int ret = GetTouchX();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_get_touch_y( mrb_state *mrb, mrb_value self ) {
 	int ret = GetTouchY();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7545,14 +7849,14 @@ mod_raylib_get_touch_point_id( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetTouchPointId( param0 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_get_touch_point_count( mrb_state *mrb, mrb_value self ) {
 	int ret = GetTouchPointCount();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7581,7 +7885,7 @@ static mrb_value
 mod_raylib_get_gesture_detected( mrb_state *mrb, mrb_value self ) {
 	int ret = GetGestureDetected();
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -7626,7 +7930,7 @@ mod_raylib_update_camera( mrb_state *mrb, mrb_value self ) {
 
 	mrb_get_args( mrb, "!di", &param0, &param1 );
 
-	UpdateCamera( NULL, param1 );
+	UpdateCamera( class_raylib_camera3d_get_ptr( mrb, param0 ), param1 );
 
 	return self;
 }
@@ -7638,9 +7942,9 @@ mod_raylib_update_camera_pro( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector3
 	mrb_float param3; // float
 
-	mrb_get_args( mrb, "!dddf", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!doof", &param0, &param1, &param2, &param3 );
 
-	UpdateCameraPro( NULL, *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_vector3_get_ptr( mrb, param2 ), param3 );
+	UpdateCameraPro( class_raylib_camera3d_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_vector3_get_ptr( mrb, param2 ), param3 );
 
 	return self;
 }
@@ -7650,7 +7954,7 @@ mod_raylib_set_shapes_texture( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Texture2D
 	mrb_value param1; // Rectangle
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "do", &param0, &param1 );
 
 	SetShapesTexture( *class_raylib_texture_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ) );
 
@@ -7663,7 +7967,7 @@ mod_raylib_draw_pixel( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "iid", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "iio", &param0, &param1, &param2 );
 
 	DrawPixel( param0, param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -7675,7 +7979,7 @@ mod_raylib_draw_pixel_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector2
 	mrb_value param1; // Color
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	DrawPixelV( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ) );
 
@@ -7690,7 +7994,7 @@ mod_raylib_draw_line( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "iiiid", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "iiiio", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawLine( param0, param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -7703,7 +8007,7 @@ mod_raylib_draw_line_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector2
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooo", &param0, &param1, &param2 );
 
 	DrawLineV( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -7717,7 +8021,7 @@ mod_raylib_draw_line_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "ddfd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oofo", &param0, &param1, &param2, &param3 );
 
 	DrawLineEx( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -7730,7 +8034,7 @@ mod_raylib_draw_line_strip( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "!did", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "!dio", &param0, &param1, &param2 );
 
 	DrawLineStrip( class_raylib_vector2_get_ptr( mrb, param0 ), param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -7744,7 +8048,7 @@ mod_raylib_draw_line_bezier( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "ddfd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oofo", &param0, &param1, &param2, &param3 );
 
 	DrawLineBezier( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -7758,7 +8062,7 @@ mod_raylib_draw_circle( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "iifd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "iifo", &param0, &param1, &param2, &param3 );
 
 	DrawCircle( param0, param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -7774,7 +8078,7 @@ mod_raylib_draw_circle_sector( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "dfffid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "offfio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawCircleSector( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -7790,7 +8094,7 @@ mod_raylib_draw_circle_sector_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "dfffid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "offfio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawCircleSectorLines( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -7805,7 +8109,7 @@ mod_raylib_draw_circle_gradient( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Color
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "iifdd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "iifoo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawCircleGradient( param0, param1, param2, *class_raylib_color_get_ptr( mrb, param3 ), *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -7818,7 +8122,7 @@ mod_raylib_draw_circle_v( mrb_state *mrb, mrb_value self ) {
 	mrb_float param1; // float
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "dfd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ofo", &param0, &param1, &param2 );
 
 	DrawCircleV( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -7832,7 +8136,7 @@ mod_raylib_draw_circle_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "iifd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "iifo", &param0, &param1, &param2, &param3 );
 
 	DrawCircleLines( param0, param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -7845,7 +8149,7 @@ mod_raylib_draw_circle_lines_v( mrb_state *mrb, mrb_value self ) {
 	mrb_float param1; // float
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "dfd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ofo", &param0, &param1, &param2 );
 
 	DrawCircleLinesV( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -7860,7 +8164,7 @@ mod_raylib_draw_ellipse( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "iiffd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "iiffo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawEllipse( param0, param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -7875,7 +8179,7 @@ mod_raylib_draw_ellipse_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "iiffd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "iiffo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawEllipseLines( param0, param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -7892,7 +8196,7 @@ mod_raylib_draw_ring( mrb_state *mrb, mrb_value self ) {
 	mrb_int param5; // int
 	mrb_value param6; // Color
 
-	mrb_get_args( mrb, "dffffid", &param0, &param1, &param2, &param3, &param4, &param5, &param6 );
+	mrb_get_args( mrb, "offffio", &param0, &param1, &param2, &param3, &param4, &param5, &param6 );
 
 	DrawRing( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, param3, param4, param5, *class_raylib_color_get_ptr( mrb, param6 ) );
 
@@ -7909,7 +8213,7 @@ mod_raylib_draw_ring_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_int param5; // int
 	mrb_value param6; // Color
 
-	mrb_get_args( mrb, "dffffid", &param0, &param1, &param2, &param3, &param4, &param5, &param6 );
+	mrb_get_args( mrb, "offffio", &param0, &param1, &param2, &param3, &param4, &param5, &param6 );
 
 	DrawRingLines( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, param3, param4, param5, *class_raylib_color_get_ptr( mrb, param6 ) );
 
@@ -7924,7 +8228,7 @@ mod_raylib_draw_rectangle( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "iiiid", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "iiiio", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawRectangle( param0, param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -7937,7 +8241,7 @@ mod_raylib_draw_rectangle_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector2
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooo", &param0, &param1, &param2 );
 
 	DrawRectangleV( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -7949,7 +8253,7 @@ mod_raylib_draw_rectangle_rec( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Rectangle
 	mrb_value param1; // Color
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	DrawRectangleRec( *class_raylib_rectangle_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ) );
 
@@ -7963,7 +8267,7 @@ mod_raylib_draw_rectangle_pro( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "ddfd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oofo", &param0, &param1, &param2, &param3 );
 
 	DrawRectanglePro( *class_raylib_rectangle_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -7979,7 +8283,7 @@ mod_raylib_draw_rectangle_gradient_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param4; // Color
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "iiiidd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "iiiioo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawRectangleGradientV( param0, param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ), *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -7995,7 +8299,7 @@ mod_raylib_draw_rectangle_gradient_h( mrb_state *mrb, mrb_value self ) {
 	mrb_value param4; // Color
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "iiiidd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "iiiioo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawRectangleGradientH( param0, param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ), *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -8010,7 +8314,7 @@ mod_raylib_draw_rectangle_gradient_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Color
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "ddddd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "ooooo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawRectangleGradientEx( *class_raylib_rectangle_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ), *class_raylib_color_get_ptr( mrb, param3 ), *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8025,7 +8329,7 @@ mod_raylib_draw_rectangle_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "iiiid", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "iiiio", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawRectangleLines( param0, param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8038,7 +8342,7 @@ mod_raylib_draw_rectangle_lines_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_float param1; // float
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "dfd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ofo", &param0, &param1, &param2 );
 
 	DrawRectangleLinesEx( *class_raylib_rectangle_get_ptr( mrb, param0 ), param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -8052,7 +8356,7 @@ mod_raylib_draw_rectangle_rounded( mrb_state *mrb, mrb_value self ) {
 	mrb_int param2; // int
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "dfid", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "ofio", &param0, &param1, &param2, &param3 );
 
 	DrawRectangleRounded( *class_raylib_rectangle_get_ptr( mrb, param0 ), param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -8067,7 +8371,7 @@ mod_raylib_draw_rectangle_rounded_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "dfifd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "ofifo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawRectangleRoundedLines( *class_raylib_rectangle_get_ptr( mrb, param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8081,7 +8385,7 @@ mod_raylib_draw_triangle( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector2
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "dddd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oooo", &param0, &param1, &param2, &param3 );
 
 	DrawTriangle( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -8095,7 +8399,7 @@ mod_raylib_draw_triangle_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector2
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "dddd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oooo", &param0, &param1, &param2, &param3 );
 
 	DrawTriangleLines( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -8108,7 +8412,7 @@ mod_raylib_draw_triangle_fan( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "!did", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "!dio", &param0, &param1, &param2 );
 
 	DrawTriangleFan( class_raylib_vector2_get_ptr( mrb, param0 ), param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -8121,7 +8425,7 @@ mod_raylib_draw_triangle_strip( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "!did", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "!dio", &param0, &param1, &param2 );
 
 	DrawTriangleStrip( class_raylib_vector2_get_ptr( mrb, param0 ), param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -8136,7 +8440,7 @@ mod_raylib_draw_poly( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "diffd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oiffo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawPoly( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8151,7 +8455,7 @@ mod_raylib_draw_poly_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "diffd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oiffo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawPolyLines( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8167,7 +8471,7 @@ mod_raylib_draw_poly_lines_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_float param4; // float
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "difffd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "oifffo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawPolyLinesEx( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -8181,7 +8485,7 @@ mod_raylib_draw_spline_linear( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!difd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!difo", &param0, &param1, &param2, &param3 );
 
 	DrawSplineLinear( class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -8195,7 +8499,7 @@ mod_raylib_draw_spline_basis( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!difd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!difo", &param0, &param1, &param2, &param3 );
 
 	DrawSplineBasis( class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -8209,7 +8513,7 @@ mod_raylib_draw_spline_catmull_rom( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!difd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!difo", &param0, &param1, &param2, &param3 );
 
 	DrawSplineCatmullRom( class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -8223,7 +8527,7 @@ mod_raylib_draw_spline_bezier_quadratic( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!difd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!difo", &param0, &param1, &param2, &param3 );
 
 	DrawSplineBezierQuadratic( class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -8237,7 +8541,7 @@ mod_raylib_draw_spline_bezier_cubic( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!difd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!difo", &param0, &param1, &param2, &param3 );
 
 	DrawSplineBezierCubic( class_raylib_vector2_get_ptr( mrb, param0 ), param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -8251,7 +8555,7 @@ mod_raylib_draw_spline_segment_linear( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "ddfd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oofo", &param0, &param1, &param2, &param3 );
 
 	DrawSplineSegmentLinear( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -8267,7 +8571,7 @@ mod_raylib_draw_spline_segment_basis( mrb_state *mrb, mrb_value self ) {
 	mrb_float param4; // float
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "ddddfd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "oooofo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawSplineSegmentBasis( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -8283,7 +8587,7 @@ mod_raylib_draw_spline_segment_catmull_rom( mrb_state *mrb, mrb_value self ) {
 	mrb_float param4; // float
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "ddddfd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "oooofo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawSplineSegmentCatmullRom( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -8298,7 +8602,7 @@ mod_raylib_draw_spline_segment_bezier_quadratic( mrb_state *mrb, mrb_value self 
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "dddfd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "ooofo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawSplineSegmentBezierQuadratic( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8314,7 +8618,7 @@ mod_raylib_draw_spline_segment_bezier_cubic( mrb_state *mrb, mrb_value self ) {
 	mrb_float param4; // float
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "ddddfd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "oooofo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawSplineSegmentBezierCubic( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -8327,7 +8631,7 @@ mod_raylib_get_spline_point_linear( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector2
 	mrb_float param2; // float
 
-	mrb_get_args( mrb, "ddf", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "oof", &param0, &param1, &param2 );
 
 	Vector2 ret = GetSplinePointLinear( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), param2 );
 
@@ -8342,7 +8646,7 @@ mod_raylib_get_spline_point_basis( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Vector2
 	mrb_float param4; // float
 
-	mrb_get_args( mrb, "ddddf", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oooof", &param0, &param1, &param2, &param3, &param4 );
 
 	Vector2 ret = GetSplinePointBasis( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4 );
 
@@ -8357,7 +8661,7 @@ mod_raylib_get_spline_point_catmull_rom( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Vector2
 	mrb_float param4; // float
 
-	mrb_get_args( mrb, "ddddf", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oooof", &param0, &param1, &param2, &param3, &param4 );
 
 	Vector2 ret = GetSplinePointCatmullRom( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4 );
 
@@ -8371,7 +8675,7 @@ mod_raylib_get_spline_point_bezier_quad( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector2
 	mrb_float param3; // float
 
-	mrb_get_args( mrb, "dddf", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "ooof", &param0, &param1, &param2, &param3 );
 
 	Vector2 ret = GetSplinePointBezierQuad( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), param3 );
 
@@ -8386,7 +8690,7 @@ mod_raylib_get_spline_point_bezier_cubic( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Vector2
 	mrb_float param4; // float
 
-	mrb_get_args( mrb, "ddddf", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oooof", &param0, &param1, &param2, &param3, &param4 );
 
 	Vector2 ret = GetSplinePointBezierCubic( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4 );
 
@@ -8398,7 +8702,7 @@ mod_raylib_check_collision_recs( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Rectangle
 	mrb_value param1; // Rectangle
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	bool ret = CheckCollisionRecs( *class_raylib_rectangle_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ) );
 
@@ -8412,7 +8716,7 @@ mod_raylib_check_collision_circles( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector2
 	mrb_float param3; // float
 
-	mrb_get_args( mrb, "dfdf", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "ofof", &param0, &param1, &param2, &param3 );
 
 	bool ret = CheckCollisionCircles( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, *class_raylib_vector2_get_ptr( mrb, param2 ), param3 );
 
@@ -8425,7 +8729,7 @@ mod_raylib_check_collision_circle_rec( mrb_state *mrb, mrb_value self ) {
 	mrb_float param1; // float
 	mrb_value param2; // Rectangle
 
-	mrb_get_args( mrb, "dfd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ofo", &param0, &param1, &param2 );
 
 	bool ret = CheckCollisionCircleRec( *class_raylib_vector2_get_ptr( mrb, param0 ), param1, *class_raylib_rectangle_get_ptr( mrb, param2 ) );
 
@@ -8437,7 +8741,7 @@ mod_raylib_check_collision_point_rec( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector2
 	mrb_value param1; // Rectangle
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	bool ret = CheckCollisionPointRec( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ) );
 
@@ -8450,7 +8754,7 @@ mod_raylib_check_collision_point_circle( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector2
 	mrb_float param2; // float
 
-	mrb_get_args( mrb, "ddf", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "oof", &param0, &param1, &param2 );
 
 	bool ret = CheckCollisionPointCircle( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), param2 );
 
@@ -8464,7 +8768,7 @@ mod_raylib_check_collision_point_triangle( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector2
 	mrb_value param3; // Vector2
 
-	mrb_get_args( mrb, "dddd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oooo", &param0, &param1, &param2, &param3 );
 
 	bool ret = CheckCollisionPointTriangle( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ) );
 
@@ -8477,7 +8781,7 @@ mod_raylib_check_collision_point_poly( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector2*
 	mrb_int param2; // int
 
-	mrb_get_args( mrb, "d!di", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "o!di", &param0, &param1, &param2 );
 
 	bool ret = CheckCollisionPointPoly( *class_raylib_vector2_get_ptr( mrb, param0 ), class_raylib_vector2_get_ptr( mrb, param1 ), param2 );
 
@@ -8492,7 +8796,7 @@ mod_raylib_check_collision_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Vector2
 	mrb_value param4; // Vector2*
 
-	mrb_get_args( mrb, "dddd!d", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oooo!d", &param0, &param1, &param2, &param3, &param4 );
 
 	bool ret = CheckCollisionLines( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), class_raylib_vector2_get_ptr( mrb, param4 ) );
 
@@ -8506,7 +8810,7 @@ mod_raylib_check_collision_point_line( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector2
 	mrb_int param3; // int
 
-	mrb_get_args( mrb, "dddi", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oooi", &param0, &param1, &param2, &param3 );
 
 	bool ret = CheckCollisionPointLine( *class_raylib_vector2_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), param3 );
 
@@ -8518,7 +8822,7 @@ mod_raylib_get_collision_rec( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Rectangle
 	mrb_value param1; // Rectangle
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	Rectangle ret = GetCollisionRec( *class_raylib_rectangle_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ) );
 
@@ -8611,7 +8915,7 @@ static mrb_value
 mod_raylib_is_image_ready( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsImageReady( *class_raylib_image_get_ptr( mrb, param0 ) );
 
@@ -8622,7 +8926,7 @@ static mrb_value
 mod_raylib_unload_image( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadImage( *class_raylib_image_get_ptr( mrb, param0 ) );
 
@@ -8634,7 +8938,7 @@ mod_raylib_export_image( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 	mrb_value param1; // const char*
 
-	mrb_get_args( mrb, "dS", &param0, &param1 );
+	mrb_get_args( mrb, "oS", &param0, &param1 );
 
 	bool ret = ExportImage( *class_raylib_image_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ) );
 
@@ -8647,7 +8951,7 @@ mod_raylib_export_image_to_memory( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // const char*
 	mrb_value param2; // int*
 
-	mrb_get_args( mrb, "dS*", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "oS*", &param0, &param1, &param2 );
 
 	unsigned char* ret = ExportImageToMemory( *class_raylib_image_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ), mrb_cptr( param2 ) );
 
@@ -8659,7 +8963,7 @@ mod_raylib_export_image_as_code( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 	mrb_value param1; // const char*
 
-	mrb_get_args( mrb, "dS", &param0, &param1 );
+	mrb_get_args( mrb, "oS", &param0, &param1 );
 
 	bool ret = ExportImageAsCode( *class_raylib_image_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ) );
 
@@ -8672,7 +8976,7 @@ mod_raylib_gen_image_color( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "iid", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "iio", &param0, &param1, &param2 );
 
 	Image ret = GenImageColor( param0, param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -8687,7 +8991,7 @@ mod_raylib_gen_image_gradient_linear( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Color
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "iiidd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "iiioo", &param0, &param1, &param2, &param3, &param4 );
 
 	Image ret = GenImageGradientLinear( param0, param1, param2, *class_raylib_color_get_ptr( mrb, param3 ), *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8702,7 +9006,7 @@ mod_raylib_gen_image_gradient_radial( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Color
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "iifdd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "iifoo", &param0, &param1, &param2, &param3, &param4 );
 
 	Image ret = GenImageGradientRadial( param0, param1, param2, *class_raylib_color_get_ptr( mrb, param3 ), *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8717,7 +9021,7 @@ mod_raylib_gen_image_gradient_square( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Color
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "iifdd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "iifoo", &param0, &param1, &param2, &param3, &param4 );
 
 	Image ret = GenImageGradientSquare( param0, param1, param2, *class_raylib_color_get_ptr( mrb, param3 ), *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8733,7 +9037,7 @@ mod_raylib_gen_image_checked( mrb_state *mrb, mrb_value self ) {
 	mrb_value param4; // Color
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "iiiidd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "iiiioo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	Image ret = GenImageChecked( param0, param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ), *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -8798,7 +9102,7 @@ static mrb_value
 mod_raylib_image_copy( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Image ret = ImageCopy( *class_raylib_image_get_ptr( mrb, param0 ) );
 
@@ -8810,7 +9114,7 @@ mod_raylib_image_from_image( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 	mrb_value param1; // Rectangle
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	Image ret = ImageFromImage( *class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ) );
 
@@ -8823,7 +9127,7 @@ mod_raylib_image_text( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "Sid", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "Sio", &param0, &param1, &param2 );
 
 	Image ret = ImageText( RSTRING_PTR( param0 ), param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -8838,7 +9142,7 @@ mod_raylib_image_text_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "dSffd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oSffo", &param0, &param1, &param2, &param3, &param4 );
 
 	Image ret = ImageTextEx( *class_raylib_font_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ), param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -8862,7 +9166,7 @@ mod_raylib_image_to_pot( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image*
 	mrb_value param1; // Color
 
-	mrb_get_args( mrb, "!dd", &param0, &param1 );
+	mrb_get_args( mrb, "!do", &param0, &param1 );
 
 	ImageToPOT( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ) );
 
@@ -8874,7 +9178,7 @@ mod_raylib_image_crop( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image*
 	mrb_value param1; // Rectangle
 
-	mrb_get_args( mrb, "!dd", &param0, &param1 );
+	mrb_get_args( mrb, "!do", &param0, &param1 );
 
 	ImageCrop( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ) );
 
@@ -8899,7 +9203,7 @@ mod_raylib_image_alpha_clear( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Color
 	mrb_float param2; // float
 
-	mrb_get_args( mrb, "!ddf", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "!dof", &param0, &param1, &param2 );
 
 	ImageAlphaClear( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ), param2 );
 
@@ -8911,7 +9215,7 @@ mod_raylib_image_alpha_mask( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image*
 	mrb_value param1; // Image
 
-	mrb_get_args( mrb, "!dd", &param0, &param1 );
+	mrb_get_args( mrb, "!do", &param0, &param1 );
 
 	ImageAlphaMask( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_image_get_ptr( mrb, param1 ) );
 
@@ -8976,7 +9280,7 @@ mod_raylib_image_resize_canvas( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "!diiiid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "!diiiio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	ImageResizeCanvas( class_raylib_image_get_ptr( mrb, param0 ), param1, param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -9070,7 +9374,7 @@ mod_raylib_image_color_tint( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image*
 	mrb_value param1; // Color
 
-	mrb_get_args( mrb, "!dd", &param0, &param1 );
+	mrb_get_args( mrb, "!do", &param0, &param1 );
 
 	ImageColorTint( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ) );
 
@@ -9129,7 +9433,7 @@ mod_raylib_image_color_replace( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Color
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "!ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "!doo", &param0, &param1, &param2 );
 
 	ImageColorReplace( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -9140,7 +9444,7 @@ static mrb_value
 mod_raylib_load_image_colors( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Color* ret = LoadImageColors( *class_raylib_image_get_ptr( mrb, param0 ) );
 
@@ -9153,7 +9457,7 @@ mod_raylib_load_image_palette( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // int*
 
-	mrb_get_args( mrb, "di*", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "oi*", &param0, &param1, &param2 );
 
 	Color* ret = LoadImagePalette( *class_raylib_image_get_ptr( mrb, param0 ), param1, mrb_cptr( param2 ) );
 
@@ -9187,7 +9491,7 @@ mod_raylib_get_image_alpha_border( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	Rectangle ret = GetImageAlphaBorder( *class_raylib_image_get_ptr( mrb, param0 ), param1 );
 
@@ -9200,7 +9504,7 @@ mod_raylib_get_image_color( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_int param2; // int
 
-	mrb_get_args( mrb, "dii", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "oii", &param0, &param1, &param2 );
 
 	Color ret = GetImageColor( *class_raylib_image_get_ptr( mrb, param0 ), param1, param2 );
 
@@ -9212,7 +9516,7 @@ mod_raylib_image_clear_background( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image*
 	mrb_value param1; // Color
 
-	mrb_get_args( mrb, "!dd", &param0, &param1 );
+	mrb_get_args( mrb, "!do", &param0, &param1 );
 
 	ImageClearBackground( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ) );
 
@@ -9226,7 +9530,7 @@ mod_raylib_image_draw_pixel( mrb_state *mrb, mrb_value self ) {
 	mrb_int param2; // int
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!diid", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!diio", &param0, &param1, &param2, &param3 );
 
 	ImageDrawPixel( class_raylib_image_get_ptr( mrb, param0 ), param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -9239,7 +9543,7 @@ mod_raylib_image_draw_pixel_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector2
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "!ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "!doo", &param0, &param1, &param2 );
 
 	ImageDrawPixelV( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -9255,7 +9559,7 @@ mod_raylib_image_draw_line( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "!diiiid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "!diiiio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	ImageDrawLine( class_raylib_image_get_ptr( mrb, param0 ), param1, param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -9269,7 +9573,7 @@ mod_raylib_image_draw_line_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector2
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!dddd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!dooo", &param0, &param1, &param2, &param3 );
 
 	ImageDrawLineV( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -9284,7 +9588,7 @@ mod_raylib_image_draw_circle( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "!diiid", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "!diiio", &param0, &param1, &param2, &param3, &param4 );
 
 	ImageDrawCircle( class_raylib_image_get_ptr( mrb, param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -9298,7 +9602,7 @@ mod_raylib_image_draw_circle_v( mrb_state *mrb, mrb_value self ) {
 	mrb_int param2; // int
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!ddid", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!doio", &param0, &param1, &param2, &param3 );
 
 	ImageDrawCircleV( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -9313,7 +9617,7 @@ mod_raylib_image_draw_circle_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "!diiid", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "!diiio", &param0, &param1, &param2, &param3, &param4 );
 
 	ImageDrawCircleLines( class_raylib_image_get_ptr( mrb, param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -9327,7 +9631,7 @@ mod_raylib_image_draw_circle_lines_v( mrb_state *mrb, mrb_value self ) {
 	mrb_int param2; // int
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!ddid", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!doio", &param0, &param1, &param2, &param3 );
 
 	ImageDrawCircleLinesV( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -9343,7 +9647,7 @@ mod_raylib_image_draw_rectangle( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "!diiiid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "!diiiio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	ImageDrawRectangle( class_raylib_image_get_ptr( mrb, param0 ), param1, param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -9357,7 +9661,7 @@ mod_raylib_image_draw_rectangle_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector2
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!dddd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!dooo", &param0, &param1, &param2, &param3 );
 
 	ImageDrawRectangleV( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -9370,7 +9674,7 @@ mod_raylib_image_draw_rectangle_rec( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Rectangle
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "!ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "!doo", &param0, &param1, &param2 );
 
 	ImageDrawRectangleRec( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -9384,7 +9688,7 @@ mod_raylib_image_draw_rectangle_lines( mrb_state *mrb, mrb_value self ) {
 	mrb_int param2; // int
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "!ddid", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "!doio", &param0, &param1, &param2, &param3 );
 
 	ImageDrawRectangleLines( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ), param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -9399,7 +9703,7 @@ mod_raylib_image_draw( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Rectangle
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "!ddddd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "!doooo", &param0, &param1, &param2, &param3, &param4 );
 
 	ImageDraw( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_image_get_ptr( mrb, param1 ), *class_raylib_rectangle_get_ptr( mrb, param2 ), *class_raylib_rectangle_get_ptr( mrb, param3 ), *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -9415,7 +9719,7 @@ mod_raylib_image_draw_text( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "!dSiiid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "!dSiiio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	ImageDrawText( class_raylib_image_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ), param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -9432,7 +9736,7 @@ mod_raylib_image_draw_text_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_float param5; // float
 	mrb_value param6; // Color
 
-	mrb_get_args( mrb, "!ddSdffd", &param0, &param1, &param2, &param3, &param4, &param5, &param6 );
+	mrb_get_args( mrb, "!doSoffo", &param0, &param1, &param2, &param3, &param4, &param5, &param6 );
 
 	ImageDrawTextEx( class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_font_get_ptr( mrb, param1 ), RSTRING_PTR( param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4, param5, *class_raylib_color_get_ptr( mrb, param6 ) );
 
@@ -9454,7 +9758,7 @@ static mrb_value
 mod_raylib_load_texture_from_image( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Texture2D ret = LoadTextureFromImage( *class_raylib_image_get_ptr( mrb, param0 ) );
 
@@ -9466,7 +9770,7 @@ mod_raylib_load_texture_cubemap( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 	mrb_int param1; // int
 
-	mrb_get_args( mrb, "di", &param0, &param1 );
+	mrb_get_args( mrb, "oi", &param0, &param1 );
 
 	TextureCubemap ret = LoadTextureCubemap( *class_raylib_image_get_ptr( mrb, param0 ), param1 );
 
@@ -9547,7 +9851,7 @@ mod_raylib_update_texture_rec( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Rectangle
 	mrb_value param2; // const void*
 
-	mrb_get_args( mrb, "dd!d", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "do!d", &param0, &param1, &param2 );
 
 	UpdateTextureRec( *class_raylib_texture_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ), mrb_cptr( param2 ) );
 
@@ -9560,7 +9864,7 @@ mod_raylib_gen_texture_mipmaps( mrb_state *mrb, mrb_value self ) {
 
 	mrb_get_args( mrb, "!d", &param0 );
 
-	GenTextureMipmaps( NULL );
+	GenTextureMipmaps( class_raylib_texture_get_ptr( mrb, param0 ) );
 
 	return self;
 }
@@ -9596,7 +9900,7 @@ mod_raylib_draw_texture( mrb_state *mrb, mrb_value self ) {
 	mrb_int param2; // int
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "diid", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "diio", &param0, &param1, &param2, &param3 );
 
 	DrawTexture( *class_raylib_texture_get_ptr( mrb, param0 ), param1, param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -9609,7 +9913,7 @@ mod_raylib_draw_texture_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector2
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "doo", &param0, &param1, &param2 );
 
 	DrawTextureV( *class_raylib_texture_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -9624,7 +9928,7 @@ mod_raylib_draw_texture_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "ddffd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "doffo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawTextureEx( *class_raylib_texture_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -9638,7 +9942,7 @@ mod_raylib_draw_texture_rec( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector2
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "dddd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "dooo", &param0, &param1, &param2, &param3 );
 
 	DrawTextureRec( *class_raylib_texture_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -9654,7 +9958,7 @@ mod_raylib_draw_texture_pro( mrb_state *mrb, mrb_value self ) {
 	mrb_float param4; // float
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "ddddfd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "dooofo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawTexturePro( *class_raylib_texture_get_ptr( mrb, param0 ), *class_raylib_rectangle_get_ptr( mrb, param1 ), *class_raylib_rectangle_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -9670,7 +9974,7 @@ mod_raylib_draw_texture_npatch( mrb_state *mrb, mrb_value self ) {
 	mrb_float param4; // float
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "ddddfd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "dooofo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawTextureNPatch( *class_raylib_texture_get_ptr( mrb, param0 ), *class_raylib_npatchinfo_get_ptr( mrb, param1 ), *class_raylib_rectangle_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -9682,7 +9986,7 @@ mod_raylib_fade( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Color
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	Color ret = Fade( *class_raylib_color_get_ptr( mrb, param0 ), param1 );
 
@@ -9693,18 +9997,18 @@ static mrb_value
 mod_raylib_color_to_int( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Color
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	int ret = ColorToInt( *class_raylib_color_get_ptr( mrb, param0 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
 mod_raylib_color_normalize( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Color
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Vector4 ret = ColorNormalize( *class_raylib_color_get_ptr( mrb, param0 ) );
 
@@ -9715,7 +10019,7 @@ static mrb_value
 mod_raylib_color_from_normalized( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector4
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Color ret = ColorFromNormalized( *class_raylib_vector4_get_ptr( mrb, param0 ) );
 
@@ -9726,7 +10030,7 @@ static mrb_value
 mod_raylib_color_to_hsv( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Color
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Vector3 ret = ColorToHSV( *class_raylib_color_get_ptr( mrb, param0 ) );
 
@@ -9751,7 +10055,7 @@ mod_raylib_color_tint( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Color
 	mrb_value param1; // Color
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	Color ret = ColorTint( *class_raylib_color_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ) );
 
@@ -9763,7 +10067,7 @@ mod_raylib_color_brightness( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Color
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	Color ret = ColorBrightness( *class_raylib_color_get_ptr( mrb, param0 ), param1 );
 
@@ -9775,7 +10079,7 @@ mod_raylib_color_contrast( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Color
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	Color ret = ColorContrast( *class_raylib_color_get_ptr( mrb, param0 ), param1 );
 
@@ -9787,7 +10091,7 @@ mod_raylib_color_alpha( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Color
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	Color ret = ColorAlpha( *class_raylib_color_get_ptr( mrb, param0 ), param1 );
 
@@ -9800,7 +10104,7 @@ mod_raylib_color_alpha_blend( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Color
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooo", &param0, &param1, &param2 );
 
 	Color ret = ColorAlphaBlend( *class_raylib_color_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -9836,7 +10140,7 @@ mod_raylib_set_pixel_color( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Color
 	mrb_int param2; // int
 
-	mrb_get_args( mrb, "ddi", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "doi", &param0, &param1, &param2 );
 
 	SetPixelColor( mrb_cptr( param0 ), *class_raylib_color_get_ptr( mrb, param1 ), param2 );
 
@@ -9853,7 +10157,7 @@ mod_raylib_get_pixel_data_size( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetPixelDataSize( param0, param1, param2 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -9894,7 +10198,7 @@ mod_raylib_load_font_from_image( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Color
 	mrb_int param2; // int
 
-	mrb_get_args( mrb, "ddi", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooi", &param0, &param1, &param2 );
 
 	Font ret = LoadFontFromImage( *class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ), param2 );
 
@@ -9921,7 +10225,7 @@ static mrb_value
 mod_raylib_is_font_ready( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Font
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsFontReady( *class_raylib_font_get_ptr( mrb, param0 ) );
 
@@ -9976,7 +10280,7 @@ static mrb_value
 mod_raylib_unload_font( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Font
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadFont( *class_raylib_font_get_ptr( mrb, param0 ) );
 
@@ -9988,7 +10292,7 @@ mod_raylib_export_font_as_code( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Font
 	mrb_value param1; // const char*
 
-	mrb_get_args( mrb, "dS", &param0, &param1 );
+	mrb_get_args( mrb, "oS", &param0, &param1 );
 
 	bool ret = ExportFontAsCode( *class_raylib_font_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ) );
 
@@ -10015,7 +10319,7 @@ mod_raylib_draw_text( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "Siiid", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "Siiio", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawText( RSTRING_PTR( param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -10031,7 +10335,7 @@ mod_raylib_draw_text_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_float param4; // float
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "dSdffd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "oSoffo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawTextEx( *class_raylib_font_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10049,7 +10353,7 @@ mod_raylib_draw_text_pro( mrb_state *mrb, mrb_value self ) {
 	mrb_float param6; // float
 	mrb_value param7; // Color
 
-	mrb_get_args( mrb, "dSddfffd", &param0, &param1, &param2, &param3, &param4, &param5, &param6, &param7 );
+	mrb_get_args( mrb, "oSoofffo", &param0, &param1, &param2, &param3, &param4, &param5, &param6, &param7 );
 
 	DrawTextPro( *class_raylib_font_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ), *class_raylib_vector2_get_ptr( mrb, param2 ), *class_raylib_vector2_get_ptr( mrb, param3 ), param4, param5, param6, *class_raylib_color_get_ptr( mrb, param7 ) );
 
@@ -10064,7 +10368,7 @@ mod_raylib_draw_text_codepoint( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "didfd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oiofo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawTextCodepoint( *class_raylib_font_get_ptr( mrb, param0 ), param1, *class_raylib_vector2_get_ptr( mrb, param2 ), param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -10081,7 +10385,7 @@ mod_raylib_draw_text_codepoints( mrb_state *mrb, mrb_value self ) {
 	mrb_float param5; // float
 	mrb_value param6; // Color
 
-	mrb_get_args( mrb, "d!didffd", &param0, &param1, &param2, &param3, &param4, &param5, &param6 );
+	mrb_get_args( mrb, "o!dioffo", &param0, &param1, &param2, &param3, &param4, &param5, &param6 );
 
 	DrawTextCodepoints( *class_raylib_font_get_ptr( mrb, param0 ), NULL, param2, *class_raylib_vector2_get_ptr( mrb, param3 ), param4, param5, *class_raylib_color_get_ptr( mrb, param6 ) );
 
@@ -10108,7 +10412,7 @@ mod_raylib_measure_text( mrb_state *mrb, mrb_value self ) {
 
 	int ret = MeasureText( RSTRING_PTR( param0 ), param1 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10118,7 +10422,7 @@ mod_raylib_measure_text_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_float param3; // float
 
-	mrb_get_args( mrb, "dSff", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oSff", &param0, &param1, &param2, &param3 );
 
 	Vector2 ret = MeasureTextEx( *class_raylib_font_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ), param2, param3 );
 
@@ -10130,11 +10434,11 @@ mod_raylib_get_glyph_index( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Font
 	mrb_int param1; // int
 
-	mrb_get_args( mrb, "di", &param0, &param1 );
+	mrb_get_args( mrb, "oi", &param0, &param1 );
 
 	int ret = GetGlyphIndex( *class_raylib_font_get_ptr( mrb, param0 ), param1 );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10142,7 +10446,7 @@ mod_raylib_get_glyph_info( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Font
 	mrb_int param1; // int
 
-	mrb_get_args( mrb, "di", &param0, &param1 );
+	mrb_get_args( mrb, "oi", &param0, &param1 );
 
 	GlyphInfo ret = GetGlyphInfo( *class_raylib_font_get_ptr( mrb, param0 ), param1 );
 
@@ -10154,7 +10458,7 @@ mod_raylib_get_glyph_atlas_rec( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Font
 	mrb_int param1; // int
 
-	mrb_get_args( mrb, "di", &param0, &param1 );
+	mrb_get_args( mrb, "oi", &param0, &param1 );
 
 	Rectangle ret = GetGlyphAtlasRec( *class_raylib_font_get_ptr( mrb, param0 ), param1 );
 
@@ -10215,7 +10519,7 @@ mod_raylib_get_codepoint_count( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetCodepointCount( RSTRING_PTR( param0 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10227,7 +10531,7 @@ mod_raylib_get_codepoint( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetCodepoint( RSTRING_PTR( param0 ), mrb_cptr( param1 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10239,7 +10543,7 @@ mod_raylib_get_codepoint_next( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetCodepointNext( RSTRING_PTR( param0 ), mrb_cptr( param1 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10251,7 +10555,7 @@ mod_raylib_get_codepoint_previous( mrb_state *mrb, mrb_value self ) {
 
 	int ret = GetCodepointPrevious( RSTRING_PTR( param0 ), mrb_cptr( param1 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10275,7 +10579,7 @@ mod_raylib_text_copy( mrb_state *mrb, mrb_value self ) {
 
 	int ret = TextCopy( mrb_cptr( param0 ), RSTRING_PTR( param1 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10298,7 +10602,7 @@ mod_raylib_text_length( mrb_state *mrb, mrb_value self ) {
 
 	unsigned int ret = TextLength( RSTRING_PTR( param0 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10399,7 +10703,7 @@ mod_raylib_text_find_index( mrb_state *mrb, mrb_value self ) {
 
 	int ret = TextFindIndex( RSTRING_PTR( param0 ), RSTRING_PTR( param1 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10443,7 +10747,7 @@ mod_raylib_text_to_integer( mrb_state *mrb, mrb_value self ) {
 
 	int ret = TextToInteger( RSTRING_PTR( param0 ) );
 
-	return mrb_int_value( mrb, ret );
+	return mrb_fixnum_value( ret );
 }
 
 static mrb_value
@@ -10452,7 +10756,7 @@ mod_raylib_draw_line3_d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector3
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooo", &param0, &param1, &param2 );
 
 	DrawLine3D( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -10464,7 +10768,7 @@ mod_raylib_draw_point3_d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Vector3
 	mrb_value param1; // Color
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	DrawPoint3D( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ) );
 
@@ -10479,7 +10783,7 @@ mod_raylib_draw_circle3_d( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "dfdfd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "ofofo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawCircle3D( *class_raylib_vector3_get_ptr( mrb, param0 ), param1, *class_raylib_vector3_get_ptr( mrb, param2 ), param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -10493,7 +10797,7 @@ mod_raylib_draw_triangle3_d( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector3
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "dddd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oooo", &param0, &param1, &param2, &param3 );
 
 	DrawTriangle3D( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_vector3_get_ptr( mrb, param2 ), *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -10506,7 +10810,7 @@ mod_raylib_draw_triangle_strip3_d( mrb_state *mrb, mrb_value self ) {
 	mrb_int param1; // int
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "!did", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "!dio", &param0, &param1, &param2 );
 
 	DrawTriangleStrip3D( class_raylib_vector3_get_ptr( mrb, param0 ), param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -10521,7 +10825,7 @@ mod_raylib_draw_cube( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "dfffd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "offfo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawCube( *class_raylib_vector3_get_ptr( mrb, param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -10534,7 +10838,7 @@ mod_raylib_draw_cube_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector3
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooo", &param0, &param1, &param2 );
 
 	DrawCubeV( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -10549,7 +10853,7 @@ mod_raylib_draw_cube_wires( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "dfffd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "offfo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawCubeWires( *class_raylib_vector3_get_ptr( mrb, param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -10562,7 +10866,7 @@ mod_raylib_draw_cube_wires_v( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector3
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooo", &param0, &param1, &param2 );
 
 	DrawCubeWiresV( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -10575,7 +10879,7 @@ mod_raylib_draw_sphere( mrb_state *mrb, mrb_value self ) {
 	mrb_float param1; // float
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "dfd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ofo", &param0, &param1, &param2 );
 
 	DrawSphere( *class_raylib_vector3_get_ptr( mrb, param0 ), param1, *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -10590,7 +10894,7 @@ mod_raylib_draw_sphere_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "dfiid", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "ofiio", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawSphereEx( *class_raylib_vector3_get_ptr( mrb, param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -10605,7 +10909,7 @@ mod_raylib_draw_sphere_wires( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "dfiid", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "ofiio", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawSphereWires( *class_raylib_vector3_get_ptr( mrb, param0 ), param1, param2, param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -10621,7 +10925,7 @@ mod_raylib_draw_cylinder( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "dfffid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "offfio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawCylinder( *class_raylib_vector3_get_ptr( mrb, param0 ), param1, param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10637,7 +10941,7 @@ mod_raylib_draw_cylinder_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "ddffid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "ooffio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawCylinderEx( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10653,7 +10957,7 @@ mod_raylib_draw_cylinder_wires( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "dfffid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "offfio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawCylinderWires( *class_raylib_vector3_get_ptr( mrb, param0 ), param1, param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10669,7 +10973,7 @@ mod_raylib_draw_cylinder_wires_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "ddffid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "ooffio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawCylinderWiresEx( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10685,7 +10989,7 @@ mod_raylib_draw_capsule( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "ddfiid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "oofiio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawCapsule( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10701,7 +11005,7 @@ mod_raylib_draw_capsule_wires( mrb_state *mrb, mrb_value self ) {
 	mrb_int param4; // int
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "ddfiid", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "oofiio", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawCapsuleWires( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), param2, param3, param4, *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10714,7 +11018,7 @@ mod_raylib_draw_plane( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector2
 	mrb_value param2; // Color
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooo", &param0, &param1, &param2 );
 
 	DrawPlane( *class_raylib_vector3_get_ptr( mrb, param0 ), *class_raylib_vector2_get_ptr( mrb, param1 ), *class_raylib_color_get_ptr( mrb, param2 ) );
 
@@ -10726,7 +11030,7 @@ mod_raylib_draw_ray( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Ray
 	mrb_value param1; // Color
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	DrawRay( *class_raylib_ray_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ) );
 
@@ -10760,7 +11064,7 @@ static mrb_value
 mod_raylib_load_model_from_mesh( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Mesh
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Model ret = LoadModelFromMesh( *class_raylib_mesh_get_ptr( mrb, param0 ) );
 
@@ -10771,7 +11075,7 @@ static mrb_value
 mod_raylib_is_model_ready( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Model
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsModelReady( *class_raylib_model_get_ptr( mrb, param0 ) );
 
@@ -10782,7 +11086,7 @@ static mrb_value
 mod_raylib_unload_model( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Model
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadModel( *class_raylib_model_get_ptr( mrb, param0 ) );
 
@@ -10793,7 +11097,7 @@ static mrb_value
 mod_raylib_get_model_bounding_box( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Model
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	BoundingBox ret = GetModelBoundingBox( *class_raylib_model_get_ptr( mrb, param0 ) );
 
@@ -10807,7 +11111,7 @@ mod_raylib_draw_model( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "ddfd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oofo", &param0, &param1, &param2, &param3 );
 
 	DrawModel( *class_raylib_model_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -10823,7 +11127,7 @@ mod_raylib_draw_model_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_value param4; // Vector3
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "dddfdd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "ooofoo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawModelEx( *class_raylib_model_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_vector3_get_ptr( mrb, param2 ), param3, *class_raylib_vector3_get_ptr( mrb, param4 ), *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10837,7 +11141,7 @@ mod_raylib_draw_model_wires( mrb_state *mrb, mrb_value self ) {
 	mrb_float param2; // float
 	mrb_value param3; // Color
 
-	mrb_get_args( mrb, "ddfd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oofo", &param0, &param1, &param2, &param3 );
 
 	DrawModelWires( *class_raylib_model_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), param2, *class_raylib_color_get_ptr( mrb, param3 ) );
 
@@ -10853,7 +11157,7 @@ mod_raylib_draw_model_wires_ex( mrb_state *mrb, mrb_value self ) {
 	mrb_value param4; // Vector3
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "dddfdd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "ooofoo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawModelWiresEx( *class_raylib_model_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_vector3_get_ptr( mrb, param2 ), param3, *class_raylib_vector3_get_ptr( mrb, param4 ), *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10865,7 +11169,7 @@ mod_raylib_draw_bounding_box( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // BoundingBox
 	mrb_value param1; // Color
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	DrawBoundingBox( *class_raylib_boundingbox_get_ptr( mrb, param0 ), *class_raylib_color_get_ptr( mrb, param1 ) );
 
@@ -10880,7 +11184,7 @@ mod_raylib_draw_billboard( mrb_state *mrb, mrb_value self ) {
 	mrb_float param3; // float
 	mrb_value param4; // Color
 
-	mrb_get_args( mrb, "dddfd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "ddofo", &param0, &param1, &param2, &param3, &param4 );
 
 	DrawBillboard( *class_raylib_camera3d_get_ptr( mrb, param0 ), *class_raylib_texture_get_ptr( mrb, param1 ), *class_raylib_vector3_get_ptr( mrb, param2 ), param3, *class_raylib_color_get_ptr( mrb, param4 ) );
 
@@ -10896,7 +11200,7 @@ mod_raylib_draw_billboard_rec( mrb_state *mrb, mrb_value self ) {
 	mrb_value param4; // Vector2
 	mrb_value param5; // Color
 
-	mrb_get_args( mrb, "dddddd", &param0, &param1, &param2, &param3, &param4, &param5 );
+	mrb_get_args( mrb, "ddoooo", &param0, &param1, &param2, &param3, &param4, &param5 );
 
 	DrawBillboardRec( *class_raylib_camera3d_get_ptr( mrb, param0 ), *class_raylib_texture_get_ptr( mrb, param1 ), *class_raylib_rectangle_get_ptr( mrb, param2 ), *class_raylib_vector3_get_ptr( mrb, param3 ), *class_raylib_vector2_get_ptr( mrb, param4 ), *class_raylib_color_get_ptr( mrb, param5 ) );
 
@@ -10915,7 +11219,7 @@ mod_raylib_draw_billboard_pro( mrb_state *mrb, mrb_value self ) {
 	mrb_float param7; // float
 	mrb_value param8; // Color
 
-	mrb_get_args( mrb, "dddddddfd", &param0, &param1, &param2, &param3, &param4, &param5, &param6, &param7, &param8 );
+	mrb_get_args( mrb, "ddooooofo", &param0, &param1, &param2, &param3, &param4, &param5, &param6, &param7, &param8 );
 
 	DrawBillboardPro( *class_raylib_camera3d_get_ptr( mrb, param0 ), *class_raylib_texture_get_ptr( mrb, param1 ), *class_raylib_rectangle_get_ptr( mrb, param2 ), *class_raylib_vector3_get_ptr( mrb, param3 ), *class_raylib_vector3_get_ptr( mrb, param4 ), *class_raylib_vector2_get_ptr( mrb, param5 ), *class_raylib_vector2_get_ptr( mrb, param6 ), param7, *class_raylib_color_get_ptr( mrb, param8 ) );
 
@@ -10942,7 +11246,7 @@ mod_raylib_update_mesh_buffer( mrb_state *mrb, mrb_value self ) {
 	mrb_int param3; // int
 	mrb_int param4; // int
 
-	mrb_get_args( mrb, "di!dii", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "oi!dii", &param0, &param1, &param2, &param3, &param4 );
 
 	UpdateMeshBuffer( *class_raylib_mesh_get_ptr( mrb, param0 ), param1, mrb_cptr( param2 ), param3, param4 );
 
@@ -10953,7 +11257,7 @@ static mrb_value
 mod_raylib_unload_mesh( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Mesh
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadMesh( *class_raylib_mesh_get_ptr( mrb, param0 ) );
 
@@ -10966,7 +11270,7 @@ mod_raylib_draw_mesh( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Material
 	mrb_value param2; // Matrix
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooo", &param0, &param1, &param2 );
 
 	DrawMesh( *class_raylib_mesh_get_ptr( mrb, param0 ), *class_raylib_material_get_ptr( mrb, param1 ), *class_raylib_matrix_get_ptr( mrb, param2 ) );
 
@@ -10980,7 +11284,7 @@ mod_raylib_draw_mesh_instanced( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // const Matrix*
 	mrb_int param3; // int
 
-	mrb_get_args( mrb, "dd!di", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oo!di", &param0, &param1, &param2, &param3 );
 
 	DrawMeshInstanced( *class_raylib_mesh_get_ptr( mrb, param0 ), *class_raylib_material_get_ptr( mrb, param1 ), NULL, param3 );
 
@@ -10992,7 +11296,7 @@ mod_raylib_export_mesh( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Mesh
 	mrb_value param1; // const char*
 
-	mrb_get_args( mrb, "dS", &param0, &param1 );
+	mrb_get_args( mrb, "oS", &param0, &param1 );
 
 	bool ret = ExportMesh( *class_raylib_mesh_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ) );
 
@@ -11003,7 +11307,7 @@ static mrb_value
 mod_raylib_get_mesh_bounding_box( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Mesh
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	BoundingBox ret = GetMeshBoundingBox( *class_raylib_mesh_get_ptr( mrb, param0 ) );
 
@@ -11145,7 +11449,7 @@ mod_raylib_gen_mesh_heightmap( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 	mrb_value param1; // Vector3
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	Mesh ret = GenMeshHeightmap( *class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ) );
 
@@ -11157,7 +11461,7 @@ mod_raylib_gen_mesh_cubicmap( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Image
 	mrb_value param1; // Vector3
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	Mesh ret = GenMeshCubicmap( *class_raylib_image_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ) );
 
@@ -11187,7 +11491,7 @@ static mrb_value
 mod_raylib_is_material_ready( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Material
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsMaterialReady( *class_raylib_material_get_ptr( mrb, param0 ) );
 
@@ -11198,7 +11502,7 @@ static mrb_value
 mod_raylib_unload_material( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Material
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadMaterial( *class_raylib_material_get_ptr( mrb, param0 ) );
 
@@ -11249,7 +11553,7 @@ mod_raylib_update_model_animation( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // ModelAnimation
 	mrb_int param2; // int
 
-	mrb_get_args( mrb, "ddi", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooi", &param0, &param1, &param2 );
 
 	UpdateModelAnimation( *class_raylib_model_get_ptr( mrb, param0 ), *class_raylib_modelanimation_get_ptr( mrb, param1 ), param2 );
 
@@ -11260,7 +11564,7 @@ static mrb_value
 mod_raylib_unload_model_animation( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // ModelAnimation
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadModelAnimation( *class_raylib_modelanimation_get_ptr( mrb, param0 ) );
 
@@ -11284,7 +11588,7 @@ mod_raylib_is_model_animation_valid( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Model
 	mrb_value param1; // ModelAnimation
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	bool ret = IsModelAnimationValid( *class_raylib_model_get_ptr( mrb, param0 ), *class_raylib_modelanimation_get_ptr( mrb, param1 ) );
 
@@ -11298,7 +11602,7 @@ mod_raylib_check_collision_spheres( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector3
 	mrb_float param3; // float
 
-	mrb_get_args( mrb, "dfdf", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "ofof", &param0, &param1, &param2, &param3 );
 
 	bool ret = CheckCollisionSpheres( *class_raylib_vector3_get_ptr( mrb, param0 ), param1, *class_raylib_vector3_get_ptr( mrb, param2 ), param3 );
 
@@ -11310,7 +11614,7 @@ mod_raylib_check_collision_boxes( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // BoundingBox
 	mrb_value param1; // BoundingBox
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	bool ret = CheckCollisionBoxes( *class_raylib_boundingbox_get_ptr( mrb, param0 ), *class_raylib_boundingbox_get_ptr( mrb, param1 ) );
 
@@ -11323,7 +11627,7 @@ mod_raylib_check_collision_box_sphere( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector3
 	mrb_float param2; // float
 
-	mrb_get_args( mrb, "ddf", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "oof", &param0, &param1, &param2 );
 
 	bool ret = CheckCollisionBoxSphere( *class_raylib_boundingbox_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), param2 );
 
@@ -11336,7 +11640,7 @@ mod_raylib_get_ray_collision_sphere( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Vector3
 	mrb_float param2; // float
 
-	mrb_get_args( mrb, "ddf", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "oof", &param0, &param1, &param2 );
 
 	RayCollision ret = GetRayCollisionSphere( *class_raylib_ray_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), param2 );
 
@@ -11348,7 +11652,7 @@ mod_raylib_get_ray_collision_box( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Ray
 	mrb_value param1; // BoundingBox
 
-	mrb_get_args( mrb, "dd", &param0, &param1 );
+	mrb_get_args( mrb, "oo", &param0, &param1 );
 
 	RayCollision ret = GetRayCollisionBox( *class_raylib_ray_get_ptr( mrb, param0 ), *class_raylib_boundingbox_get_ptr( mrb, param1 ) );
 
@@ -11361,7 +11665,7 @@ mod_raylib_get_ray_collision_mesh( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // Mesh
 	mrb_value param2; // Matrix
 
-	mrb_get_args( mrb, "ddd", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "ooo", &param0, &param1, &param2 );
 
 	RayCollision ret = GetRayCollisionMesh( *class_raylib_ray_get_ptr( mrb, param0 ), *class_raylib_mesh_get_ptr( mrb, param1 ), *class_raylib_matrix_get_ptr( mrb, param2 ) );
 
@@ -11375,7 +11679,7 @@ mod_raylib_get_ray_collision_triangle( mrb_state *mrb, mrb_value self ) {
 	mrb_value param2; // Vector3
 	mrb_value param3; // Vector3
 
-	mrb_get_args( mrb, "dddd", &param0, &param1, &param2, &param3 );
+	mrb_get_args( mrb, "oooo", &param0, &param1, &param2, &param3 );
 
 	RayCollision ret = GetRayCollisionTriangle( *class_raylib_ray_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_vector3_get_ptr( mrb, param2 ), *class_raylib_vector3_get_ptr( mrb, param3 ) );
 
@@ -11390,7 +11694,7 @@ mod_raylib_get_ray_collision_quad( mrb_state *mrb, mrb_value self ) {
 	mrb_value param3; // Vector3
 	mrb_value param4; // Vector3
 
-	mrb_get_args( mrb, "ddddd", &param0, &param1, &param2, &param3, &param4 );
+	mrb_get_args( mrb, "ooooo", &param0, &param1, &param2, &param3, &param4 );
 
 	RayCollision ret = GetRayCollisionQuad( *class_raylib_ray_get_ptr( mrb, param0 ), *class_raylib_vector3_get_ptr( mrb, param1 ), *class_raylib_vector3_get_ptr( mrb, param2 ), *class_raylib_vector3_get_ptr( mrb, param3 ), *class_raylib_vector3_get_ptr( mrb, param4 ) );
 
@@ -11464,7 +11768,7 @@ static mrb_value
 mod_raylib_is_wave_ready( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Wave
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsWaveReady( *class_raylib_wave_get_ptr( mrb, param0 ) );
 
@@ -11486,7 +11790,7 @@ static mrb_value
 mod_raylib_load_sound_from_wave( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Wave
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Sound ret = LoadSoundFromWave( *class_raylib_wave_get_ptr( mrb, param0 ) );
 
@@ -11497,7 +11801,7 @@ static mrb_value
 mod_raylib_load_sound_alias( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Sound ret = LoadSoundAlias( *class_raylib_sound_get_ptr( mrb, param0 ) );
 
@@ -11508,7 +11812,7 @@ static mrb_value
 mod_raylib_is_sound_ready( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsSoundReady( *class_raylib_sound_get_ptr( mrb, param0 ) );
 
@@ -11521,7 +11825,7 @@ mod_raylib_update_sound( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // const void*
 	mrb_int param2; // int
 
-	mrb_get_args( mrb, "d!di", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "o!di", &param0, &param1, &param2 );
 
 	UpdateSound( *class_raylib_sound_get_ptr( mrb, param0 ), mrb_cptr( param1 ), param2 );
 
@@ -11532,7 +11836,7 @@ static mrb_value
 mod_raylib_unload_wave( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Wave
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadWave( *class_raylib_wave_get_ptr( mrb, param0 ) );
 
@@ -11543,7 +11847,7 @@ static mrb_value
 mod_raylib_unload_sound( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadSound( *class_raylib_sound_get_ptr( mrb, param0 ) );
 
@@ -11554,7 +11858,7 @@ static mrb_value
 mod_raylib_unload_sound_alias( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadSoundAlias( *class_raylib_sound_get_ptr( mrb, param0 ) );
 
@@ -11566,7 +11870,7 @@ mod_raylib_export_wave( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Wave
 	mrb_value param1; // const char*
 
-	mrb_get_args( mrb, "dS", &param0, &param1 );
+	mrb_get_args( mrb, "oS", &param0, &param1 );
 
 	bool ret = ExportWave( *class_raylib_wave_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ) );
 
@@ -11578,7 +11882,7 @@ mod_raylib_export_wave_as_code( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Wave
 	mrb_value param1; // const char*
 
-	mrb_get_args( mrb, "dS", &param0, &param1 );
+	mrb_get_args( mrb, "oS", &param0, &param1 );
 
 	bool ret = ExportWaveAsCode( *class_raylib_wave_get_ptr( mrb, param0 ), RSTRING_PTR( param1 ) );
 
@@ -11589,7 +11893,7 @@ static mrb_value
 mod_raylib_play_sound( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	PlaySound( *class_raylib_sound_get_ptr( mrb, param0 ) );
 
@@ -11600,7 +11904,7 @@ static mrb_value
 mod_raylib_stop_sound( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	StopSound( *class_raylib_sound_get_ptr( mrb, param0 ) );
 
@@ -11611,7 +11915,7 @@ static mrb_value
 mod_raylib_pause_sound( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	PauseSound( *class_raylib_sound_get_ptr( mrb, param0 ) );
 
@@ -11622,7 +11926,7 @@ static mrb_value
 mod_raylib_resume_sound( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	ResumeSound( *class_raylib_sound_get_ptr( mrb, param0 ) );
 
@@ -11633,7 +11937,7 @@ static mrb_value
 mod_raylib_is_sound_playing( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsSoundPlaying( *class_raylib_sound_get_ptr( mrb, param0 ) );
 
@@ -11645,7 +11949,7 @@ mod_raylib_set_sound_volume( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SetSoundVolume( *class_raylib_sound_get_ptr( mrb, param0 ), param1 );
 
@@ -11657,7 +11961,7 @@ mod_raylib_set_sound_pitch( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SetSoundPitch( *class_raylib_sound_get_ptr( mrb, param0 ), param1 );
 
@@ -11669,7 +11973,7 @@ mod_raylib_set_sound_pan( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Sound
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SetSoundPan( *class_raylib_sound_get_ptr( mrb, param0 ), param1 );
 
@@ -11680,7 +11984,7 @@ static mrb_value
 mod_raylib_wave_copy( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Wave
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	Wave ret = WaveCopy( *class_raylib_wave_get_ptr( mrb, param0 ) );
 
@@ -11718,7 +12022,7 @@ static mrb_value
 mod_raylib_load_wave_samples( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Wave
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	float* ret = LoadWaveSamples( *class_raylib_wave_get_ptr( mrb, param0 ) );
 
@@ -11764,7 +12068,7 @@ static mrb_value
 mod_raylib_is_music_ready( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsMusicReady( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11775,7 +12079,7 @@ static mrb_value
 mod_raylib_unload_music_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadMusicStream( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11786,7 +12090,7 @@ static mrb_value
 mod_raylib_play_music_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	PlayMusicStream( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11797,7 +12101,7 @@ static mrb_value
 mod_raylib_is_music_stream_playing( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsMusicStreamPlaying( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11808,7 +12112,7 @@ static mrb_value
 mod_raylib_update_music_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UpdateMusicStream( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11819,7 +12123,7 @@ static mrb_value
 mod_raylib_stop_music_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	StopMusicStream( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11830,7 +12134,7 @@ static mrb_value
 mod_raylib_pause_music_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	PauseMusicStream( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11841,7 +12145,7 @@ static mrb_value
 mod_raylib_resume_music_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	ResumeMusicStream( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11853,7 +12157,7 @@ mod_raylib_seek_music_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SeekMusicStream( *class_raylib_music_get_ptr( mrb, param0 ), param1 );
 
@@ -11865,7 +12169,7 @@ mod_raylib_set_music_volume( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SetMusicVolume( *class_raylib_music_get_ptr( mrb, param0 ), param1 );
 
@@ -11877,7 +12181,7 @@ mod_raylib_set_music_pitch( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SetMusicPitch( *class_raylib_music_get_ptr( mrb, param0 ), param1 );
 
@@ -11889,7 +12193,7 @@ mod_raylib_set_music_pan( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SetMusicPan( *class_raylib_music_get_ptr( mrb, param0 ), param1 );
 
@@ -11900,7 +12204,7 @@ static mrb_value
 mod_raylib_get_music_time_length( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	float ret = GetMusicTimeLength( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11911,7 +12215,7 @@ static mrb_value
 mod_raylib_get_music_time_played( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // Music
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	float ret = GetMusicTimePlayed( *class_raylib_music_get_ptr( mrb, param0 ) );
 
@@ -11935,7 +12239,7 @@ static mrb_value
 mod_raylib_is_audio_stream_ready( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsAudioStreamReady( *class_raylib_audiostream_get_ptr( mrb, param0 ) );
 
@@ -11946,7 +12250,7 @@ static mrb_value
 mod_raylib_unload_audio_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	UnloadAudioStream( *class_raylib_audiostream_get_ptr( mrb, param0 ) );
 
@@ -11959,7 +12263,7 @@ mod_raylib_update_audio_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param1; // const void*
 	mrb_int param2; // int
 
-	mrb_get_args( mrb, "d!di", &param0, &param1, &param2 );
+	mrb_get_args( mrb, "o!di", &param0, &param1, &param2 );
 
 	UpdateAudioStream( *class_raylib_audiostream_get_ptr( mrb, param0 ), mrb_cptr( param1 ), param2 );
 
@@ -11970,7 +12274,7 @@ static mrb_value
 mod_raylib_is_audio_stream_processed( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsAudioStreamProcessed( *class_raylib_audiostream_get_ptr( mrb, param0 ) );
 
@@ -11981,7 +12285,7 @@ static mrb_value
 mod_raylib_play_audio_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	PlayAudioStream( *class_raylib_audiostream_get_ptr( mrb, param0 ) );
 
@@ -11992,7 +12296,7 @@ static mrb_value
 mod_raylib_pause_audio_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	PauseAudioStream( *class_raylib_audiostream_get_ptr( mrb, param0 ) );
 
@@ -12003,7 +12307,7 @@ static mrb_value
 mod_raylib_resume_audio_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	ResumeAudioStream( *class_raylib_audiostream_get_ptr( mrb, param0 ) );
 
@@ -12014,7 +12318,7 @@ static mrb_value
 mod_raylib_is_audio_stream_playing( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	bool ret = IsAudioStreamPlaying( *class_raylib_audiostream_get_ptr( mrb, param0 ) );
 
@@ -12025,7 +12329,7 @@ static mrb_value
 mod_raylib_stop_audio_stream( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 
-	mrb_get_args( mrb, "d", &param0 );
+	mrb_get_args( mrb, "o", &param0 );
 
 	StopAudioStream( *class_raylib_audiostream_get_ptr( mrb, param0 ) );
 
@@ -12037,7 +12341,7 @@ mod_raylib_set_audio_stream_volume( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SetAudioStreamVolume( *class_raylib_audiostream_get_ptr( mrb, param0 ), param1 );
 
@@ -12049,7 +12353,7 @@ mod_raylib_set_audio_stream_pitch( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SetAudioStreamPitch( *class_raylib_audiostream_get_ptr( mrb, param0 ), param1 );
 
@@ -12061,7 +12365,7 @@ mod_raylib_set_audio_stream_pan( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 	mrb_float param1; // float
 
-	mrb_get_args( mrb, "df", &param0, &param1 );
+	mrb_get_args( mrb, "of", &param0, &param1 );
 
 	SetAudioStreamPan( *class_raylib_audiostream_get_ptr( mrb, param0 ), param1 );
 
@@ -12084,7 +12388,7 @@ mod_raylib_set_audio_stream_callback( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 	mrb_value param1; // AudioCallback
 
-	mrb_get_args( mrb, "d*", &param0, &param1 );
+	mrb_get_args( mrb, "o*", &param0, &param1 );
 
 	SetAudioStreamCallback( *class_raylib_audiostream_get_ptr( mrb, param0 ), NULL );
 
@@ -12096,7 +12400,7 @@ mod_raylib_attach_audio_stream_processor( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 	mrb_value param1; // AudioCallback
 
-	mrb_get_args( mrb, "d*", &param0, &param1 );
+	mrb_get_args( mrb, "o*", &param0, &param1 );
 
 	AttachAudioStreamProcessor( *class_raylib_audiostream_get_ptr( mrb, param0 ), NULL );
 
@@ -12108,7 +12412,7 @@ mod_raylib_detach_audio_stream_processor( mrb_state *mrb, mrb_value self ) {
 	mrb_value param0; // AudioStream
 	mrb_value param1; // AudioCallback
 
-	mrb_get_args( mrb, "d*", &param0, &param1 );
+	mrb_get_args( mrb, "o*", &param0, &param1 );
 
 	DetachAudioStreamProcessor( *class_raylib_audiostream_get_ptr( mrb, param0 ), NULL );
 
@@ -12148,752 +12452,752 @@ mrb_raylib_module_init( mrb_state *mrb ) {
 	mrb_define_const( mrb, mod_RayLib, "VERSION_MINOR", mrb_fixnum_value( 0 ) );
 	mrb_define_const( mrb, mod_RayLib, "VERSION_PATCH", mrb_fixnum_value( 0 ) );
 
-int arena_size = mrb_gc_arena_save(mrb);
+	int arena_size = mrb_gc_arena_save(mrb);
 
-//----------------------------------------------------------------//
-// Raylib::ConfigFlags
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "FLAG_VSYNC_HINT", mrb_fixnum_value(64));
-mrb_define_const(mrb, mod_RayLib, "FLAG_FULLSCREEN_MODE", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_RESIZABLE", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_UNDECORATED", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_HIDDEN", mrb_fixnum_value(128));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_MINIMIZED", mrb_fixnum_value(512));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_MAXIMIZED", mrb_fixnum_value(1024));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_UNFOCUSED", mrb_fixnum_value(2048));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_TOPMOST", mrb_fixnum_value(4096));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_ALWAYS_RUN", mrb_fixnum_value(256));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_TRANSPARENT", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_HIGHDPI", mrb_fixnum_value(8192));
-mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_MOUSE_PASSTHROUGH", mrb_fixnum_value(16384));
-mrb_define_const(mrb, mod_RayLib, "FLAG_BORDERLESS_WINDOWED_MODE", mrb_fixnum_value(32768));
-mrb_define_const(mrb, mod_RayLib, "FLAG_MSAA_4X_HINT", mrb_fixnum_value(32));
-mrb_define_const(mrb, mod_RayLib, "FLAG_INTERLACED_HINT", mrb_fixnum_value(65536));
+	//----------------------------------------------------------------//
+	// Raylib::ConfigFlags
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "FLAG_VSYNC_HINT", mrb_fixnum_value(64));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_FULLSCREEN_MODE", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_RESIZABLE", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_UNDECORATED", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_HIDDEN", mrb_fixnum_value(128));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_MINIMIZED", mrb_fixnum_value(512));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_MAXIMIZED", mrb_fixnum_value(1024));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_UNFOCUSED", mrb_fixnum_value(2048));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_TOPMOST", mrb_fixnum_value(4096));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_ALWAYS_RUN", mrb_fixnum_value(256));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_TRANSPARENT", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_HIGHDPI", mrb_fixnum_value(8192));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_WINDOW_MOUSE_PASSTHROUGH", mrb_fixnum_value(16384));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_BORDERLESS_WINDOWED_MODE", mrb_fixnum_value(32768));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_MSAA_4X_HINT", mrb_fixnum_value(32));
+	mrb_define_const(mrb, mod_RayLib, "FLAG_INTERLACED_HINT", mrb_fixnum_value(65536));
 
-struct RClass *mod_RayLib_ConfigFlags;
-mod_RayLib_ConfigFlags = mrb_define_module_under(mrb, mod_RayLib, "ConfigFlags" );
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_VSYNC_HINT", mrb_fixnum_value(64));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_FULLSCREEN_MODE", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_RESIZABLE", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_UNDECORATED", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_HIDDEN", mrb_fixnum_value(128));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_MINIMIZED", mrb_fixnum_value(512));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_MAXIMIZED", mrb_fixnum_value(1024));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_UNFOCUSED", mrb_fixnum_value(2048));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_TOPMOST", mrb_fixnum_value(4096));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_ALWAYS_RUN", mrb_fixnum_value(256));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_TRANSPARENT", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_HIGHDPI", mrb_fixnum_value(8192));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_MOUSE_PASSTHROUGH", mrb_fixnum_value(16384));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_BORDERLESS_WINDOWED_MODE", mrb_fixnum_value(32768));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_MSAA_4X_HINT", mrb_fixnum_value(32));
-mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_INTERLACED_HINT", mrb_fixnum_value(65536));
+	struct RClass *mod_RayLib_ConfigFlags;
+	mod_RayLib_ConfigFlags = mrb_define_module_under(mrb, mod_RayLib, "ConfigFlags" );
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_VSYNC_HINT", mrb_fixnum_value(64));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_FULLSCREEN_MODE", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_RESIZABLE", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_UNDECORATED", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_HIDDEN", mrb_fixnum_value(128));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_MINIMIZED", mrb_fixnum_value(512));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_MAXIMIZED", mrb_fixnum_value(1024));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_UNFOCUSED", mrb_fixnum_value(2048));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_TOPMOST", mrb_fixnum_value(4096));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_ALWAYS_RUN", mrb_fixnum_value(256));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_TRANSPARENT", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_HIGHDPI", mrb_fixnum_value(8192));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_WINDOW_MOUSE_PASSTHROUGH", mrb_fixnum_value(16384));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_BORDERLESS_WINDOWED_MODE", mrb_fixnum_value(32768));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_MSAA_4X_HINT", mrb_fixnum_value(32));
+	mrb_define_const(mrb, mod_RayLib_ConfigFlags, "FLAG_INTERLACED_HINT", mrb_fixnum_value(65536));
 
-//----------------------------------------------------------------//
-// Raylib::TraceLogLevel
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "LOG_ALL", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "LOG_TRACE", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "LOG_DEBUG", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "LOG_INFO", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "LOG_WARNING", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "LOG_ERROR", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib, "LOG_FATAL", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib, "LOG_NONE", mrb_fixnum_value(7));
+	//----------------------------------------------------------------//
+	// Raylib::TraceLogLevel
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "LOG_ALL", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "LOG_TRACE", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "LOG_DEBUG", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "LOG_INFO", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "LOG_WARNING", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "LOG_ERROR", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib, "LOG_FATAL", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib, "LOG_NONE", mrb_fixnum_value(7));
 
-struct RClass *mod_RayLib_TraceLogLevel;
-mod_RayLib_TraceLogLevel = mrb_define_module_under(mrb, mod_RayLib, "TraceLogLevel" );
-mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_ALL", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_TRACE", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_DEBUG", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_INFO", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_WARNING", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_ERROR", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_FATAL", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_NONE", mrb_fixnum_value(7));
+	struct RClass *mod_RayLib_TraceLogLevel;
+	mod_RayLib_TraceLogLevel = mrb_define_module_under(mrb, mod_RayLib, "TraceLogLevel" );
+	mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_ALL", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_TRACE", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_DEBUG", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_INFO", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_WARNING", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_ERROR", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_FATAL", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib_TraceLogLevel, "LOG_NONE", mrb_fixnum_value(7));
 
-//----------------------------------------------------------------//
-// Raylib::KeyboardKey
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "KEY_NULL", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "KEY_APOSTROPHE", mrb_fixnum_value(39));
-mrb_define_const(mrb, mod_RayLib, "KEY_COMMA", mrb_fixnum_value(44));
-mrb_define_const(mrb, mod_RayLib, "KEY_MINUS", mrb_fixnum_value(45));
-mrb_define_const(mrb, mod_RayLib, "KEY_PERIOD", mrb_fixnum_value(46));
-mrb_define_const(mrb, mod_RayLib, "KEY_SLASH", mrb_fixnum_value(47));
-mrb_define_const(mrb, mod_RayLib, "KEY_ZERO", mrb_fixnum_value(48));
-mrb_define_const(mrb, mod_RayLib, "KEY_ONE", mrb_fixnum_value(49));
-mrb_define_const(mrb, mod_RayLib, "KEY_TWO", mrb_fixnum_value(50));
-mrb_define_const(mrb, mod_RayLib, "KEY_THREE", mrb_fixnum_value(51));
-mrb_define_const(mrb, mod_RayLib, "KEY_FOUR", mrb_fixnum_value(52));
-mrb_define_const(mrb, mod_RayLib, "KEY_FIVE", mrb_fixnum_value(53));
-mrb_define_const(mrb, mod_RayLib, "KEY_SIX", mrb_fixnum_value(54));
-mrb_define_const(mrb, mod_RayLib, "KEY_SEVEN", mrb_fixnum_value(55));
-mrb_define_const(mrb, mod_RayLib, "KEY_EIGHT", mrb_fixnum_value(56));
-mrb_define_const(mrb, mod_RayLib, "KEY_NINE", mrb_fixnum_value(57));
-mrb_define_const(mrb, mod_RayLib, "KEY_SEMICOLON", mrb_fixnum_value(59));
-mrb_define_const(mrb, mod_RayLib, "KEY_EQUAL", mrb_fixnum_value(61));
-mrb_define_const(mrb, mod_RayLib, "KEY_A", mrb_fixnum_value(65));
-mrb_define_const(mrb, mod_RayLib, "KEY_B", mrb_fixnum_value(66));
-mrb_define_const(mrb, mod_RayLib, "KEY_C", mrb_fixnum_value(67));
-mrb_define_const(mrb, mod_RayLib, "KEY_D", mrb_fixnum_value(68));
-mrb_define_const(mrb, mod_RayLib, "KEY_E", mrb_fixnum_value(69));
-mrb_define_const(mrb, mod_RayLib, "KEY_F", mrb_fixnum_value(70));
-mrb_define_const(mrb, mod_RayLib, "KEY_G", mrb_fixnum_value(71));
-mrb_define_const(mrb, mod_RayLib, "KEY_H", mrb_fixnum_value(72));
-mrb_define_const(mrb, mod_RayLib, "KEY_I", mrb_fixnum_value(73));
-mrb_define_const(mrb, mod_RayLib, "KEY_J", mrb_fixnum_value(74));
-mrb_define_const(mrb, mod_RayLib, "KEY_K", mrb_fixnum_value(75));
-mrb_define_const(mrb, mod_RayLib, "KEY_L", mrb_fixnum_value(76));
-mrb_define_const(mrb, mod_RayLib, "KEY_M", mrb_fixnum_value(77));
-mrb_define_const(mrb, mod_RayLib, "KEY_N", mrb_fixnum_value(78));
-mrb_define_const(mrb, mod_RayLib, "KEY_O", mrb_fixnum_value(79));
-mrb_define_const(mrb, mod_RayLib, "KEY_P", mrb_fixnum_value(80));
-mrb_define_const(mrb, mod_RayLib, "KEY_Q", mrb_fixnum_value(81));
-mrb_define_const(mrb, mod_RayLib, "KEY_R", mrb_fixnum_value(82));
-mrb_define_const(mrb, mod_RayLib, "KEY_S", mrb_fixnum_value(83));
-mrb_define_const(mrb, mod_RayLib, "KEY_T", mrb_fixnum_value(84));
-mrb_define_const(mrb, mod_RayLib, "KEY_U", mrb_fixnum_value(85));
-mrb_define_const(mrb, mod_RayLib, "KEY_V", mrb_fixnum_value(86));
-mrb_define_const(mrb, mod_RayLib, "KEY_W", mrb_fixnum_value(87));
-mrb_define_const(mrb, mod_RayLib, "KEY_X", mrb_fixnum_value(88));
-mrb_define_const(mrb, mod_RayLib, "KEY_Y", mrb_fixnum_value(89));
-mrb_define_const(mrb, mod_RayLib, "KEY_Z", mrb_fixnum_value(90));
-mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_BRACKET", mrb_fixnum_value(91));
-mrb_define_const(mrb, mod_RayLib, "KEY_BACKSLASH", mrb_fixnum_value(92));
-mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_BRACKET", mrb_fixnum_value(93));
-mrb_define_const(mrb, mod_RayLib, "KEY_GRAVE", mrb_fixnum_value(96));
-mrb_define_const(mrb, mod_RayLib, "KEY_SPACE", mrb_fixnum_value(32));
-mrb_define_const(mrb, mod_RayLib, "KEY_ESCAPE", mrb_fixnum_value(256));
-mrb_define_const(mrb, mod_RayLib, "KEY_ENTER", mrb_fixnum_value(257));
-mrb_define_const(mrb, mod_RayLib, "KEY_TAB", mrb_fixnum_value(258));
-mrb_define_const(mrb, mod_RayLib, "KEY_BACKSPACE", mrb_fixnum_value(259));
-mrb_define_const(mrb, mod_RayLib, "KEY_INSERT", mrb_fixnum_value(260));
-mrb_define_const(mrb, mod_RayLib, "KEY_DELETE", mrb_fixnum_value(261));
-mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT", mrb_fixnum_value(262));
-mrb_define_const(mrb, mod_RayLib, "KEY_LEFT", mrb_fixnum_value(263));
-mrb_define_const(mrb, mod_RayLib, "KEY_DOWN", mrb_fixnum_value(264));
-mrb_define_const(mrb, mod_RayLib, "KEY_UP", mrb_fixnum_value(265));
-mrb_define_const(mrb, mod_RayLib, "KEY_PAGE_UP", mrb_fixnum_value(266));
-mrb_define_const(mrb, mod_RayLib, "KEY_PAGE_DOWN", mrb_fixnum_value(267));
-mrb_define_const(mrb, mod_RayLib, "KEY_HOME", mrb_fixnum_value(268));
-mrb_define_const(mrb, mod_RayLib, "KEY_END", mrb_fixnum_value(269));
-mrb_define_const(mrb, mod_RayLib, "KEY_CAPS_LOCK", mrb_fixnum_value(280));
-mrb_define_const(mrb, mod_RayLib, "KEY_SCROLL_LOCK", mrb_fixnum_value(281));
-mrb_define_const(mrb, mod_RayLib, "KEY_NUM_LOCK", mrb_fixnum_value(282));
-mrb_define_const(mrb, mod_RayLib, "KEY_PRINT_SCREEN", mrb_fixnum_value(283));
-mrb_define_const(mrb, mod_RayLib, "KEY_PAUSE", mrb_fixnum_value(284));
-mrb_define_const(mrb, mod_RayLib, "KEY_F1", mrb_fixnum_value(290));
-mrb_define_const(mrb, mod_RayLib, "KEY_F2", mrb_fixnum_value(291));
-mrb_define_const(mrb, mod_RayLib, "KEY_F3", mrb_fixnum_value(292));
-mrb_define_const(mrb, mod_RayLib, "KEY_F4", mrb_fixnum_value(293));
-mrb_define_const(mrb, mod_RayLib, "KEY_F5", mrb_fixnum_value(294));
-mrb_define_const(mrb, mod_RayLib, "KEY_F6", mrb_fixnum_value(295));
-mrb_define_const(mrb, mod_RayLib, "KEY_F7", mrb_fixnum_value(296));
-mrb_define_const(mrb, mod_RayLib, "KEY_F8", mrb_fixnum_value(297));
-mrb_define_const(mrb, mod_RayLib, "KEY_F9", mrb_fixnum_value(298));
-mrb_define_const(mrb, mod_RayLib, "KEY_F10", mrb_fixnum_value(299));
-mrb_define_const(mrb, mod_RayLib, "KEY_F11", mrb_fixnum_value(300));
-mrb_define_const(mrb, mod_RayLib, "KEY_F12", mrb_fixnum_value(301));
-mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_SHIFT", mrb_fixnum_value(340));
-mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_CONTROL", mrb_fixnum_value(341));
-mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_ALT", mrb_fixnum_value(342));
-mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_SUPER", mrb_fixnum_value(343));
-mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_SHIFT", mrb_fixnum_value(344));
-mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_CONTROL", mrb_fixnum_value(345));
-mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_ALT", mrb_fixnum_value(346));
-mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_SUPER", mrb_fixnum_value(347));
-mrb_define_const(mrb, mod_RayLib, "KEY_KB_MENU", mrb_fixnum_value(348));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_0", mrb_fixnum_value(320));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_1", mrb_fixnum_value(321));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_2", mrb_fixnum_value(322));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_3", mrb_fixnum_value(323));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_4", mrb_fixnum_value(324));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_5", mrb_fixnum_value(325));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_6", mrb_fixnum_value(326));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_7", mrb_fixnum_value(327));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_8", mrb_fixnum_value(328));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_9", mrb_fixnum_value(329));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_DECIMAL", mrb_fixnum_value(330));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_DIVIDE", mrb_fixnum_value(331));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_MULTIPLY", mrb_fixnum_value(332));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_SUBTRACT", mrb_fixnum_value(333));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_ADD", mrb_fixnum_value(334));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_ENTER", mrb_fixnum_value(335));
-mrb_define_const(mrb, mod_RayLib, "KEY_KP_EQUAL", mrb_fixnum_value(336));
-mrb_define_const(mrb, mod_RayLib, "KEY_BACK", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "KEY_MENU", mrb_fixnum_value(82));
-mrb_define_const(mrb, mod_RayLib, "KEY_VOLUME_UP", mrb_fixnum_value(24));
-mrb_define_const(mrb, mod_RayLib, "KEY_VOLUME_DOWN", mrb_fixnum_value(25));
+	//----------------------------------------------------------------//
+	// Raylib::KeyboardKey
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "KEY_NULL", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "KEY_APOSTROPHE", mrb_fixnum_value(39));
+	mrb_define_const(mrb, mod_RayLib, "KEY_COMMA", mrb_fixnum_value(44));
+	mrb_define_const(mrb, mod_RayLib, "KEY_MINUS", mrb_fixnum_value(45));
+	mrb_define_const(mrb, mod_RayLib, "KEY_PERIOD", mrb_fixnum_value(46));
+	mrb_define_const(mrb, mod_RayLib, "KEY_SLASH", mrb_fixnum_value(47));
+	mrb_define_const(mrb, mod_RayLib, "KEY_ZERO", mrb_fixnum_value(48));
+	mrb_define_const(mrb, mod_RayLib, "KEY_ONE", mrb_fixnum_value(49));
+	mrb_define_const(mrb, mod_RayLib, "KEY_TWO", mrb_fixnum_value(50));
+	mrb_define_const(mrb, mod_RayLib, "KEY_THREE", mrb_fixnum_value(51));
+	mrb_define_const(mrb, mod_RayLib, "KEY_FOUR", mrb_fixnum_value(52));
+	mrb_define_const(mrb, mod_RayLib, "KEY_FIVE", mrb_fixnum_value(53));
+	mrb_define_const(mrb, mod_RayLib, "KEY_SIX", mrb_fixnum_value(54));
+	mrb_define_const(mrb, mod_RayLib, "KEY_SEVEN", mrb_fixnum_value(55));
+	mrb_define_const(mrb, mod_RayLib, "KEY_EIGHT", mrb_fixnum_value(56));
+	mrb_define_const(mrb, mod_RayLib, "KEY_NINE", mrb_fixnum_value(57));
+	mrb_define_const(mrb, mod_RayLib, "KEY_SEMICOLON", mrb_fixnum_value(59));
+	mrb_define_const(mrb, mod_RayLib, "KEY_EQUAL", mrb_fixnum_value(61));
+	mrb_define_const(mrb, mod_RayLib, "KEY_A", mrb_fixnum_value(65));
+	mrb_define_const(mrb, mod_RayLib, "KEY_B", mrb_fixnum_value(66));
+	mrb_define_const(mrb, mod_RayLib, "KEY_C", mrb_fixnum_value(67));
+	mrb_define_const(mrb, mod_RayLib, "KEY_D", mrb_fixnum_value(68));
+	mrb_define_const(mrb, mod_RayLib, "KEY_E", mrb_fixnum_value(69));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F", mrb_fixnum_value(70));
+	mrb_define_const(mrb, mod_RayLib, "KEY_G", mrb_fixnum_value(71));
+	mrb_define_const(mrb, mod_RayLib, "KEY_H", mrb_fixnum_value(72));
+	mrb_define_const(mrb, mod_RayLib, "KEY_I", mrb_fixnum_value(73));
+	mrb_define_const(mrb, mod_RayLib, "KEY_J", mrb_fixnum_value(74));
+	mrb_define_const(mrb, mod_RayLib, "KEY_K", mrb_fixnum_value(75));
+	mrb_define_const(mrb, mod_RayLib, "KEY_L", mrb_fixnum_value(76));
+	mrb_define_const(mrb, mod_RayLib, "KEY_M", mrb_fixnum_value(77));
+	mrb_define_const(mrb, mod_RayLib, "KEY_N", mrb_fixnum_value(78));
+	mrb_define_const(mrb, mod_RayLib, "KEY_O", mrb_fixnum_value(79));
+	mrb_define_const(mrb, mod_RayLib, "KEY_P", mrb_fixnum_value(80));
+	mrb_define_const(mrb, mod_RayLib, "KEY_Q", mrb_fixnum_value(81));
+	mrb_define_const(mrb, mod_RayLib, "KEY_R", mrb_fixnum_value(82));
+	mrb_define_const(mrb, mod_RayLib, "KEY_S", mrb_fixnum_value(83));
+	mrb_define_const(mrb, mod_RayLib, "KEY_T", mrb_fixnum_value(84));
+	mrb_define_const(mrb, mod_RayLib, "KEY_U", mrb_fixnum_value(85));
+	mrb_define_const(mrb, mod_RayLib, "KEY_V", mrb_fixnum_value(86));
+	mrb_define_const(mrb, mod_RayLib, "KEY_W", mrb_fixnum_value(87));
+	mrb_define_const(mrb, mod_RayLib, "KEY_X", mrb_fixnum_value(88));
+	mrb_define_const(mrb, mod_RayLib, "KEY_Y", mrb_fixnum_value(89));
+	mrb_define_const(mrb, mod_RayLib, "KEY_Z", mrb_fixnum_value(90));
+	mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_BRACKET", mrb_fixnum_value(91));
+	mrb_define_const(mrb, mod_RayLib, "KEY_BACKSLASH", mrb_fixnum_value(92));
+	mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_BRACKET", mrb_fixnum_value(93));
+	mrb_define_const(mrb, mod_RayLib, "KEY_GRAVE", mrb_fixnum_value(96));
+	mrb_define_const(mrb, mod_RayLib, "KEY_SPACE", mrb_fixnum_value(32));
+	mrb_define_const(mrb, mod_RayLib, "KEY_ESCAPE", mrb_fixnum_value(256));
+	mrb_define_const(mrb, mod_RayLib, "KEY_ENTER", mrb_fixnum_value(257));
+	mrb_define_const(mrb, mod_RayLib, "KEY_TAB", mrb_fixnum_value(258));
+	mrb_define_const(mrb, mod_RayLib, "KEY_BACKSPACE", mrb_fixnum_value(259));
+	mrb_define_const(mrb, mod_RayLib, "KEY_INSERT", mrb_fixnum_value(260));
+	mrb_define_const(mrb, mod_RayLib, "KEY_DELETE", mrb_fixnum_value(261));
+	mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT", mrb_fixnum_value(262));
+	mrb_define_const(mrb, mod_RayLib, "KEY_LEFT", mrb_fixnum_value(263));
+	mrb_define_const(mrb, mod_RayLib, "KEY_DOWN", mrb_fixnum_value(264));
+	mrb_define_const(mrb, mod_RayLib, "KEY_UP", mrb_fixnum_value(265));
+	mrb_define_const(mrb, mod_RayLib, "KEY_PAGE_UP", mrb_fixnum_value(266));
+	mrb_define_const(mrb, mod_RayLib, "KEY_PAGE_DOWN", mrb_fixnum_value(267));
+	mrb_define_const(mrb, mod_RayLib, "KEY_HOME", mrb_fixnum_value(268));
+	mrb_define_const(mrb, mod_RayLib, "KEY_END", mrb_fixnum_value(269));
+	mrb_define_const(mrb, mod_RayLib, "KEY_CAPS_LOCK", mrb_fixnum_value(280));
+	mrb_define_const(mrb, mod_RayLib, "KEY_SCROLL_LOCK", mrb_fixnum_value(281));
+	mrb_define_const(mrb, mod_RayLib, "KEY_NUM_LOCK", mrb_fixnum_value(282));
+	mrb_define_const(mrb, mod_RayLib, "KEY_PRINT_SCREEN", mrb_fixnum_value(283));
+	mrb_define_const(mrb, mod_RayLib, "KEY_PAUSE", mrb_fixnum_value(284));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F1", mrb_fixnum_value(290));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F2", mrb_fixnum_value(291));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F3", mrb_fixnum_value(292));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F4", mrb_fixnum_value(293));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F5", mrb_fixnum_value(294));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F6", mrb_fixnum_value(295));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F7", mrb_fixnum_value(296));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F8", mrb_fixnum_value(297));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F9", mrb_fixnum_value(298));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F10", mrb_fixnum_value(299));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F11", mrb_fixnum_value(300));
+	mrb_define_const(mrb, mod_RayLib, "KEY_F12", mrb_fixnum_value(301));
+	mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_SHIFT", mrb_fixnum_value(340));
+	mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_CONTROL", mrb_fixnum_value(341));
+	mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_ALT", mrb_fixnum_value(342));
+	mrb_define_const(mrb, mod_RayLib, "KEY_LEFT_SUPER", mrb_fixnum_value(343));
+	mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_SHIFT", mrb_fixnum_value(344));
+	mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_CONTROL", mrb_fixnum_value(345));
+	mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_ALT", mrb_fixnum_value(346));
+	mrb_define_const(mrb, mod_RayLib, "KEY_RIGHT_SUPER", mrb_fixnum_value(347));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KB_MENU", mrb_fixnum_value(348));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_0", mrb_fixnum_value(320));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_1", mrb_fixnum_value(321));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_2", mrb_fixnum_value(322));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_3", mrb_fixnum_value(323));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_4", mrb_fixnum_value(324));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_5", mrb_fixnum_value(325));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_6", mrb_fixnum_value(326));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_7", mrb_fixnum_value(327));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_8", mrb_fixnum_value(328));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_9", mrb_fixnum_value(329));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_DECIMAL", mrb_fixnum_value(330));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_DIVIDE", mrb_fixnum_value(331));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_MULTIPLY", mrb_fixnum_value(332));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_SUBTRACT", mrb_fixnum_value(333));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_ADD", mrb_fixnum_value(334));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_ENTER", mrb_fixnum_value(335));
+	mrb_define_const(mrb, mod_RayLib, "KEY_KP_EQUAL", mrb_fixnum_value(336));
+	mrb_define_const(mrb, mod_RayLib, "KEY_BACK", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "KEY_MENU", mrb_fixnum_value(82));
+	mrb_define_const(mrb, mod_RayLib, "KEY_VOLUME_UP", mrb_fixnum_value(24));
+	mrb_define_const(mrb, mod_RayLib, "KEY_VOLUME_DOWN", mrb_fixnum_value(25));
 
-struct RClass *mod_RayLib_KeyboardKey;
-mod_RayLib_KeyboardKey = mrb_define_module_under(mrb, mod_RayLib, "KeyboardKey" );
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_NULL", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_APOSTROPHE", mrb_fixnum_value(39));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_COMMA", mrb_fixnum_value(44));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_MINUS", mrb_fixnum_value(45));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PERIOD", mrb_fixnum_value(46));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SLASH", mrb_fixnum_value(47));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_ZERO", mrb_fixnum_value(48));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_ONE", mrb_fixnum_value(49));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_TWO", mrb_fixnum_value(50));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_THREE", mrb_fixnum_value(51));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_FOUR", mrb_fixnum_value(52));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_FIVE", mrb_fixnum_value(53));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SIX", mrb_fixnum_value(54));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SEVEN", mrb_fixnum_value(55));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_EIGHT", mrb_fixnum_value(56));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_NINE", mrb_fixnum_value(57));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SEMICOLON", mrb_fixnum_value(59));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_EQUAL", mrb_fixnum_value(61));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_A", mrb_fixnum_value(65));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_B", mrb_fixnum_value(66));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_C", mrb_fixnum_value(67));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_D", mrb_fixnum_value(68));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_E", mrb_fixnum_value(69));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F", mrb_fixnum_value(70));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_G", mrb_fixnum_value(71));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_H", mrb_fixnum_value(72));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_I", mrb_fixnum_value(73));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_J", mrb_fixnum_value(74));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_K", mrb_fixnum_value(75));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_L", mrb_fixnum_value(76));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_M", mrb_fixnum_value(77));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_N", mrb_fixnum_value(78));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_O", mrb_fixnum_value(79));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_P", mrb_fixnum_value(80));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_Q", mrb_fixnum_value(81));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_R", mrb_fixnum_value(82));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_S", mrb_fixnum_value(83));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_T", mrb_fixnum_value(84));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_U", mrb_fixnum_value(85));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_V", mrb_fixnum_value(86));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_W", mrb_fixnum_value(87));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_X", mrb_fixnum_value(88));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_Y", mrb_fixnum_value(89));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_Z", mrb_fixnum_value(90));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_BRACKET", mrb_fixnum_value(91));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_BACKSLASH", mrb_fixnum_value(92));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_BRACKET", mrb_fixnum_value(93));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_GRAVE", mrb_fixnum_value(96));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SPACE", mrb_fixnum_value(32));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_ESCAPE", mrb_fixnum_value(256));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_ENTER", mrb_fixnum_value(257));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_TAB", mrb_fixnum_value(258));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_BACKSPACE", mrb_fixnum_value(259));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_INSERT", mrb_fixnum_value(260));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_DELETE", mrb_fixnum_value(261));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT", mrb_fixnum_value(262));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT", mrb_fixnum_value(263));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_DOWN", mrb_fixnum_value(264));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_UP", mrb_fixnum_value(265));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PAGE_UP", mrb_fixnum_value(266));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PAGE_DOWN", mrb_fixnum_value(267));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_HOME", mrb_fixnum_value(268));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_END", mrb_fixnum_value(269));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_CAPS_LOCK", mrb_fixnum_value(280));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SCROLL_LOCK", mrb_fixnum_value(281));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_NUM_LOCK", mrb_fixnum_value(282));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PRINT_SCREEN", mrb_fixnum_value(283));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PAUSE", mrb_fixnum_value(284));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F1", mrb_fixnum_value(290));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F2", mrb_fixnum_value(291));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F3", mrb_fixnum_value(292));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F4", mrb_fixnum_value(293));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F5", mrb_fixnum_value(294));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F6", mrb_fixnum_value(295));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F7", mrb_fixnum_value(296));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F8", mrb_fixnum_value(297));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F9", mrb_fixnum_value(298));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F10", mrb_fixnum_value(299));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F11", mrb_fixnum_value(300));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F12", mrb_fixnum_value(301));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_SHIFT", mrb_fixnum_value(340));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_CONTROL", mrb_fixnum_value(341));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_ALT", mrb_fixnum_value(342));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_SUPER", mrb_fixnum_value(343));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_SHIFT", mrb_fixnum_value(344));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_CONTROL", mrb_fixnum_value(345));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_ALT", mrb_fixnum_value(346));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_SUPER", mrb_fixnum_value(347));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KB_MENU", mrb_fixnum_value(348));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_0", mrb_fixnum_value(320));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_1", mrb_fixnum_value(321));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_2", mrb_fixnum_value(322));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_3", mrb_fixnum_value(323));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_4", mrb_fixnum_value(324));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_5", mrb_fixnum_value(325));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_6", mrb_fixnum_value(326));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_7", mrb_fixnum_value(327));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_8", mrb_fixnum_value(328));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_9", mrb_fixnum_value(329));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_DECIMAL", mrb_fixnum_value(330));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_DIVIDE", mrb_fixnum_value(331));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_MULTIPLY", mrb_fixnum_value(332));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_SUBTRACT", mrb_fixnum_value(333));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_ADD", mrb_fixnum_value(334));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_ENTER", mrb_fixnum_value(335));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_EQUAL", mrb_fixnum_value(336));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_BACK", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_MENU", mrb_fixnum_value(82));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_VOLUME_UP", mrb_fixnum_value(24));
-mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_VOLUME_DOWN", mrb_fixnum_value(25));
+	struct RClass *mod_RayLib_KeyboardKey;
+	mod_RayLib_KeyboardKey = mrb_define_module_under(mrb, mod_RayLib, "KeyboardKey" );
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_NULL", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_APOSTROPHE", mrb_fixnum_value(39));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_COMMA", mrb_fixnum_value(44));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_MINUS", mrb_fixnum_value(45));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PERIOD", mrb_fixnum_value(46));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SLASH", mrb_fixnum_value(47));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_ZERO", mrb_fixnum_value(48));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_ONE", mrb_fixnum_value(49));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_TWO", mrb_fixnum_value(50));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_THREE", mrb_fixnum_value(51));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_FOUR", mrb_fixnum_value(52));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_FIVE", mrb_fixnum_value(53));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SIX", mrb_fixnum_value(54));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SEVEN", mrb_fixnum_value(55));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_EIGHT", mrb_fixnum_value(56));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_NINE", mrb_fixnum_value(57));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SEMICOLON", mrb_fixnum_value(59));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_EQUAL", mrb_fixnum_value(61));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_A", mrb_fixnum_value(65));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_B", mrb_fixnum_value(66));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_C", mrb_fixnum_value(67));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_D", mrb_fixnum_value(68));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_E", mrb_fixnum_value(69));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F", mrb_fixnum_value(70));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_G", mrb_fixnum_value(71));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_H", mrb_fixnum_value(72));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_I", mrb_fixnum_value(73));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_J", mrb_fixnum_value(74));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_K", mrb_fixnum_value(75));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_L", mrb_fixnum_value(76));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_M", mrb_fixnum_value(77));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_N", mrb_fixnum_value(78));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_O", mrb_fixnum_value(79));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_P", mrb_fixnum_value(80));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_Q", mrb_fixnum_value(81));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_R", mrb_fixnum_value(82));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_S", mrb_fixnum_value(83));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_T", mrb_fixnum_value(84));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_U", mrb_fixnum_value(85));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_V", mrb_fixnum_value(86));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_W", mrb_fixnum_value(87));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_X", mrb_fixnum_value(88));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_Y", mrb_fixnum_value(89));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_Z", mrb_fixnum_value(90));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_BRACKET", mrb_fixnum_value(91));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_BACKSLASH", mrb_fixnum_value(92));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_BRACKET", mrb_fixnum_value(93));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_GRAVE", mrb_fixnum_value(96));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SPACE", mrb_fixnum_value(32));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_ESCAPE", mrb_fixnum_value(256));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_ENTER", mrb_fixnum_value(257));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_TAB", mrb_fixnum_value(258));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_BACKSPACE", mrb_fixnum_value(259));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_INSERT", mrb_fixnum_value(260));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_DELETE", mrb_fixnum_value(261));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT", mrb_fixnum_value(262));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT", mrb_fixnum_value(263));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_DOWN", mrb_fixnum_value(264));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_UP", mrb_fixnum_value(265));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PAGE_UP", mrb_fixnum_value(266));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PAGE_DOWN", mrb_fixnum_value(267));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_HOME", mrb_fixnum_value(268));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_END", mrb_fixnum_value(269));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_CAPS_LOCK", mrb_fixnum_value(280));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_SCROLL_LOCK", mrb_fixnum_value(281));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_NUM_LOCK", mrb_fixnum_value(282));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PRINT_SCREEN", mrb_fixnum_value(283));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_PAUSE", mrb_fixnum_value(284));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F1", mrb_fixnum_value(290));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F2", mrb_fixnum_value(291));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F3", mrb_fixnum_value(292));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F4", mrb_fixnum_value(293));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F5", mrb_fixnum_value(294));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F6", mrb_fixnum_value(295));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F7", mrb_fixnum_value(296));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F8", mrb_fixnum_value(297));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F9", mrb_fixnum_value(298));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F10", mrb_fixnum_value(299));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F11", mrb_fixnum_value(300));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_F12", mrb_fixnum_value(301));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_SHIFT", mrb_fixnum_value(340));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_CONTROL", mrb_fixnum_value(341));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_ALT", mrb_fixnum_value(342));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_LEFT_SUPER", mrb_fixnum_value(343));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_SHIFT", mrb_fixnum_value(344));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_CONTROL", mrb_fixnum_value(345));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_ALT", mrb_fixnum_value(346));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_RIGHT_SUPER", mrb_fixnum_value(347));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KB_MENU", mrb_fixnum_value(348));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_0", mrb_fixnum_value(320));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_1", mrb_fixnum_value(321));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_2", mrb_fixnum_value(322));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_3", mrb_fixnum_value(323));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_4", mrb_fixnum_value(324));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_5", mrb_fixnum_value(325));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_6", mrb_fixnum_value(326));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_7", mrb_fixnum_value(327));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_8", mrb_fixnum_value(328));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_9", mrb_fixnum_value(329));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_DECIMAL", mrb_fixnum_value(330));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_DIVIDE", mrb_fixnum_value(331));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_MULTIPLY", mrb_fixnum_value(332));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_SUBTRACT", mrb_fixnum_value(333));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_ADD", mrb_fixnum_value(334));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_ENTER", mrb_fixnum_value(335));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_KP_EQUAL", mrb_fixnum_value(336));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_BACK", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_MENU", mrb_fixnum_value(82));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_VOLUME_UP", mrb_fixnum_value(24));
+	mrb_define_const(mrb, mod_RayLib_KeyboardKey, "KEY_VOLUME_DOWN", mrb_fixnum_value(25));
 
-//----------------------------------------------------------------//
-// Raylib::MouseButton
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_LEFT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_RIGHT", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_MIDDLE", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_SIDE", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_EXTRA", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_FORWARD", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_BACK", mrb_fixnum_value(6));
+	//----------------------------------------------------------------//
+	// Raylib::MouseButton
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_LEFT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_RIGHT", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_MIDDLE", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_SIDE", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_EXTRA", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_FORWARD", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_BUTTON_BACK", mrb_fixnum_value(6));
 
-struct RClass *mod_RayLib_MouseButton;
-mod_RayLib_MouseButton = mrb_define_module_under(mrb, mod_RayLib, "MouseButton" );
-mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_LEFT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_RIGHT", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_MIDDLE", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_SIDE", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_EXTRA", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_FORWARD", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_BACK", mrb_fixnum_value(6));
+	struct RClass *mod_RayLib_MouseButton;
+	mod_RayLib_MouseButton = mrb_define_module_under(mrb, mod_RayLib, "MouseButton" );
+	mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_LEFT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_RIGHT", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_MIDDLE", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_SIDE", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_EXTRA", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_FORWARD", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib_MouseButton, "MOUSE_BUTTON_BACK", mrb_fixnum_value(6));
 
-//----------------------------------------------------------------//
-// Raylib::MouseCursor
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_DEFAULT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_ARROW", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_IBEAM", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_CROSSHAIR", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_POINTING_HAND", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_EW", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_NS", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_NWSE", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_NESW", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_ALL", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_NOT_ALLOWED", mrb_fixnum_value(10));
+	//----------------------------------------------------------------//
+	// Raylib::MouseCursor
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_DEFAULT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_ARROW", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_IBEAM", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_CROSSHAIR", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_POINTING_HAND", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_EW", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_NS", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_NWSE", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_NESW", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_RESIZE_ALL", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib, "MOUSE_CURSOR_NOT_ALLOWED", mrb_fixnum_value(10));
 
-struct RClass *mod_RayLib_MouseCursor;
-mod_RayLib_MouseCursor = mrb_define_module_under(mrb, mod_RayLib, "MouseCursor" );
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_DEFAULT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_ARROW", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_IBEAM", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_CROSSHAIR", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_POINTING_HAND", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_EW", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_NS", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_NWSE", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_NESW", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_ALL", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_NOT_ALLOWED", mrb_fixnum_value(10));
+	struct RClass *mod_RayLib_MouseCursor;
+	mod_RayLib_MouseCursor = mrb_define_module_under(mrb, mod_RayLib, "MouseCursor" );
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_DEFAULT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_ARROW", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_IBEAM", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_CROSSHAIR", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_POINTING_HAND", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_EW", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_NS", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_NWSE", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_NESW", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_RESIZE_ALL", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib_MouseCursor, "MOUSE_CURSOR_NOT_ALLOWED", mrb_fixnum_value(10));
 
-//----------------------------------------------------------------//
-// Raylib::GamepadButton
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_UNKNOWN", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_FACE_UP", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_FACE_RIGHT", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_FACE_DOWN", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_FACE_LEFT", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_FACE_UP", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_FACE_RIGHT", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_FACE_DOWN", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_FACE_LEFT", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_TRIGGER_1", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_TRIGGER_2", mrb_fixnum_value(10));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_TRIGGER_1", mrb_fixnum_value(11));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_TRIGGER_2", mrb_fixnum_value(12));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_MIDDLE_LEFT", mrb_fixnum_value(13));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_MIDDLE", mrb_fixnum_value(14));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_MIDDLE_RIGHT", mrb_fixnum_value(15));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_THUMB", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_THUMB", mrb_fixnum_value(17));
+	//----------------------------------------------------------------//
+	// Raylib::GamepadButton
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_UNKNOWN", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_FACE_UP", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_FACE_RIGHT", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_FACE_DOWN", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_FACE_LEFT", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_FACE_UP", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_FACE_RIGHT", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_FACE_DOWN", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_FACE_LEFT", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_TRIGGER_1", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_TRIGGER_2", mrb_fixnum_value(10));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_TRIGGER_1", mrb_fixnum_value(11));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_TRIGGER_2", mrb_fixnum_value(12));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_MIDDLE_LEFT", mrb_fixnum_value(13));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_MIDDLE", mrb_fixnum_value(14));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_MIDDLE_RIGHT", mrb_fixnum_value(15));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_LEFT_THUMB", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_BUTTON_RIGHT_THUMB", mrb_fixnum_value(17));
 
-struct RClass *mod_RayLib_GamepadButton;
-mod_RayLib_GamepadButton = mrb_define_module_under(mrb, mod_RayLib, "GamepadButton" );
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_UNKNOWN", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_FACE_UP", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_FACE_RIGHT", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_FACE_DOWN", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_FACE_LEFT", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_FACE_UP", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_FACE_RIGHT", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_FACE_DOWN", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_FACE_LEFT", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_TRIGGER_1", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_TRIGGER_2", mrb_fixnum_value(10));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_TRIGGER_1", mrb_fixnum_value(11));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_TRIGGER_2", mrb_fixnum_value(12));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_MIDDLE_LEFT", mrb_fixnum_value(13));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_MIDDLE", mrb_fixnum_value(14));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_MIDDLE_RIGHT", mrb_fixnum_value(15));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_THUMB", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_THUMB", mrb_fixnum_value(17));
+	struct RClass *mod_RayLib_GamepadButton;
+	mod_RayLib_GamepadButton = mrb_define_module_under(mrb, mod_RayLib, "GamepadButton" );
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_UNKNOWN", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_FACE_UP", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_FACE_RIGHT", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_FACE_DOWN", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_FACE_LEFT", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_FACE_UP", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_FACE_RIGHT", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_FACE_DOWN", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_FACE_LEFT", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_TRIGGER_1", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_TRIGGER_2", mrb_fixnum_value(10));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_TRIGGER_1", mrb_fixnum_value(11));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_TRIGGER_2", mrb_fixnum_value(12));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_MIDDLE_LEFT", mrb_fixnum_value(13));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_MIDDLE", mrb_fixnum_value(14));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_MIDDLE_RIGHT", mrb_fixnum_value(15));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_LEFT_THUMB", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib_GamepadButton, "GAMEPAD_BUTTON_RIGHT_THUMB", mrb_fixnum_value(17));
 
-//----------------------------------------------------------------//
-// Raylib::GamepadAxis
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_LEFT_X", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_LEFT_Y", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_RIGHT_X", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_RIGHT_Y", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_LEFT_TRIGGER", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_RIGHT_TRIGGER", mrb_fixnum_value(5));
+	//----------------------------------------------------------------//
+	// Raylib::GamepadAxis
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_LEFT_X", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_LEFT_Y", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_RIGHT_X", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_RIGHT_Y", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_LEFT_TRIGGER", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "GAMEPAD_AXIS_RIGHT_TRIGGER", mrb_fixnum_value(5));
 
-struct RClass *mod_RayLib_GamepadAxis;
-mod_RayLib_GamepadAxis = mrb_define_module_under(mrb, mod_RayLib, "GamepadAxis" );
-mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_LEFT_X", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_LEFT_Y", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_RIGHT_X", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_RIGHT_Y", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_LEFT_TRIGGER", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_RIGHT_TRIGGER", mrb_fixnum_value(5));
+	struct RClass *mod_RayLib_GamepadAxis;
+	mod_RayLib_GamepadAxis = mrb_define_module_under(mrb, mod_RayLib, "GamepadAxis" );
+	mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_LEFT_X", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_LEFT_Y", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_RIGHT_X", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_RIGHT_Y", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_LEFT_TRIGGER", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_GamepadAxis, "GAMEPAD_AXIS_RIGHT_TRIGGER", mrb_fixnum_value(5));
 
-//----------------------------------------------------------------//
-// Raylib::MaterialMapIndex
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_ALBEDO", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_METALNESS", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_NORMAL", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_ROUGHNESS", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_OCCLUSION", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_EMISSION", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_HEIGHT", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_CUBEMAP", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_IRRADIANCE", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_PREFILTER", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_BRDF", mrb_fixnum_value(10));
+	//----------------------------------------------------------------//
+	// Raylib::MaterialMapIndex
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_ALBEDO", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_METALNESS", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_NORMAL", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_ROUGHNESS", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_OCCLUSION", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_EMISSION", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_HEIGHT", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_CUBEMAP", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_IRRADIANCE", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_PREFILTER", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib, "MATERIAL_MAP_BRDF", mrb_fixnum_value(10));
 
-struct RClass *mod_RayLib_MaterialMapIndex;
-mod_RayLib_MaterialMapIndex = mrb_define_module_under(mrb, mod_RayLib, "MaterialMapIndex" );
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_ALBEDO", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_METALNESS", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_NORMAL", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_ROUGHNESS", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_OCCLUSION", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_EMISSION", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_HEIGHT", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_CUBEMAP", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_IRRADIANCE", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_PREFILTER", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_BRDF", mrb_fixnum_value(10));
+	struct RClass *mod_RayLib_MaterialMapIndex;
+	mod_RayLib_MaterialMapIndex = mrb_define_module_under(mrb, mod_RayLib, "MaterialMapIndex" );
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_ALBEDO", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_METALNESS", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_NORMAL", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_ROUGHNESS", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_OCCLUSION", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_EMISSION", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_HEIGHT", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_CUBEMAP", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_IRRADIANCE", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_PREFILTER", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib_MaterialMapIndex, "MATERIAL_MAP_BRDF", mrb_fixnum_value(10));
 
-//----------------------------------------------------------------//
-// Raylib::ShaderLocationIndex
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_POSITION", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_TEXCOORD01", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_TEXCOORD02", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_NORMAL", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_TANGENT", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_COLOR", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_MVP", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_VIEW", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_PROJECTION", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_MODEL", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_NORMAL", mrb_fixnum_value(10));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VECTOR_VIEW", mrb_fixnum_value(11));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_COLOR_DIFFUSE", mrb_fixnum_value(12));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_COLOR_SPECULAR", mrb_fixnum_value(13));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_COLOR_AMBIENT", mrb_fixnum_value(14));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_ALBEDO", mrb_fixnum_value(15));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_METALNESS", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_NORMAL", mrb_fixnum_value(17));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_ROUGHNESS", mrb_fixnum_value(18));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_OCCLUSION", mrb_fixnum_value(19));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_EMISSION", mrb_fixnum_value(20));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_HEIGHT", mrb_fixnum_value(21));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_CUBEMAP", mrb_fixnum_value(22));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_IRRADIANCE", mrb_fixnum_value(23));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_PREFILTER", mrb_fixnum_value(24));
-mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_BRDF", mrb_fixnum_value(25));
+	//----------------------------------------------------------------//
+	// Raylib::ShaderLocationIndex
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_POSITION", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_TEXCOORD01", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_TEXCOORD02", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_NORMAL", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_TANGENT", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VERTEX_COLOR", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_MVP", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_VIEW", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_PROJECTION", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_MODEL", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MATRIX_NORMAL", mrb_fixnum_value(10));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_VECTOR_VIEW", mrb_fixnum_value(11));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_COLOR_DIFFUSE", mrb_fixnum_value(12));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_COLOR_SPECULAR", mrb_fixnum_value(13));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_COLOR_AMBIENT", mrb_fixnum_value(14));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_ALBEDO", mrb_fixnum_value(15));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_METALNESS", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_NORMAL", mrb_fixnum_value(17));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_ROUGHNESS", mrb_fixnum_value(18));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_OCCLUSION", mrb_fixnum_value(19));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_EMISSION", mrb_fixnum_value(20));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_HEIGHT", mrb_fixnum_value(21));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_CUBEMAP", mrb_fixnum_value(22));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_IRRADIANCE", mrb_fixnum_value(23));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_PREFILTER", mrb_fixnum_value(24));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_LOC_MAP_BRDF", mrb_fixnum_value(25));
 
-struct RClass *mod_RayLib_ShaderLocationIndex;
-mod_RayLib_ShaderLocationIndex = mrb_define_module_under(mrb, mod_RayLib, "ShaderLocationIndex" );
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_POSITION", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_TEXCOORD01", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_TEXCOORD02", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_NORMAL", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_TANGENT", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_COLOR", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_MVP", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_VIEW", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_PROJECTION", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_MODEL", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_NORMAL", mrb_fixnum_value(10));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VECTOR_VIEW", mrb_fixnum_value(11));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_COLOR_DIFFUSE", mrb_fixnum_value(12));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_COLOR_SPECULAR", mrb_fixnum_value(13));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_COLOR_AMBIENT", mrb_fixnum_value(14));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_ALBEDO", mrb_fixnum_value(15));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_METALNESS", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_NORMAL", mrb_fixnum_value(17));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_ROUGHNESS", mrb_fixnum_value(18));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_OCCLUSION", mrb_fixnum_value(19));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_EMISSION", mrb_fixnum_value(20));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_HEIGHT", mrb_fixnum_value(21));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_CUBEMAP", mrb_fixnum_value(22));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_IRRADIANCE", mrb_fixnum_value(23));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_PREFILTER", mrb_fixnum_value(24));
-mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_BRDF", mrb_fixnum_value(25));
+	struct RClass *mod_RayLib_ShaderLocationIndex;
+	mod_RayLib_ShaderLocationIndex = mrb_define_module_under(mrb, mod_RayLib, "ShaderLocationIndex" );
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_POSITION", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_TEXCOORD01", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_TEXCOORD02", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_NORMAL", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_TANGENT", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VERTEX_COLOR", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_MVP", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_VIEW", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_PROJECTION", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_MODEL", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MATRIX_NORMAL", mrb_fixnum_value(10));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_VECTOR_VIEW", mrb_fixnum_value(11));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_COLOR_DIFFUSE", mrb_fixnum_value(12));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_COLOR_SPECULAR", mrb_fixnum_value(13));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_COLOR_AMBIENT", mrb_fixnum_value(14));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_ALBEDO", mrb_fixnum_value(15));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_METALNESS", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_NORMAL", mrb_fixnum_value(17));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_ROUGHNESS", mrb_fixnum_value(18));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_OCCLUSION", mrb_fixnum_value(19));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_EMISSION", mrb_fixnum_value(20));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_HEIGHT", mrb_fixnum_value(21));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_CUBEMAP", mrb_fixnum_value(22));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_IRRADIANCE", mrb_fixnum_value(23));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_PREFILTER", mrb_fixnum_value(24));
+	mrb_define_const(mrb, mod_RayLib_ShaderLocationIndex, "SHADER_LOC_MAP_BRDF", mrb_fixnum_value(25));
 
-//----------------------------------------------------------------//
-// Raylib::ShaderUniformDataType
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_FLOAT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_VEC2", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_VEC3", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_VEC4", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_INT", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_IVEC2", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_IVEC3", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_IVEC4", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_SAMPLER2D", mrb_fixnum_value(8));
+	//----------------------------------------------------------------//
+	// Raylib::ShaderUniformDataType
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_FLOAT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_VEC2", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_VEC3", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_VEC4", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_INT", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_IVEC2", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_IVEC3", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_IVEC4", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_UNIFORM_SAMPLER2D", mrb_fixnum_value(8));
 
-struct RClass *mod_RayLib_ShaderUniformDataType;
-mod_RayLib_ShaderUniformDataType = mrb_define_module_under(mrb, mod_RayLib, "ShaderUniformDataType" );
-mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_FLOAT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_VEC2", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_VEC3", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_VEC4", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_INT", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_IVEC2", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_IVEC3", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_IVEC4", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_SAMPLER2D", mrb_fixnum_value(8));
+	struct RClass *mod_RayLib_ShaderUniformDataType;
+	mod_RayLib_ShaderUniformDataType = mrb_define_module_under(mrb, mod_RayLib, "ShaderUniformDataType" );
+	mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_FLOAT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_VEC2", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_VEC3", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_VEC4", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_INT", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_IVEC2", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_IVEC3", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_IVEC4", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib_ShaderUniformDataType, "SHADER_UNIFORM_SAMPLER2D", mrb_fixnum_value(8));
 
-//----------------------------------------------------------------//
-// Raylib::ShaderAttributeDataType
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "SHADER_ATTRIB_FLOAT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "SHADER_ATTRIB_VEC2", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "SHADER_ATTRIB_VEC3", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "SHADER_ATTRIB_VEC4", mrb_fixnum_value(3));
+	//----------------------------------------------------------------//
+	// Raylib::ShaderAttributeDataType
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "SHADER_ATTRIB_FLOAT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_ATTRIB_VEC2", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_ATTRIB_VEC3", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "SHADER_ATTRIB_VEC4", mrb_fixnum_value(3));
 
-struct RClass *mod_RayLib_ShaderAttributeDataType;
-mod_RayLib_ShaderAttributeDataType = mrb_define_module_under(mrb, mod_RayLib, "ShaderAttributeDataType" );
-mrb_define_const(mrb, mod_RayLib_ShaderAttributeDataType, "SHADER_ATTRIB_FLOAT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_ShaderAttributeDataType, "SHADER_ATTRIB_VEC2", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_ShaderAttributeDataType, "SHADER_ATTRIB_VEC3", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_ShaderAttributeDataType, "SHADER_ATTRIB_VEC4", mrb_fixnum_value(3));
+	struct RClass *mod_RayLib_ShaderAttributeDataType;
+	mod_RayLib_ShaderAttributeDataType = mrb_define_module_under(mrb, mod_RayLib, "ShaderAttributeDataType" );
+	mrb_define_const(mrb, mod_RayLib_ShaderAttributeDataType, "SHADER_ATTRIB_FLOAT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_ShaderAttributeDataType, "SHADER_ATTRIB_VEC2", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_ShaderAttributeDataType, "SHADER_ATTRIB_VEC3", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_ShaderAttributeDataType, "SHADER_ATTRIB_VEC4", mrb_fixnum_value(3));
 
-//----------------------------------------------------------------//
-// Raylib::PixelFormat
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_GRAYSCALE", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R5G6B5", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R8G8B8", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R5G5B5A1", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R4G4B4A4", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R8G8B8A8", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R32", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R32G32B32", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R32G32B32A32", mrb_fixnum_value(10));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R16", mrb_fixnum_value(11));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R16G16B16", mrb_fixnum_value(12));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R16G16B16A16", mrb_fixnum_value(13));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_DXT1_RGB", mrb_fixnum_value(14));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_DXT1_RGBA", mrb_fixnum_value(15));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_DXT3_RGBA", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_DXT5_RGBA", mrb_fixnum_value(17));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ETC1_RGB", mrb_fixnum_value(18));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ETC2_RGB", mrb_fixnum_value(19));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ETC2_EAC_RGBA", mrb_fixnum_value(20));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_PVRT_RGB", mrb_fixnum_value(21));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_PVRT_RGBA", mrb_fixnum_value(22));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ASTC_4x4_RGBA", mrb_fixnum_value(23));
-mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ASTC_8x8_RGBA", mrb_fixnum_value(24));
+	//----------------------------------------------------------------//
+	// Raylib::PixelFormat
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_GRAYSCALE", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R5G6B5", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R8G8B8", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R5G5B5A1", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R4G4B4A4", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R8G8B8A8", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R32", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R32G32B32", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R32G32B32A32", mrb_fixnum_value(10));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R16", mrb_fixnum_value(11));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R16G16B16", mrb_fixnum_value(12));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_UNCOMPRESSED_R16G16B16A16", mrb_fixnum_value(13));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_DXT1_RGB", mrb_fixnum_value(14));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_DXT1_RGBA", mrb_fixnum_value(15));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_DXT3_RGBA", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_DXT5_RGBA", mrb_fixnum_value(17));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ETC1_RGB", mrb_fixnum_value(18));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ETC2_RGB", mrb_fixnum_value(19));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ETC2_EAC_RGBA", mrb_fixnum_value(20));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_PVRT_RGB", mrb_fixnum_value(21));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_PVRT_RGBA", mrb_fixnum_value(22));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ASTC_4x4_RGBA", mrb_fixnum_value(23));
+	mrb_define_const(mrb, mod_RayLib, "PIXELFORMAT_COMPRESSED_ASTC_8x8_RGBA", mrb_fixnum_value(24));
 
-struct RClass *mod_RayLib_PixelFormat;
-mod_RayLib_PixelFormat = mrb_define_module_under(mrb, mod_RayLib, "PixelFormat" );
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_GRAYSCALE", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R5G6B5", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R8G8B8", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R5G5B5A1", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R4G4B4A4", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R8G8B8A8", mrb_fixnum_value(7));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R32", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R32G32B32", mrb_fixnum_value(9));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R32G32B32A32", mrb_fixnum_value(10));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R16", mrb_fixnum_value(11));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R16G16B16", mrb_fixnum_value(12));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R16G16B16A16", mrb_fixnum_value(13));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_DXT1_RGB", mrb_fixnum_value(14));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_DXT1_RGBA", mrb_fixnum_value(15));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_DXT3_RGBA", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_DXT5_RGBA", mrb_fixnum_value(17));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ETC1_RGB", mrb_fixnum_value(18));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ETC2_RGB", mrb_fixnum_value(19));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ETC2_EAC_RGBA", mrb_fixnum_value(20));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_PVRT_RGB", mrb_fixnum_value(21));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_PVRT_RGBA", mrb_fixnum_value(22));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ASTC_4x4_RGBA", mrb_fixnum_value(23));
-mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ASTC_8x8_RGBA", mrb_fixnum_value(24));
+	struct RClass *mod_RayLib_PixelFormat;
+	mod_RayLib_PixelFormat = mrb_define_module_under(mrb, mod_RayLib, "PixelFormat" );
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_GRAYSCALE", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R5G6B5", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R8G8B8", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R5G5B5A1", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R4G4B4A4", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R8G8B8A8", mrb_fixnum_value(7));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R32", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R32G32B32", mrb_fixnum_value(9));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R32G32B32A32", mrb_fixnum_value(10));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R16", mrb_fixnum_value(11));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R16G16B16", mrb_fixnum_value(12));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_UNCOMPRESSED_R16G16B16A16", mrb_fixnum_value(13));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_DXT1_RGB", mrb_fixnum_value(14));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_DXT1_RGBA", mrb_fixnum_value(15));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_DXT3_RGBA", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_DXT5_RGBA", mrb_fixnum_value(17));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ETC1_RGB", mrb_fixnum_value(18));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ETC2_RGB", mrb_fixnum_value(19));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ETC2_EAC_RGBA", mrb_fixnum_value(20));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_PVRT_RGB", mrb_fixnum_value(21));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_PVRT_RGBA", mrb_fixnum_value(22));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ASTC_4x4_RGBA", mrb_fixnum_value(23));
+	mrb_define_const(mrb, mod_RayLib_PixelFormat, "PIXELFORMAT_COMPRESSED_ASTC_8x8_RGBA", mrb_fixnum_value(24));
 
-//----------------------------------------------------------------//
-// Raylib::TextureFilter
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_POINT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_BILINEAR", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_TRILINEAR", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_ANISOTROPIC_4X", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_ANISOTROPIC_8X", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_ANISOTROPIC_16X", mrb_fixnum_value(5));
+	//----------------------------------------------------------------//
+	// Raylib::TextureFilter
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_POINT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_BILINEAR", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_TRILINEAR", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_ANISOTROPIC_4X", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_ANISOTROPIC_8X", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_FILTER_ANISOTROPIC_16X", mrb_fixnum_value(5));
 
-struct RClass *mod_RayLib_TextureFilter;
-mod_RayLib_TextureFilter = mrb_define_module_under(mrb, mod_RayLib, "TextureFilter" );
-mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_POINT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_BILINEAR", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_TRILINEAR", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_ANISOTROPIC_4X", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_ANISOTROPIC_8X", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_ANISOTROPIC_16X", mrb_fixnum_value(5));
+	struct RClass *mod_RayLib_TextureFilter;
+	mod_RayLib_TextureFilter = mrb_define_module_under(mrb, mod_RayLib, "TextureFilter" );
+	mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_POINT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_BILINEAR", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_TRILINEAR", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_ANISOTROPIC_4X", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_ANISOTROPIC_8X", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_TextureFilter, "TEXTURE_FILTER_ANISOTROPIC_16X", mrb_fixnum_value(5));
 
-//----------------------------------------------------------------//
-// Raylib::TextureWrap
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_WRAP_REPEAT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_WRAP_CLAMP", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_WRAP_MIRROR_REPEAT", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "TEXTURE_WRAP_MIRROR_CLAMP", mrb_fixnum_value(3));
+	//----------------------------------------------------------------//
+	// Raylib::TextureWrap
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_WRAP_REPEAT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_WRAP_CLAMP", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_WRAP_MIRROR_REPEAT", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "TEXTURE_WRAP_MIRROR_CLAMP", mrb_fixnum_value(3));
 
-struct RClass *mod_RayLib_TextureWrap;
-mod_RayLib_TextureWrap = mrb_define_module_under(mrb, mod_RayLib, "TextureWrap" );
-mrb_define_const(mrb, mod_RayLib_TextureWrap, "TEXTURE_WRAP_REPEAT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_TextureWrap, "TEXTURE_WRAP_CLAMP", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_TextureWrap, "TEXTURE_WRAP_MIRROR_REPEAT", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_TextureWrap, "TEXTURE_WRAP_MIRROR_CLAMP", mrb_fixnum_value(3));
+	struct RClass *mod_RayLib_TextureWrap;
+	mod_RayLib_TextureWrap = mrb_define_module_under(mrb, mod_RayLib, "TextureWrap" );
+	mrb_define_const(mrb, mod_RayLib_TextureWrap, "TEXTURE_WRAP_REPEAT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_TextureWrap, "TEXTURE_WRAP_CLAMP", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_TextureWrap, "TEXTURE_WRAP_MIRROR_REPEAT", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_TextureWrap, "TEXTURE_WRAP_MIRROR_CLAMP", mrb_fixnum_value(3));
 
-//----------------------------------------------------------------//
-// Raylib::CubemapLayout
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_AUTO_DETECT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_LINE_VERTICAL", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_LINE_HORIZONTAL", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_CROSS_THREE_BY_FOUR", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_CROSS_FOUR_BY_THREE", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_PANORAMA", mrb_fixnum_value(5));
+	//----------------------------------------------------------------//
+	// Raylib::CubemapLayout
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_AUTO_DETECT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_LINE_VERTICAL", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_LINE_HORIZONTAL", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_CROSS_THREE_BY_FOUR", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_CROSS_FOUR_BY_THREE", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "CUBEMAP_LAYOUT_PANORAMA", mrb_fixnum_value(5));
 
-struct RClass *mod_RayLib_CubemapLayout;
-mod_RayLib_CubemapLayout = mrb_define_module_under(mrb, mod_RayLib, "CubemapLayout" );
-mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_AUTO_DETECT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_LINE_VERTICAL", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_LINE_HORIZONTAL", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_CROSS_THREE_BY_FOUR", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_CROSS_FOUR_BY_THREE", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_PANORAMA", mrb_fixnum_value(5));
+	struct RClass *mod_RayLib_CubemapLayout;
+	mod_RayLib_CubemapLayout = mrb_define_module_under(mrb, mod_RayLib, "CubemapLayout" );
+	mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_AUTO_DETECT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_LINE_VERTICAL", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_LINE_HORIZONTAL", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_CROSS_THREE_BY_FOUR", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_CROSS_FOUR_BY_THREE", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_CubemapLayout, "CUBEMAP_LAYOUT_PANORAMA", mrb_fixnum_value(5));
 
-//----------------------------------------------------------------//
-// Raylib::FontType
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "FONT_DEFAULT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "FONT_BITMAP", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "FONT_SDF", mrb_fixnum_value(2));
+	//----------------------------------------------------------------//
+	// Raylib::FontType
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "FONT_DEFAULT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "FONT_BITMAP", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "FONT_SDF", mrb_fixnum_value(2));
 
-struct RClass *mod_RayLib_FontType;
-mod_RayLib_FontType = mrb_define_module_under(mrb, mod_RayLib, "FontType" );
-mrb_define_const(mrb, mod_RayLib_FontType, "FONT_DEFAULT", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_FontType, "FONT_BITMAP", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_FontType, "FONT_SDF", mrb_fixnum_value(2));
+	struct RClass *mod_RayLib_FontType;
+	mod_RayLib_FontType = mrb_define_module_under(mrb, mod_RayLib, "FontType" );
+	mrb_define_const(mrb, mod_RayLib_FontType, "FONT_DEFAULT", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_FontType, "FONT_BITMAP", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_FontType, "FONT_SDF", mrb_fixnum_value(2));
 
-//----------------------------------------------------------------//
-// Raylib::BlendMode
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "BLEND_ALPHA", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "BLEND_ADDITIVE", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "BLEND_MULTIPLIED", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "BLEND_ADD_COLORS", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "BLEND_SUBTRACT_COLORS", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "BLEND_ALPHA_PREMULTIPLY", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib, "BLEND_CUSTOM", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib, "BLEND_CUSTOM_SEPARATE", mrb_fixnum_value(7));
+	//----------------------------------------------------------------//
+	// Raylib::BlendMode
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "BLEND_ALPHA", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "BLEND_ADDITIVE", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "BLEND_MULTIPLIED", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "BLEND_ADD_COLORS", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "BLEND_SUBTRACT_COLORS", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "BLEND_ALPHA_PREMULTIPLY", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib, "BLEND_CUSTOM", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib, "BLEND_CUSTOM_SEPARATE", mrb_fixnum_value(7));
 
-struct RClass *mod_RayLib_BlendMode;
-mod_RayLib_BlendMode = mrb_define_module_under(mrb, mod_RayLib, "BlendMode" );
-mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_ALPHA", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_ADDITIVE", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_MULTIPLIED", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_ADD_COLORS", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_SUBTRACT_COLORS", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_ALPHA_PREMULTIPLY", mrb_fixnum_value(5));
-mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_CUSTOM", mrb_fixnum_value(6));
-mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_CUSTOM_SEPARATE", mrb_fixnum_value(7));
+	struct RClass *mod_RayLib_BlendMode;
+	mod_RayLib_BlendMode = mrb_define_module_under(mrb, mod_RayLib, "BlendMode" );
+	mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_ALPHA", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_ADDITIVE", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_MULTIPLIED", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_ADD_COLORS", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_SUBTRACT_COLORS", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_ALPHA_PREMULTIPLY", mrb_fixnum_value(5));
+	mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_CUSTOM", mrb_fixnum_value(6));
+	mrb_define_const(mrb, mod_RayLib_BlendMode, "BLEND_CUSTOM_SEPARATE", mrb_fixnum_value(7));
 
-//----------------------------------------------------------------//
-// Raylib::Gesture
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "GESTURE_NONE", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_TAP", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_DOUBLETAP", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_HOLD", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_DRAG", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_SWIPE_RIGHT", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_SWIPE_LEFT", mrb_fixnum_value(32));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_SWIPE_UP", mrb_fixnum_value(64));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_SWIPE_DOWN", mrb_fixnum_value(128));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_PINCH_IN", mrb_fixnum_value(256));
-mrb_define_const(mrb, mod_RayLib, "GESTURE_PINCH_OUT", mrb_fixnum_value(512));
+	//----------------------------------------------------------------//
+	// Raylib::Gesture
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_NONE", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_TAP", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_DOUBLETAP", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_HOLD", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_DRAG", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_SWIPE_RIGHT", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_SWIPE_LEFT", mrb_fixnum_value(32));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_SWIPE_UP", mrb_fixnum_value(64));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_SWIPE_DOWN", mrb_fixnum_value(128));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_PINCH_IN", mrb_fixnum_value(256));
+	mrb_define_const(mrb, mod_RayLib, "GESTURE_PINCH_OUT", mrb_fixnum_value(512));
 
-struct RClass *mod_RayLib_Gesture;
-mod_RayLib_Gesture = mrb_define_module_under(mrb, mod_RayLib, "Gesture" );
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_NONE", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_TAP", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_DOUBLETAP", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_HOLD", mrb_fixnum_value(4));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_DRAG", mrb_fixnum_value(8));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_SWIPE_RIGHT", mrb_fixnum_value(16));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_SWIPE_LEFT", mrb_fixnum_value(32));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_SWIPE_UP", mrb_fixnum_value(64));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_SWIPE_DOWN", mrb_fixnum_value(128));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_PINCH_IN", mrb_fixnum_value(256));
-mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_PINCH_OUT", mrb_fixnum_value(512));
+	struct RClass *mod_RayLib_Gesture;
+	mod_RayLib_Gesture = mrb_define_module_under(mrb, mod_RayLib, "Gesture" );
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_NONE", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_TAP", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_DOUBLETAP", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_HOLD", mrb_fixnum_value(4));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_DRAG", mrb_fixnum_value(8));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_SWIPE_RIGHT", mrb_fixnum_value(16));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_SWIPE_LEFT", mrb_fixnum_value(32));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_SWIPE_UP", mrb_fixnum_value(64));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_SWIPE_DOWN", mrb_fixnum_value(128));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_PINCH_IN", mrb_fixnum_value(256));
+	mrb_define_const(mrb, mod_RayLib_Gesture, "GESTURE_PINCH_OUT", mrb_fixnum_value(512));
 
-//----------------------------------------------------------------//
-// Raylib::CameraMode
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "CAMERA_CUSTOM", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "CAMERA_FREE", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "CAMERA_ORBITAL", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib, "CAMERA_FIRST_PERSON", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib, "CAMERA_THIRD_PERSON", mrb_fixnum_value(4));
+	//----------------------------------------------------------------//
+	// Raylib::CameraMode
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "CAMERA_CUSTOM", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "CAMERA_FREE", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "CAMERA_ORBITAL", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib, "CAMERA_FIRST_PERSON", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib, "CAMERA_THIRD_PERSON", mrb_fixnum_value(4));
 
-struct RClass *mod_RayLib_CameraMode;
-mod_RayLib_CameraMode = mrb_define_module_under(mrb, mod_RayLib, "CameraMode" );
-mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_CUSTOM", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_FREE", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_ORBITAL", mrb_fixnum_value(2));
-mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_FIRST_PERSON", mrb_fixnum_value(3));
-mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_THIRD_PERSON", mrb_fixnum_value(4));
+	struct RClass *mod_RayLib_CameraMode;
+	mod_RayLib_CameraMode = mrb_define_module_under(mrb, mod_RayLib, "CameraMode" );
+	mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_CUSTOM", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_FREE", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_ORBITAL", mrb_fixnum_value(2));
+	mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_FIRST_PERSON", mrb_fixnum_value(3));
+	mrb_define_const(mrb, mod_RayLib_CameraMode, "CAMERA_THIRD_PERSON", mrb_fixnum_value(4));
 
-//----------------------------------------------------------------//
-// Raylib::CameraProjection
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "CAMERA_PERSPECTIVE", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "CAMERA_ORTHOGRAPHIC", mrb_fixnum_value(1));
+	//----------------------------------------------------------------//
+	// Raylib::CameraProjection
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "CAMERA_PERSPECTIVE", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "CAMERA_ORTHOGRAPHIC", mrb_fixnum_value(1));
 
-struct RClass *mod_RayLib_CameraProjection;
-mod_RayLib_CameraProjection = mrb_define_module_under(mrb, mod_RayLib, "CameraProjection" );
-mrb_define_const(mrb, mod_RayLib_CameraProjection, "CAMERA_PERSPECTIVE", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_CameraProjection, "CAMERA_ORTHOGRAPHIC", mrb_fixnum_value(1));
+	struct RClass *mod_RayLib_CameraProjection;
+	mod_RayLib_CameraProjection = mrb_define_module_under(mrb, mod_RayLib, "CameraProjection" );
+	mrb_define_const(mrb, mod_RayLib_CameraProjection, "CAMERA_PERSPECTIVE", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_CameraProjection, "CAMERA_ORTHOGRAPHIC", mrb_fixnum_value(1));
 
-//----------------------------------------------------------------//
-// Raylib::NPatchLayout
-//----------------------------------------------------------------//
-mrb_define_const(mrb, mod_RayLib, "NPATCH_NINE_PATCH", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib, "NPATCH_THREE_PATCH_VERTICAL", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib, "NPATCH_THREE_PATCH_HORIZONTAL", mrb_fixnum_value(2));
+	//----------------------------------------------------------------//
+	// Raylib::NPatchLayout
+	//----------------------------------------------------------------//
+	mrb_define_const(mrb, mod_RayLib, "NPATCH_NINE_PATCH", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib, "NPATCH_THREE_PATCH_VERTICAL", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib, "NPATCH_THREE_PATCH_HORIZONTAL", mrb_fixnum_value(2));
 
-struct RClass *mod_RayLib_NPatchLayout;
-mod_RayLib_NPatchLayout = mrb_define_module_under(mrb, mod_RayLib, "NPatchLayout" );
-mrb_define_const(mrb, mod_RayLib_NPatchLayout, "NPATCH_NINE_PATCH", mrb_fixnum_value(0));
-mrb_define_const(mrb, mod_RayLib_NPatchLayout, "NPATCH_THREE_PATCH_VERTICAL", mrb_fixnum_value(1));
-mrb_define_const(mrb, mod_RayLib_NPatchLayout, "NPATCH_THREE_PATCH_HORIZONTAL", mrb_fixnum_value(2));
+	struct RClass *mod_RayLib_NPatchLayout;
+	mod_RayLib_NPatchLayout = mrb_define_module_under(mrb, mod_RayLib, "NPatchLayout" );
+	mrb_define_const(mrb, mod_RayLib_NPatchLayout, "NPATCH_NINE_PATCH", mrb_fixnum_value(0));
+	mrb_define_const(mrb, mod_RayLib_NPatchLayout, "NPATCH_THREE_PATCH_VERTICAL", mrb_fixnum_value(1));
+	mrb_define_const(mrb, mod_RayLib_NPatchLayout, "NPATCH_THREE_PATCH_HORIZONTAL", mrb_fixnum_value(2));
 
-mrb_gc_arena_restore(mrb, arena_size);
+	mrb_gc_arena_restore(mrb, arena_size);
 
 	//----------------------------------------------------------------//
 	// module: Vector2
