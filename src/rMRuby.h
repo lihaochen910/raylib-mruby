@@ -2,7 +2,6 @@
 #define RMRUBY_H
 
 #include <mruby.h>
-#include <raylib.h>
 
 #ifdef __cplusplus
 #define RMRUBY_API extern "C"

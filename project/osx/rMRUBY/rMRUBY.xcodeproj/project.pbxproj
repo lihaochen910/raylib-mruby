@@ -7,16 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B359098A8B437CD4BDF2384 /* module_audio_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B35944A3DECE0B57FC52175 /* module_audio_wrapper.c */; };
+		2B35910F3BE48A31FD65EA7D /* wave_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359481BC90E476E839F19F /* wave_wrapper.c */; };
+		2B3595E6BC8AE15A7A20B42B /* glyphinfo_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3592A8A494137D1F360739 /* glyphinfo_wrapper.c */; };
 		2B35969504C6A02CD7B2D0AF /* libmruby.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B35906B88E11BF2F5EED569 /* libmruby.a */; };
 		2B3598AC4B0D85C40ECBC192 /* rMRuby.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359C05981A840F31938B1D /* rMRuby.c */; };
+		2B3598E6AFF1A54B54539370 /* music_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3594A49642202FF05954D5 /* music_wrapper.c */; };
+		2B3599BEA65F7710FE2CC323 /* audiostream_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359AA87D51C88F55965805 /* audiostream_wrapper.c */; };
+		2B3599F7C25BE300FD396AB2 /* texture_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3595724394D50038E3F048 /* texture_wrapper.c */; };
 		2B359AEA8FC9F27676E649A7 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359C5945698ACF9BFD8755 /* main.c */; };
+		2B359B4231958D8E6B34671A /* font_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3596F1E7533567A79297A6 /* font_wrapper.c */; };
+		2B359BD2688814738869CC32 /* module_texture_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B35965BEBC29938CBDBC3FF /* module_texture_wrapper.c */; };
+		2B359BF0C6FB8C38EFB338E0 /* module_shapes_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359B473D26F6756B3FE6CC /* module_shapes_wrapper.c */; };
+		2B359C3788D5FEC6E1E5E73A /* module_models_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3593ECBFD6621C5B0AFE70 /* module_models_wrapper.c */; };
 		2B359C81C3D2AD7DD91E3F79 /* libraylib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3598C64D76F4108A47EBA2 /* libraylib.a */; };
-		997A6E4F2B67476200A79CED /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 997A6E4E2B67476200A79CED /* libglfw3.a */; };
-		997A6E512B6747A300A79CED /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997A6E502B6747A300A79CED /* OpenGL.framework */; };
-		997A6E532B6747AB00A79CED /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997A6E522B6747AB00A79CED /* Cocoa.framework */; };
-		997A6E552B6747B400A79CED /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997A6E542B6747B400A79CED /* IOKit.framework */; };
-		997A6E572B6747BB00A79CED /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997A6E562B6747BB00A79CED /* CoreAudio.framework */; };
-		997A6E592B6747C100A79CED /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997A6E582B6747C100A79CED /* CoreVideo.framework */; };
+		2B359CE96753629AE699A372 /* module_shaders_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359665DCFDFB0B93841F16 /* module_shaders_wrapper.c */; };
+		2B359D12E4B0B2996591BE1B /* core_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359C6D70A0998FDEFEEBF7 /* core_wrapper.c */; };
+		2B359E196B0428132441096F /* image_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3597C070E3C13CDFC1F067 /* image_wrapper.c */; };
+		2B359E28E5B0E570E0EB65D6 /* module_text_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359023625A20C6C4C255E9 /* module_text_wrapper.c */; };
+		2B359E92BBA1869D864E44FD /* shader_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B359AB492ECFCD5EE607C33 /* shader_wrapper.c */; };
+		2B359F29559A094765925C09 /* sound_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B35999BEED2492313B5D7C5 /* sound_wrapper.c */; };
+		2B359F6A61BF9DE3525A30DE /* render_texture_wrapper.c in Sources */ = {isa = PBXBuildFile; fileRef = 2B3590E5E368ADB2A5716DD9 /* render_texture_wrapper.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,19 +43,46 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B359023625A20C6C4C255E9 /* module_text_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module_text_wrapper.c; sourceTree = "<group>"; };
 		2B35906B88E11BF2F5EED569 /* libmruby.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmruby.a; path = "/Users/Kanbaru/GitWorkspace/mruby/build/host-debug/lib/libmruby.a"; sourceTree = "<absolute>"; };
+		2B3590E5E368ADB2A5716DD9 /* render_texture_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = render_texture_wrapper.c; sourceTree = "<group>"; };
+		2B3591A052FC513AC293EA39 /* sound_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sound_wrapper.h; sourceTree = "<group>"; };
+		2B359263339E80813D07F3B4 /* module_shapes_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module_shapes_wrapper.h; sourceTree = "<group>"; };
+		2B3592A8A494137D1F360739 /* glyphinfo_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glyphinfo_wrapper.c; sourceTree = "<group>"; };
+		2B3593ECBFD6621C5B0AFE70 /* module_models_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module_models_wrapper.c; sourceTree = "<group>"; };
+		2B35943C155298C04EE86673 /* render_texture_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = render_texture_wrapper.h; sourceTree = "<group>"; };
+		2B35944A3DECE0B57FC52175 /* module_audio_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module_audio_wrapper.c; sourceTree = "<group>"; };
+		2B359481BC90E476E839F19F /* wave_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wave_wrapper.c; sourceTree = "<group>"; };
+		2B3594A49642202FF05954D5 /* music_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = music_wrapper.c; sourceTree = "<group>"; };
+		2B3595724394D50038E3F048 /* texture_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = texture_wrapper.c; sourceTree = "<group>"; };
+		2B3595DAE4083E6F198F0B61 /* audiostream_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = audiostream_wrapper.h; sourceTree = "<group>"; };
+		2B35965BEBC29938CBDBC3FF /* module_texture_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module_texture_wrapper.c; sourceTree = "<group>"; };
+		2B359665DCFDFB0B93841F16 /* module_shaders_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module_shaders_wrapper.c; sourceTree = "<group>"; };
+		2B3596AF710723093C2F7A84 /* font_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font_wrapper.h; sourceTree = "<group>"; };
+		2B3596F1E7533567A79297A6 /* font_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = font_wrapper.c; sourceTree = "<group>"; };
+		2B359757E7AD63776BBE835B /* module_shaders_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module_shaders_wrapper.h; sourceTree = "<group>"; };
+		2B3597954565E609131048E8 /* music_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = music_wrapper.h; sourceTree = "<group>"; };
+		2B3597C070E3C13CDFC1F067 /* image_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_wrapper.c; sourceTree = "<group>"; };
 		2B3598C64D76F4108A47EBA2 /* libraylib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libraylib.a; path = /Users/Kanbaru/GitWorkspace/raylib/src/libraylib.a; sourceTree = "<absolute>"; };
+		2B3598DC9210181771F3E78D /* module_text_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module_text_wrapper.h; sourceTree = "<group>"; };
+		2B3598EE17422E8E84E340DB /* core_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core_wrapper.h; sourceTree = "<group>"; };
+		2B35995D5BED3976232E1FA1 /* module_models_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module_models_wrapper.h; sourceTree = "<group>"; };
+		2B35999BEED2492313B5D7C5 /* sound_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sound_wrapper.c; sourceTree = "<group>"; };
+		2B3599F754BB083A45AC5BC1 /* glyphinfo_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glyphinfo_wrapper.h; sourceTree = "<group>"; };
+		2B359AA87D51C88F55965805 /* audiostream_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = audiostream_wrapper.c; sourceTree = "<group>"; };
+		2B359AB492ECFCD5EE607C33 /* shader_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shader_wrapper.c; sourceTree = "<group>"; };
+		2B359B473D26F6756B3FE6CC /* module_shapes_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = module_shapes_wrapper.c; sourceTree = "<group>"; };
+		2B359BC2856AB7A51A1FBACF /* module_audio_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module_audio_wrapper.h; sourceTree = "<group>"; };
+		2B359BD3E06D2DB89CE45445 /* image_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_wrapper.h; sourceTree = "<group>"; };
+		2B359C0343E4055DBB80E39E /* module_texture_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = module_texture_wrapper.h; sourceTree = "<group>"; };
 		2B359C05981A840F31938B1D /* rMRuby.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rMRuby.c; sourceTree = "<group>"; };
+		2B359C2598A5509328E12BDA /* texture_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = texture_wrapper.h; sourceTree = "<group>"; };
+		2B359C4ADBFF3CB721A26D49 /* wave_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wave_wrapper.h; sourceTree = "<group>"; };
 		2B359C5945698ACF9BFD8755 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		2B359C6D70A0998FDEFEEBF7 /* core_wrapper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = core_wrapper.c; sourceTree = "<group>"; };
+		2B359D622AF7CB937B57A4F4 /* shader_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shader_wrapper.h; sourceTree = "<group>"; };
 		2B359EB97A70001AB019E592 /* rMRuby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rMRuby.h; sourceTree = "<group>"; };
 		2B359FB2E731F02EF00DC6CA /* rMRUBY */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = rMRUBY; sourceTree = BUILT_PRODUCTS_DIR; };
-		997A6E4E2B67476200A79CED /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../raylib/src/external/glfw/build/src/libglfw3.a; sourceTree = "<group>"; };
-		997A6E502B6747A300A79CED /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		997A6E522B6747AB00A79CED /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		997A6E542B6747B400A79CED /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		997A6E562B6747BB00A79CED /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		997A6E582B6747C100A79CED /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
-		997A6E5A2B67480500A79CED /* libmruby_core.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmruby_core.a; path = ../../../../mruby/build/host/lib/libmruby_core.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,12 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				997A6E592B6747C100A79CED /* CoreVideo.framework in Frameworks */,
-				997A6E572B6747BB00A79CED /* CoreAudio.framework in Frameworks */,
-				997A6E552B6747B400A79CED /* IOKit.framework in Frameworks */,
-				997A6E532B6747AB00A79CED /* Cocoa.framework in Frameworks */,
-				997A6E512B6747A300A79CED /* OpenGL.framework in Frameworks */,
-				997A6E4F2B67476200A79CED /* libglfw3.a in Frameworks */,
 				2B35969504C6A02CD7B2D0AF /* libmruby.a in Frameworks */,
 				2B359C81C3D2AD7DD91E3F79 /* libraylib.a in Frameworks */,
 			);
@@ -97,6 +129,40 @@
 			children = (
 				2B359C05981A840F31938B1D /* rMRuby.c */,
 				2B359EB97A70001AB019E592 /* rMRuby.h */,
+				2B359C6D70A0998FDEFEEBF7 /* core_wrapper.c */,
+				2B3598EE17422E8E84E340DB /* core_wrapper.h */,
+				2B3596F1E7533567A79297A6 /* font_wrapper.c */,
+				2B3596AF710723093C2F7A84 /* font_wrapper.h */,
+				2B359481BC90E476E839F19F /* wave_wrapper.c */,
+				2B359C4ADBFF3CB721A26D49 /* wave_wrapper.h */,
+				2B3597C070E3C13CDFC1F067 /* image_wrapper.c */,
+				2B359BD3E06D2DB89CE45445 /* image_wrapper.h */,
+				2B3594A49642202FF05954D5 /* music_wrapper.c */,
+				2B3597954565E609131048E8 /* music_wrapper.h */,
+				2B35999BEED2492313B5D7C5 /* sound_wrapper.c */,
+				2B3591A052FC513AC293EA39 /* sound_wrapper.h */,
+				2B359AB492ECFCD5EE607C33 /* shader_wrapper.c */,
+				2B359D622AF7CB937B57A4F4 /* shader_wrapper.h */,
+				2B3595724394D50038E3F048 /* texture_wrapper.c */,
+				2B359C2598A5509328E12BDA /* texture_wrapper.h */,
+				2B3592A8A494137D1F360739 /* glyphinfo_wrapper.c */,
+				2B3599F754BB083A45AC5BC1 /* glyphinfo_wrapper.h */,
+				2B359AA87D51C88F55965805 /* audiostream_wrapper.c */,
+				2B3595DAE4083E6F198F0B61 /* audiostream_wrapper.h */,
+				2B359023625A20C6C4C255E9 /* module_text_wrapper.c */,
+				2B3598DC9210181771F3E78D /* module_text_wrapper.h */,
+				2B35944A3DECE0B57FC52175 /* module_audio_wrapper.c */,
+				2B359BC2856AB7A51A1FBACF /* module_audio_wrapper.h */,
+				2B3593ECBFD6621C5B0AFE70 /* module_models_wrapper.c */,
+				2B35995D5BED3976232E1FA1 /* module_models_wrapper.h */,
+				2B359B473D26F6756B3FE6CC /* module_shapes_wrapper.c */,
+				2B359263339E80813D07F3B4 /* module_shapes_wrapper.h */,
+				2B359665DCFDFB0B93841F16 /* module_shaders_wrapper.c */,
+				2B359757E7AD63776BBE835B /* module_shaders_wrapper.h */,
+				2B35965BEBC29938CBDBC3FF /* module_texture_wrapper.c */,
+				2B359C0343E4055DBB80E39E /* module_texture_wrapper.h */,
+				2B3590E5E368ADB2A5716DD9 /* render_texture_wrapper.c */,
+				2B35943C155298C04EE86673 /* render_texture_wrapper.h */,
 			);
 			name = src;
 			path = ../../../../src;
@@ -105,13 +171,6 @@
 		2B359CAECB26A6B53550FB53 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				997A6E5A2B67480500A79CED /* libmruby_core.a */,
-				997A6E582B6747C100A79CED /* CoreVideo.framework */,
-				997A6E562B6747BB00A79CED /* CoreAudio.framework */,
-				997A6E542B6747B400A79CED /* IOKit.framework */,
-				997A6E522B6747AB00A79CED /* Cocoa.framework */,
-				997A6E502B6747A300A79CED /* OpenGL.framework */,
-				997A6E4E2B67476200A79CED /* libglfw3.a */,
 				2B35906B88E11BF2F5EED569 /* libmruby.a */,
 				2B3598C64D76F4108A47EBA2 /* libraylib.a */,
 			);
@@ -151,7 +210,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 			);
 			mainGroup = 2B3593551BA0EBA11B569823;
@@ -171,6 +229,23 @@
 			files = (
 				2B359AEA8FC9F27676E649A7 /* main.c in Sources */,
 				2B3598AC4B0D85C40ECBC192 /* rMRuby.c in Sources */,
+				2B359D12E4B0B2996591BE1B /* core_wrapper.c in Sources */,
+				2B359B4231958D8E6B34671A /* font_wrapper.c in Sources */,
+				2B35910F3BE48A31FD65EA7D /* wave_wrapper.c in Sources */,
+				2B359E196B0428132441096F /* image_wrapper.c in Sources */,
+				2B3598E6AFF1A54B54539370 /* music_wrapper.c in Sources */,
+				2B359F29559A094765925C09 /* sound_wrapper.c in Sources */,
+				2B359E92BBA1869D864E44FD /* shader_wrapper.c in Sources */,
+				2B3599F7C25BE300FD396AB2 /* texture_wrapper.c in Sources */,
+				2B3595E6BC8AE15A7A20B42B /* glyphinfo_wrapper.c in Sources */,
+				2B3599BEA65F7710FE2CC323 /* audiostream_wrapper.c in Sources */,
+				2B359E28E5B0E570E0EB65D6 /* module_text_wrapper.c in Sources */,
+				2B359098A8B437CD4BDF2384 /* module_audio_wrapper.c in Sources */,
+				2B359C3788D5FEC6E1E5E73A /* module_models_wrapper.c in Sources */,
+				2B359BF0C6FB8C38EFB338E0 /* module_shapes_wrapper.c in Sources */,
+				2B359CE96753629AE699A372 /* module_shaders_wrapper.c in Sources */,
+				2B359BD2688814738869CC32 /* module_texture_wrapper.c in Sources */,
+				2B359F6A61BF9DE3525A30DE /* render_texture_wrapper.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,19 +257,14 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"${PROJECT_DIR}/../../../../raylib/src\"/**",
-					/Users/Kanbaru/GitWorkspace/mruby/build/host/lib,
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-					MRB_NO_BOXING,
-					MRB_USE_FLOAT32,
-					MRB_UTF8_STRING,
+					"\"${PROJECT_DIR}/../../../../mruby/build/host-debug/lib\"/**",
+					"\"${PROJECT_DIR}/../../../../raylib/src\"/**",
+					"\"${PROJECT_DIR}/../../../../mruby/build/host-debug/lib\"/**",
+					"\"${PROJECT_DIR}/../../../../raylib/src\"/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/Users/Kanbaru/GitWorkspace/raylib/src,
-					/Users/Kanbaru/GitWorkspace/mruby/build/host/lib,
-					/Users/Kanbaru/GitWorkspace/raylib/src/external/glfw/build/src,
+					"/Users/Kanbaru/GitWorkspace/mruby/build/host-debug/lib",
 					"\"${PROJECT_DIR}/\"/**",
 					"\"${PROJECT_DIR}/\"/**",
 				);
@@ -275,12 +345,14 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"${PROJECT_DIR}/../../../../raylib/src\"/**",
-					/Users/Kanbaru/GitWorkspace/mruby/build/host/lib,
+					"\"${PROJECT_DIR}/../../../../mruby/build/host-debug/lib\"/**",
+					"\"${PROJECT_DIR}/../../../../raylib/src\"/**",
+					"\"${PROJECT_DIR}/../../../../mruby/build/host-debug/lib\"/**",
+					"\"${PROJECT_DIR}/../../../../raylib/src\"/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/Users/Kanbaru/GitWorkspace/raylib/src,
-					/Users/Kanbaru/GitWorkspace/mruby/build/host/lib,
-					/Users/Kanbaru/GitWorkspace/raylib/src/external/glfw/build/src,
+					"/Users/Kanbaru/GitWorkspace/mruby/build/host-debug/lib",
 					"\"${PROJECT_DIR}/\"/**",
 					"\"${PROJECT_DIR}/\"/**",
 				);
@@ -359,7 +431,6 @@
 				2B35991F87B7FD51BA557E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		2B3596BD8BB749455F845C03 /* Build configuration list for PBXProject "rMRUBY" */ = {
 			isa = XCConfigurationList;
