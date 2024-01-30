@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug.DLL|Win32">
-      <Configuration>Debug.DLL</Configuration>
-      <Platform>Win32</Platform>
-    </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug.DLL|x64">
-      <Configuration>Debug.DLL</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
@@ -37,7 +29,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A6B2A11B-0669-4AF5-A025-8DD02DBBE5EA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>shaders_basic_lighting</RootNamespace>
+    <RootNamespace>rMRUBY</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>rMRUBY</ProjectName>
   </PropertyGroup>
@@ -49,18 +41,6 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug.DLL|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug.DLL|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>$(DefaultPlatformToolset)</PlatformToolset>
@@ -128,6 +108,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)\build\$(ProjectName)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\build\$(ProjectName)\obj\$(Platform)\$(Configuration)\</IntDir>
+    <ExternalIncludePath>D:\GitWorkspace\mruby\include;D:\GitWorkspace\raylib\src;$(VC_IncludePath);$(WindowsSDK_IncludePath);</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -210,7 +191,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\build\raylib\bin\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\GitWorkspace\mruby\build\host\lib;D:\GitWorkspace\raylib\projects\VS2022\build\raylib\bin\Win32\Debug;$(SolutionDir)\build\raylib\bin\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
       <AdditionalDependencies>raylib.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winmm.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -220,7 +201,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;PLATFORM_DESKTOP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MRB_USE_DEBUG_HOOK;MRB_NO_BOXING;MRB_USE_FLOAT32;MRB_UTF8_STRING;MRB_USE_COMPLEX=0;WIN32;_DEBUG;_CONSOLE;PLATFORM_DESKTOP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CompileAs>CompileAsC</CompileAs>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
@@ -230,7 +211,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\GitWorkspace\mruby\build\host\lib;D:\GitWorkspace\raylib\projects\VS2022\build\raylib\bin\x64\Debug;$(SolutionDir)\build\raylib\bin\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libmruby.lib;raylib.lib;Ws2_32.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winmm.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libmruby.lib;libmruby_core.lib;raylib.lib;Ws2_32.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winmm.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug.DLL|Win32'">
@@ -375,11 +356,6 @@
       <Message>Copy Release DLL to output directory</Message>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\raylib\raylib.vcxproj">
-      <Project>{e89d61ac-55de-4482-afd4-df7242ebc859}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\rMRuby.c" />
     <ClCompile Include="..\osx\rMRUBY\rMRUBY\main.c" />

@@ -1,0 +1,27 @@
+<Project>
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+    <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <DefineConstants>TRACE;DEBUG</DefineConstants>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CppAst" Version="0.14.0" />
+      <PackageReference Include="libclang.runtime.win-x64" Version="17.0.4" />
+      <PackageReference Include="libClangSharp.runtime.win-x64" Version="17.0.4" />
+    </ItemGroup>
+
+    <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+
+</Project>

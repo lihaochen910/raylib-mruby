@@ -1,4 +1,8 @@
 {
+    "C_Cpp.default.includePath": [
+        "D:\\GitWorkspace\\raylib\\src",
+        "D:\\GitWorkspace\\mruby\\include"
+    ]
     "files.associations": {
         "*.x": "objective-c",
         "*.xm": "objective-c",
